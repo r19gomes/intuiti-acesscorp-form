@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-2">
+            @Html.Partial("_Menu")
+        </div>
+        <div class="col-10">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>
