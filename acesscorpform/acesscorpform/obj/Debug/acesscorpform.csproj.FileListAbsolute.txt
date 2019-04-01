@@ -72,4 +72,14 @@ C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpfor
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\obj\Debug\acesscorpform.csproj.CopyComplete
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\obj\Debug\acesscorpform.dll
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\obj\Debug\acesscorpform.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\bin\Antlr3.Runtime.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\bin\Newtonsoft.Json.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\bin\PagedList.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\bin\System.Web.Optimization.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\bin\WebGrease.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\bin\Antlr3.Runtime.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\bin\Newtonsoft.Json.xml
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\bin\PagedList.xml
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\bin\System.Web.Optimization.xml
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\bin\pt-br\System.Web.Optimization.resources.dll
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\obj\Debug\acesscorpform.csprojAssemblyReference.cache

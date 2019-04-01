@@ -60,12 +60,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\acesscorpform\acesscorpform.csproj">
+    <ProjectReference Include="..\acesscorpform\Acesscorp.UI.csproj">
       <Project>{D17BEECC-E433-4BC9-BEAE-A23D5E17CE3C}</Project>
-      <Name>acesscorpform</Name>
+      <Name>Acesscorp.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

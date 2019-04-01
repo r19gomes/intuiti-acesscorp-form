@@ -34,3 +34,7 @@ C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpfor
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Tests\obj\Debug\acesscorpform.Tests.csproj.CopyComplete
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Tests\obj\Debug\acesscorpform.Tests.dll
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Tests\obj\Debug\acesscorpform.Tests.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Tests\bin\Debug\acesscorpform.Tests.dll.config
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Tests\bin\Debug\pt-br\System.Web.Optimization.resources.dll

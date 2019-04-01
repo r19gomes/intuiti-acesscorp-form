@@ -3,9 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "acesscorpform", "acesscorpform\acesscorpform.csproj", "{D17BEECC-E433-4BC9-BEAE-A23D5E17CE3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acesscorp.UI", "acesscorpform\Acesscorp.UI.csproj", "{D17BEECC-E433-4BC9-BEAE-A23D5E17CE3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "acesscorpform.Tests", "acesscorpform.Tests\acesscorpform.Tests.csproj", "{8D417D47-EACF-475B-A8D9-76F591609752}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Apresentacao", "0 - Apresentacao", "{C522BE97-8C04-446F-B463-C044AE061B4B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Testes", "4 - Testes", "{0FC19B3F-CA7A-44EB-93D2-14E9B038A233}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Servicos Distribuidos", "1 - Servicos Distribuidos", "{38BACAB8-9BD1-4CA9-9C25-48D6826FEE93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Dominio", "2 - Dominio", "{2504FCFE-B27C-4D1B-AB92-AD068109FD22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infraestrutura", "3 - Infraestrutura", "{C3E8084A-0A62-4508-8842-DB5ED11DEB82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +34,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D17BEECC-E433-4BC9-BEAE-A23D5E17CE3C} = {C522BE97-8C04-446F-B463-C044AE061B4B}
+		{8D417D47-EACF-475B-A8D9-76F591609752} = {0FC19B3F-CA7A-44EB-93D2-14E9B038A233}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {198CD36C-F693-4B30-AC6C-91AFDF258A4F}
