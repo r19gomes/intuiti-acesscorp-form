@@ -85,5 +85,18 @@ namespace acesscorpform.Controllers
                 return View();
             }
         }
+
+        [HttpPost]
+        public ActionResult AddAttributes(int? atributoId)
+        {
+            try
+            {
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return View();
+            }
+        }
     }
 }

@@ -1,6 +1,12 @@
 ﻿body {
 }
 
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .list-group {
     margin: auto;
     float: left;
@@ -12,4 +18,25 @@
     left: 0;
     right: 0;
     padding-top: 10%;
+}
+
+.fixar-rodape {
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+}
+
+.btn-local-group {
+    padding-top: 1%;
+}
+
+.panel {
+    height: 180px;
+    padding: 0px;
+    margin: 5px -5px 5px -5px;
+    background-color: antiquewhite;
+    border: 1px solid red;
+    overflow:auto;
 }
