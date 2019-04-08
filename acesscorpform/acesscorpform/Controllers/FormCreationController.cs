@@ -98,5 +98,10 @@ namespace acesscorpform.Controllers
                 return View();
             }
         }
+
+        public JsonResult GetAll()
+        {
+            return Json(null, JsonRequestBehavior.AllowGet);
+        }
     }
 }

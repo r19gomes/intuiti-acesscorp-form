@@ -1,5 +1,4 @@
-﻿@model IEnumerable<acesscorpform.RouteConfig>
-
+﻿
 @{
     ViewBag.Title = "Formulários";
     Layout = "~/Views/Shared/_LayoutAccesscorp.cshtml";
@@ -7,118 +6,34 @@
 
 <h2>Formulários</h2>
 
-@using (Html.BeginForm("Salvar", "FormCreation", FormMethod.Post, null))
-{
-<form>
-    <div class="form-row">
-        <div class="form-group col-4">
-            <label for="DDL_status">Status</label>
-            <select id="DDL_status" class="form-control" autofocus>
-                <option value="1" selected>Em Elaboração</option>
-                <option value="2">Liberado</option>
-                <option value="3">Cancelado</option>
-            </select>
-        </div>
-        <div class="form-group col-2">
-            <label for="TXT_dataVigenciaInicial">Vigência Inicial</label>
-            <input id="TXT_dataVigenciaInicial" type="date" class="form-control" />
-        </div>
-        <div class="form-group col-2">
-            <label for="TXT_dataVigenciaFinal">Vigência Final</label>
-            <input id="TXT_dataVigenciaFinal" type="date" class="form-control" />
-        </div>
-        <div class="form-group col-4">
-            <label for="DDL_tipoDeFormulario">Tipo de Formulário</label>
-            <select id="DDL_tipoDeFormulario" class="form-control">
-                <option value="1" selected>Padrão</option>
-                <option value="2">Cadastro</option>
-            </select>
-        </div>
+<form ng-controller="FormCreationCtrl">
+    <div class="panel panel-info">
+        <div class="panel-heading">Formulários</div>
     </div>
-    <div class="form-row">
-        <div class="form-group col">
-            <label for="TXT_nome">Nome</label>
-            <input id="TXT_nome" type="text" class="form-control" />
-        </div>
-        <div class="form-group col">
-            <label for="TXT_apelido">Apelido</label>
-            <input id="TXT_apelido" type="text" class="form-control" />
-        </div>
-    </div>
-    <div class="form-row" style="background-color: aliceblue">
-        <div class="form-group col-10">
-            <label for="DDL_atributos">Atributos</label>
-            <select id="DDL_atributos" class="form-control">
-                <option value="0" selected>Selecione o novo campo no formulário</option>
-                <option value="1|garantia-group|Garantia|TXT_garantia|text">Garantia</option>
-                <option value="2|email-group|E-mail|TXT_email|email">E-mail</option>
-                <option value="3|cep-group|Cep|TXT_cep|text">Cep</option>
-            </select>
-        </div>
-        <div class="form-group col-1" style="max-width:110px">
-            <button type="button" class="btn btn-secondary"
-                    style="margin-top: 33%; float:right;"
-                    onclick="newField()">
-                Adicionar
-            </button>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-body">
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="col btn-local-group">
-            <button type="submit" class="btn btn-primary">Salvar</button>
-            <button type="button" class="btn btn-secondary">Cancelar</button>
-        </div>
-    </div>
+    <table class="table table-bordered">
+        <thead style="background-color: burlywood;">
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in FormCreation">
+                <td>{{item.Id}}</td>
+                <td>{{item.Nome}}</td>
+                <td style="width: 200px">
+                    @Html.ActionLink("Editar", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </form>
-    @section scripts {
-        <script type="text/javascript">
-            var newField = () => {
-                let $DDL_atributos = $('#DDL_atributos');
-                if ($DDL_atributos != null && $DDL_atributos != undefined) {
-                    if ($DDL_atributos.val() != null && $DDL_atributos.val() != undefined) {
-                        let fields = $DDL_atributos.val().split('|');
-                        if (fields != null && fields != undefined) {
-                            if (fields.length > 0) {
-                                let atributoId = fields[0];
-                                if (parseFloat(atributoId) > 0) {
-                                    let div = fields[1];
-                                    let label = fields[2];
-                                    let id = fields[3];
-                                    console.log("id:", id);
-                                    let type = fields[4];
-                                    let fieldExists = $(`#${id}`).length;
-                                    console.log("fieldExists:", fieldExists);
-                                    if (parseInt(fieldExists) == 0) {
-                                        let field = $('.panel-body').val();
-                                        field += `
-                                                    <div id="${div}" class="form-group col-12">
-                                                        <button class="btn" onclick="removeField('${div}')"
-                                                            style="color:red" data-toggle="tooltip" data-placement="left"
-                                                                title="Remove o campo: ${label}"><i class="fa fa-trash"></i></button>
-                                                        <label for="${id}">${label}</label>
-                                                        <input id="${id}" type="${type}" class="form-control" />
-                                                    </div>`;
-                                        $('.panel-body').append(field);
-                                    } else {
-                                        alert(`O atributo '${label}' já foi adicionando no formulário.`);
-                                    }
-                                } else {
-                                    alert('Nenhum atributo foi selecionado.');
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            var removeField = (div) => {
-                $(`#${div}`).remove();
-                return false;
-            }
-        </script>
-    }
+@section scripts {
+    <script src="~/ClientApp/app/formCreation/Module.js"></script>
+    <script src="~/ClientApp/app/formCreation/Service.js"></script>
+    <script src="~/ClientApp/app/formCreation/Controller.js"></script>
+    <script type="text/javascript">
+    </script>
 }
