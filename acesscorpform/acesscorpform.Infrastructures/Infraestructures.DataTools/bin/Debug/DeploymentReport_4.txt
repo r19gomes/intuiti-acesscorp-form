@@ -1,0 +1,24 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Formularios] (Table)
+       [dbo].[FormulariosTipos] (Table)
+       [dbo].[FormulariosTiposAtributos] (Table)
+       [dbo].[Status] (Table)
+       [dbo].[TiposAtributos] (Table)
+       Default Constraint: unnamed constraint on [dbo].[TiposAtributos] (Default Constraint)
+       [dbo].[FK_Formularios_FormularioTipoId_FormulariosTipos_FormularioTipoId] (Foreign Key)
+       [dbo].[FK_Formularios_StatusId_Status_StatusId] (Foreign Key)
+       [dbo].[FK_FormulariosTiposAtributos_FormularioId_Formularios_FormularioId] (Foreign Key)
+       [dbo].[FK_FormulariosTiposAtributos_TipoAtributoId_TiposAtributos_TipoAtributoId] (Foreign Key)
+
+** Supporting actions
