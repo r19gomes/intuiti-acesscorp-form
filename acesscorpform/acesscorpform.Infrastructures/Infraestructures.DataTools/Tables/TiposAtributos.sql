@@ -3,7 +3,11 @@
 	[TipoAtributoId] BIGINT IDENTITY(1,1) NOT NULL
 ,	[Nome] VARCHAR(600) NOT NULL
 ,	[Descricao] VARCHAR(MAX) NOT NULL
+,	[TipoDadoId] [varchar](150) NOT NULL
 ,	[FlagStatus] BIT NOT NULL
+,	[OrdemExibicao] [int] NOT NULL DEFAULT ((0))
+,	[Limitador] [bit] NULL
+,	[Qualificador] [bit] NULL
 ,	[CadastroUsuarioId] BIGINT NOT NULL
 ,	[CadastroDataHora] DATETIME2 NOT NULL
 ,	[AtualizacaoUsuarioId] BIGINT NULL

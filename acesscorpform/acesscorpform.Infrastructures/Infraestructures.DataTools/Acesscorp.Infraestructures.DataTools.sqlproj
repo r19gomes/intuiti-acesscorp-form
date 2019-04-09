@@ -73,4 +73,7 @@
   <ItemGroup>
     <RefactorLog Include="Infraestructures.DataTools.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\PosDeploy\001_TiposAtributos.sql" />
+  </ItemGroup>
 </Project>

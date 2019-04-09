@@ -3,3 +3,9 @@ Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\ac
 Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.pdb
 Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Database1.dll
 Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Database1.pdb
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Acesscorp.Infraestructures.DataTools.dacpac
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Database1.dll
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Database1.pdb
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Acesscorp.Infraestructures.DataTools.sqlprojAssemblyReference.cache
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.dll
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.pdb
