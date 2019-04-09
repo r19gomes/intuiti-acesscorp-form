@@ -1,0 +1,5 @@
+Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Acesscorp.Infraestructures.DataTools.dacpac
+Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.dll
+Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.pdb
+Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Database1.dll
+Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Database1.pdb
