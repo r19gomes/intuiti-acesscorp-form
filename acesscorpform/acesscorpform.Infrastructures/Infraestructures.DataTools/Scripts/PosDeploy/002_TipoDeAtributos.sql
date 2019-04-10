@@ -1,130 +1,13 @@
-﻿/*
-"TipoDeAtributos": [
-    {
-      "TipoDeAtributoId": 2,
-      "Nome": "Endereço",
-      "Apelido": "Endereço",
-      "NomeFisico": "ENDERECO",
-      "FlagStatus": true,
-      "TipoDeEntidadeId": 1,
-      "TipoDeDadoId": 4,
-      "CadastroDataHora": "2018-11-29 00:00",
-      "CadastroUsuarioId": null,
-      "AtualizacaoDataHora": null,
-      "AtualizacaoUsuarioId": null
-    },
-    {
-      "TipoDeAtributoId": 2,
-      "Nome": "Número",
-      "Apelido": "Número",
-      "NomeFisico": "NUMERO",
-      "FlagStatus": true,
-      "TipoDeEntidadeId": 1,
-      "TipoDeDadoId": 4,
-      "CadastroDataHora": "2018-11-29 00:00",
-      "CadastroUsuarioId": null,
-      "AtualizacaoDataHora": null,
-      "AtualizacaoUsuarioId": null
-    },
-    {
-      "TipoDeAtributoId": 3,
-      "Nome": "Complemento",
-      "Apelido": "Complemento",
-      "NomeFisico": "COMPLEMENTO",
-      "FlagStatus": true,
-      "TipoDeEntidadeId": 1,
-      "TipoDeDadoId": 4,
-      "CadastroDataHora": "2018-11-29 00:00",
-      "CadastroUsuarioId": null,
-      "AtualizacaoDataHora": null,
-      "AtualizacaoUsuarioId": null
-    },
-    {
-      "TipoDeAtributoId": 4,
-      "Nome": "Bairro",
-      "Apelido": "Bairro",
-      "NomeFisico": "BAIRRO",
-      "FlagStatus": true,
-      "TipoDeEntidadeId": 1,
-      "TipoDeDadoId": 4,
-      "CadastroDataHora": "2018-11-29 00:00",
-      "CadastroUsuarioId": null,
-      "AtualizacaoDataHora": null,
-      "AtualizacaoUsuarioId": null
-    },
-    {
-      "TipoDeAtributoId": 5,
-      "Nome": "Cep",
-      "Apelido": "Cep",
-      "NomeFisico": "CEP",
-      "FlagStatus": true,
-      "TipoDeEntidadeId": 1,
-      "TipoDeDadoId": 4,
-      "CadastroDataHora": "2018-11-29 00:00",
-      "CadastroUsuarioId": null,
-      "AtualizacaoDataHora": null,
-      "AtualizacaoUsuarioId": null
-    },
-    {
-      "TipoDeAtributoId": 6,
-      "Nome": "Cep Complemento",
-      "Apelido": "Cep Complemento",
-      "NomeFisico": "CEP_COMPLEMENTO",
-      "FlagStatus": true,
-      "TipoDeEntidadeId": 1,
-      "TipoDeDadoId": 4,
-      "CadastroDataHora": "2018-11-29 00:00",
-      "CadastroUsuarioId": null,
-      "AtualizacaoDataHora": null,
-      "AtualizacaoUsuarioId": null
-    },
-    {
-      "TipoDeAtributoId": 7,
-      "Nome": "Nome do País",
-      "Apelido": "País",
-      "NomeFisico": "NOME_PAIS",
-      "FlagStatus": true,
-      "TipoDeEntidadeId": 1,
-      "TipoDeDadoId": 4,
-      "CadastroDataHora": "2018-11-29 00:00",
-      "CadastroUsuarioId": null,
-      "AtualizacaoDataHora": null,
-      "AtualizacaoUsuarioId": null
-    },
-    {
-      "TipoDeAtributoId": 8,
-      "Nome": "Estado",
-      "Apelido": "UF",
-      "NomeFisico": "NOME_ESTADO",
-      "FlagStatus": true,
-      "TipoDeEntidadeId": 1,
-      "TipoDeDadoId": 4,
-      "CadastroDataHora": "2018-11-29 00:00",
-      "CadastroUsuarioId": null,
-      "AtualizacaoDataHora": null,
-      "AtualizacaoUsuarioId": null
-    },
-    {
-      "TipoDeAtributoId": 9,
-      "Nome": "Cidade",
-      "Apelido": "Cidade",
-      "NomeFisico": "CIDADE",
-      "FlagStatus": true,
-      "TipoDeEntidadeId": 1,
-      "TipoDeDadoId": 4,
-      "CadastroDataHora": "2018-11-29 00:00",
-      "CadastroUsuarioId": null,
-      "AtualizacaoDataHora": null,
-      "AtualizacaoUsuarioId": null
-    }
-*/
-IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = 'Amortização do Principal')
+﻿IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
 BEGIN
-	INSERT [dbo].[TiposAtributos]
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
+	,	[Apelido]
 	,	[Descricao]
+	, [NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -132,24 +15,315 @@ BEGIN
 	,	[Qualificador]
 	)
 	SELECT
-		--[TipoAtributoId] = 11
-		[Nome] = 'Amortização do Principal'	
-	,	[Descricao] 'Lista de peridiocidade (armazena Peridiocidade + Quantidade de PMTS)'
+		[TipoDeAtributoId] = 2
+	,	[Nome] = 'Endereço'	
+	,	[Apelido] = 'Endereço'
+	,	[Descricao] = NULL
+	,	[NomeFisico] = "ENDERECO"
+	,	[TipoDadoId] = @VARCHAR  
+	,	[FlagStatus] = 1		
+	,	[OrdemExibicao] = 0
+	,	[Limitador] = 0
+	,	[Qualificador] = 0
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+END
+GO
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido]
+	,	[Descricao]
+	, [NomeFisico] 
+	,	[TipoDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	)
+	SELECT
+		[TipoDeAtributoId] = 2
+	,	[Nome] = 'Endereço'	
+	,	[Apelido] = 'Endereço'
+	,	[Descricao] = NULL
+	,	[NomeFisico] = "ENDERECO"
+	,	[TipoDadoId] = @VARCHAR  
+	,	[FlagStatus] = 1		
+	,	[OrdemExibicao] = 0
+	,	[Limitador] = 0
+	,	[Qualificador] = 0
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+END
+GO
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido]
+	,	[Descricao]
+	, [NomeFisico] 
+	,	[TipoDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	)
+	SELECT
+		[TipoDeAtributoId] = 3
+	,	[Nome] = 'Complemento'	
+	,	[Apelido] = 'Complemento'
+	,	[Descricao] = NULL
+	,	[NomeFisico] = "COMPLEMENTO"
+	,	[TipoDadoId] = @VARCHAR  
+	,	[FlagStatus] = 1		
+	,	[OrdemExibicao] = 0
+	,	[Limitador] = 0
+	,	[Qualificador] = 0
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+END
+GO
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido]
+	,	[Descricao]
+	, [NomeFisico] 
+	,	[TipoDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	)
+	SELECT
+		[TipoDeAtributoId] = 4
+	,	[Nome] = 'Bairro'	
+	,	[Apelido] = 'Bairro'
+	,	[Descricao] = NULL
+	,	[NomeFisico] = "BAIRRO"
+	,	[TipoDadoId] = @VARCHAR  
+	,	[FlagStatus] = 1		
+	,	[OrdemExibicao] = 0
+	,	[Limitador] = 0
+	,	[Qualificador] = 0
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+END
+GO
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido]
+	,	[Descricao]
+	, [NomeFisico] 
+	,	[TipoDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	)
+	SELECT
+		[TipoDeAtributoId] = 5
+	,	[Nome] = 'Cep'	
+	,	[Apelido] = 'Cep'
+	,	[Descricao] = NULL
+	,	[NomeFisico] = "CEP"
+	,	[TipoDadoId] = @VARCHAR  
+	,	[FlagStatus] = 1		
+	,	[OrdemExibicao] = 0
+	,	[Limitador] = 0
+	,	[Qualificador] = 0
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+END
+GO
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido]
+	,	[Descricao]
+	, [NomeFisico] 
+	,	[TipoDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	)
+	SELECT
+		[TipoDeAtributoId] = 6
+	,	[Nome] = 'Cep Complemento'	
+	,	[Apelido] = 'Cep Complemento'
+	,	[Descricao] = NULL
+	,	[NomeFisico] = "CEP_COMPLEMENTO"
+	,	[TipoDadoId] = @VARCHAR  
+	,	[FlagStatus] = 1		
+	,	[OrdemExibicao] = 0
+	,	[Limitador] = 0
+	,	[Qualificador] = 0
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+END
+GO
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido]
+	,	[Descricao]
+	, [NomeFisico] 
+	,	[TipoDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	)
+	SELECT
+		[TipoDeAtributoId] = 7
+	,	[Nome] = 'Nome do País'	
+	,	[Apelido] = 'País'
+	,	[Descricao] = NULL
+	,	[NomeFisico] = "NOME_PAIS"
+	,	[TipoDadoId] = @VARCHAR  
+	,	[FlagStatus] = 1		
+	,	[OrdemExibicao] = 0
+	,	[Limitador] = 0
+	,	[Qualificador] = 0
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+END
+GO
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido]
+	,	[Descricao]
+	, [NomeFisico] 
+	,	[TipoDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	)
+	SELECT
+		[TipoDeAtributoId] = 8
+	,	[Nome] = 'Estado'	
+	,	[Apelido] = 'UF'
+	,	[Descricao] = NULL
+	,	[NomeFisico] = "NOME_ESTADO"
+	,	[TipoDadoId] = @VARCHAR  
+	,	[FlagStatus] = 1		
+	,	[OrdemExibicao] = 0
+	,	[Limitador] = 0
+	,	[Qualificador] = 0
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+END
+GO
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido]
+	,	[Descricao]
+	, [NomeFisico] 
+	,	[TipoDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	)
+	SELECT
+		[TipoDeAtributoId] = 9
+	,	[Nome] = 'Cidade'	
+	,	[Apelido] = 'Cidade'
+	,	[Descricao] = NULL
+	,	[NomeFisico] = "CIDADE"
+	,	[TipoDadoId] = @VARCHAR  
+	,	[FlagStatus] = 1		
+	,	[OrdemExibicao] = 0
+	,	[Limitador] = 0
+	,	[Qualificador] = 0
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+END
+GO
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Amortização do Principal')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido]
+	,	[Descricao]
+	, [NomeFisico] 
+	,	[TipoDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	)
+	SELECT
+		[TipoDeAtributoId] = 11
+	,	[Nome] = 'Amortização do Principal'	
+	,	[Apelido] = 'Amortização do Principal'
+	,	[Descricao] 'Lista de peridiocidade (Armazena Peridiocidade + Quantidade de PMTS)'
+	,	[NomeFisico] = 'AMORIZACAO_PRINCIPAL'
 	,	[TipoDadoId] = @VARCHAR  
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 8
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
 GO
 
-IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = 'ArvoreGarantia')
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'ArvoreGarantia')
 BEGIN
-	INSERT [dbo].[TiposAtributos]
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Descricao]
 	,	[TipoDadoId]
@@ -159,8 +333,8 @@ BEGIN
 	,	[Qualificador]
 	)
 	SELECT
-		--[TipoAtributoId] = 2000
-		[Nome] = 'ArvoreGarantia'	
+		[TipoAtributoId] = 2000
+	,	[Nome] = 'ArvoreGarantia'	
 	,	[Descricao] 'ARVORE DE GARANTIAS'
 	,	[TipoDadoId] = @INTEGER
 	,	[FlagStatus] = 1		
@@ -168,15 +342,16 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
 GO
 
-IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = 'ArvoreNostroAccount')
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'ArvoreNostroAccount')
 BEGIN
-	INSERT [dbo].[TiposAtributos]
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Descricao]
 	,	[TipoDadoId]
@@ -186,8 +361,8 @@ BEGIN
 	,	[Qualificador]
 	)
 	SELECT
-		--[TipoAtributoId] = 4000
-		[Nome] = 'ArvoreNostroAccount'	
+		[TipoDeAtributoId] = 4000
+	,	[Nome] = 'ArvoreNostroAccount'	
 	,	[Descricao] 'ARVORE DE Notro Account'
 	,	[TipoDadoId] = @INTEGER
 	,	[FlagStatus] = 1		
@@ -195,15 +370,16 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
 GO
 
-IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = 'ArvoreSettlement')
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'ArvoreSettlement')
 BEGIN
-	INSERT [dbo].[TiposAtributos]
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Descricao]
 	,	[TipoDadoId]
@@ -213,8 +389,8 @@ BEGIN
 	,	[Qualificador]
 	)
 	SELECT
-		--[TipoAtributoId] = 3000
-		[Nome] = 'ArvoreSettlement'	
+		[TipoDeAtributoId] = 3000
+	,	[Nome] = 'ArvoreSettlement'	
 	,	[Descricao] 'ARVORE DE Settlement'
 	,	[TipoDadoId] = @INTEGER
 	,	[FlagStatus] = 1		
@@ -222,15 +398,16 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
 GO
 
-IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Banco')
 BEGIN
-	INSERT [dbo].[TiposAtributos]
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Descricao]
 	,	[TipoDadoId]
@@ -240,8 +417,8 @@ BEGIN
 	,	[Qualificador]
 	)
 	SELECT
-		--[TipoAtributoId] = 2
-		[Nome] = 'Banco'	
+		[TipoDeAtributoId] = 21
+	,	[Nome] = 'Banco'	
 	,	[Descricao] 'Banco'
 	,	[TipoDadoId] = @INTEGER
 	,	[FlagStatus] = 1		
@@ -249,16 +426,17 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
-IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = '')
 BEGIN
-	INSERT [dbo].[TiposAtributos]
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	INSERT [dbo].[TipoDeAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Descricao]
 	,	[TipoDadoId]
@@ -268,8 +446,8 @@ BEGIN
 	,	[Qualificador]
 	)
 	SELECT
-		--[TipoAtributoId] = 9
-		[Nome] = 'Carência'	
+		[TipoDeAtributoId] = 19
+	,	[Nome] = 'Carência'	
 	,	[Descricao] 'Quantidade de dias'
 	,	[TipoDadoId] = @INTEGER
 	,	[FlagStatus] = 1		
@@ -277,13 +455,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -305,13 +484,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -333,13 +513,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -361,13 +542,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -389,13 +571,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -417,13 +600,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -445,13 +629,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -473,13 +658,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -501,13 +687,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -529,13 +716,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -557,13 +745,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -585,13 +774,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -613,13 +803,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -641,13 +832,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -669,13 +861,14 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO
 
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -697,7 +890,7 @@ BEGIN
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
 	;
-	SET @TIPO_ATRIBUTO_ID = SCOPE_IDENTITY()
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
 END
 GO

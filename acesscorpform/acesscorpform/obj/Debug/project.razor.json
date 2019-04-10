@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform\\Acesscorp.UI.csproj",
+  "TargetFramework": "v4.6.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}
