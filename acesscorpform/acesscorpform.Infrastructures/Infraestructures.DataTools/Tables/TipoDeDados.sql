@@ -1,0 +1,15 @@
+﻿CREATE TABLE [dbo].[TipoDeDados]
+(
+	[TipoDeDadoId] BIGINT NOT NULL
+,	[Nome] VARCHAR(200) NULL
+,	[FlagStatus] BIT NOT NULL
+,	[CadastroUsuarioId] BIGINT NOT NULL
+,	[CadastroDataHora] DATETIME2 NOT NULL
+,	[AtualizacaoUsuarioId] BIGINT NULL
+,	[AtualizacaoDataHora] DATETIME2 NULL
+,	CONSTRAINT [PK_TipoDeDados] PRIMARY KEY CLUSTERED 
+	(
+		[TipoDeDadoId] ASC
+	)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO 

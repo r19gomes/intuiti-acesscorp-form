@@ -64,16 +64,19 @@
     <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\TiposAtributos.sql" />
     <Build Include="Tables\Formularios.sql" />
     <Build Include="Tables\Status.sql" />
     <Build Include="Tables\FormulariosTipos.sql" />
     <Build Include="Tables\FormulariosTiposAtributos.sql" />
+    <Build Include="Tables\TipoDeDados.sql" />
+    <Build Include="Tables\TipoDeAtributos.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Infraestructures.DataTools.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\PosDeploy\001_TiposAtributos.sql" />
+    <None Include="Scripts\PosDeploy\001_TipoDeDados.sql" />
+    <None Include="Scripts\PosDeploy\002_TipoDeAtributos.sql" />
+    <None Include="Scripts\PosDeploy\999_Usuarios.sql" />
   </ItemGroup>
 </Project>

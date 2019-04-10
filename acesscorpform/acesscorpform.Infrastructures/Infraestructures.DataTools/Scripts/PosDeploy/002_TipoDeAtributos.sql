@@ -1,4 +1,124 @@
-﻿IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = 'Amortização do Principal')
+﻿/*
+"TipoDeAtributos": [
+    {
+      "TipoDeAtributoId": 2,
+      "Nome": "Endereço",
+      "Apelido": "Endereço",
+      "NomeFisico": "ENDERECO",
+      "FlagStatus": true,
+      "TipoDeEntidadeId": 1,
+      "TipoDeDadoId": 4,
+      "CadastroDataHora": "2018-11-29 00:00",
+      "CadastroUsuarioId": null,
+      "AtualizacaoDataHora": null,
+      "AtualizacaoUsuarioId": null
+    },
+    {
+      "TipoDeAtributoId": 2,
+      "Nome": "Número",
+      "Apelido": "Número",
+      "NomeFisico": "NUMERO",
+      "FlagStatus": true,
+      "TipoDeEntidadeId": 1,
+      "TipoDeDadoId": 4,
+      "CadastroDataHora": "2018-11-29 00:00",
+      "CadastroUsuarioId": null,
+      "AtualizacaoDataHora": null,
+      "AtualizacaoUsuarioId": null
+    },
+    {
+      "TipoDeAtributoId": 3,
+      "Nome": "Complemento",
+      "Apelido": "Complemento",
+      "NomeFisico": "COMPLEMENTO",
+      "FlagStatus": true,
+      "TipoDeEntidadeId": 1,
+      "TipoDeDadoId": 4,
+      "CadastroDataHora": "2018-11-29 00:00",
+      "CadastroUsuarioId": null,
+      "AtualizacaoDataHora": null,
+      "AtualizacaoUsuarioId": null
+    },
+    {
+      "TipoDeAtributoId": 4,
+      "Nome": "Bairro",
+      "Apelido": "Bairro",
+      "NomeFisico": "BAIRRO",
+      "FlagStatus": true,
+      "TipoDeEntidadeId": 1,
+      "TipoDeDadoId": 4,
+      "CadastroDataHora": "2018-11-29 00:00",
+      "CadastroUsuarioId": null,
+      "AtualizacaoDataHora": null,
+      "AtualizacaoUsuarioId": null
+    },
+    {
+      "TipoDeAtributoId": 5,
+      "Nome": "Cep",
+      "Apelido": "Cep",
+      "NomeFisico": "CEP",
+      "FlagStatus": true,
+      "TipoDeEntidadeId": 1,
+      "TipoDeDadoId": 4,
+      "CadastroDataHora": "2018-11-29 00:00",
+      "CadastroUsuarioId": null,
+      "AtualizacaoDataHora": null,
+      "AtualizacaoUsuarioId": null
+    },
+    {
+      "TipoDeAtributoId": 6,
+      "Nome": "Cep Complemento",
+      "Apelido": "Cep Complemento",
+      "NomeFisico": "CEP_COMPLEMENTO",
+      "FlagStatus": true,
+      "TipoDeEntidadeId": 1,
+      "TipoDeDadoId": 4,
+      "CadastroDataHora": "2018-11-29 00:00",
+      "CadastroUsuarioId": null,
+      "AtualizacaoDataHora": null,
+      "AtualizacaoUsuarioId": null
+    },
+    {
+      "TipoDeAtributoId": 7,
+      "Nome": "Nome do País",
+      "Apelido": "País",
+      "NomeFisico": "NOME_PAIS",
+      "FlagStatus": true,
+      "TipoDeEntidadeId": 1,
+      "TipoDeDadoId": 4,
+      "CadastroDataHora": "2018-11-29 00:00",
+      "CadastroUsuarioId": null,
+      "AtualizacaoDataHora": null,
+      "AtualizacaoUsuarioId": null
+    },
+    {
+      "TipoDeAtributoId": 8,
+      "Nome": "Estado",
+      "Apelido": "UF",
+      "NomeFisico": "NOME_ESTADO",
+      "FlagStatus": true,
+      "TipoDeEntidadeId": 1,
+      "TipoDeDadoId": 4,
+      "CadastroDataHora": "2018-11-29 00:00",
+      "CadastroUsuarioId": null,
+      "AtualizacaoDataHora": null,
+      "AtualizacaoUsuarioId": null
+    },
+    {
+      "TipoDeAtributoId": 9,
+      "Nome": "Cidade",
+      "Apelido": "Cidade",
+      "NomeFisico": "CIDADE",
+      "FlagStatus": true,
+      "TipoDeEntidadeId": 1,
+      "TipoDeDadoId": 4,
+      "CadastroDataHora": "2018-11-29 00:00",
+      "CadastroUsuarioId": null,
+      "AtualizacaoDataHora": null,
+      "AtualizacaoUsuarioId": null
+    }
+*/
+IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = 'Amortização do Principal')
 BEGIN
 	INSERT [dbo].[TiposAtributos]
 	(
