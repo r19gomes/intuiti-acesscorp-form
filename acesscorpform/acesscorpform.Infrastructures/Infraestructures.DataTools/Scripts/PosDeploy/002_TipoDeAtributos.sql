@@ -15,14 +15,18 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Apelido]
-	,	[Descricao]
-	,	[NomeFisico] 
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 2
@@ -30,11 +34,15 @@ BEGIN
 	,	[Apelido] = 'Endereço'
 	,	[Descricao] = NULL
 	,	[NomeFisico] = "ENDERECO"
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID  
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID  
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -57,14 +65,18 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Apelido]
-	,	[Descricao]
-	,	[NomeFisico] 
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 2
@@ -72,11 +84,15 @@ BEGIN
 	,	[Apelido] = 'Endereço'
 	,	[Descricao] = NULL
 	,	[NomeFisico] = 'ENDERECO'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID  
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID  
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -100,14 +116,18 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Apelido]
-	,	[Descricao]
-	,	[NomeFisico] 
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 3
@@ -115,11 +135,15 @@ BEGIN
 	,	[Apelido] = 'Complemento'
 	,	[Descricao] = NULL
 	,	[NomeFisico] = 'COMPLEMENTO'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID  
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID  
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -142,14 +166,18 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Apelido]
-	,	[Descricao]
-	,	[NomeFisico] 
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 4
@@ -157,11 +185,15 @@ BEGIN
 	,	[Apelido] = 'Bairro'
 	,	[Descricao] = NULL
 	,	[NomeFisico] = 'BAIRRO'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -184,14 +216,18 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Apelido]
-	,	[Descricao]
-	,	[NomeFisico] 
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 5
@@ -199,11 +235,15 @@ BEGIN
 	,	[Apelido] = 'Cep'
 	,	[Descricao] = NULL
 	,	[NomeFisico] = 'CEP'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -226,14 +266,18 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Apelido]
-	,	[Descricao]
-	,	[NomeFisico] 
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 6
@@ -241,11 +285,15 @@ BEGIN
 	,	[Apelido] = 'Cep Complemento'
 	,	[Descricao] = NULL
 	,	[NomeFisico] = 'CEP_COMPLEMENTO'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -268,14 +316,18 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Apelido]
-	,	[Descricao]
-	,	[NomeFisico] 
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 7
@@ -283,11 +335,15 @@ BEGIN
 	,	[Apelido] = 'País'
 	,	[Descricao] = NULL
 	,	[NomeFisico] = 'NOME_PAIS'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -310,14 +366,18 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Apelido]
-	,	[Descricao]
-	,	[NomeFisico] 
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 8
@@ -325,11 +385,15 @@ BEGIN
 	,	[Apelido] = 'UF'
 	,	[Descricao] = NULL
 	,	[NomeFisico] = 'NOME_ESTADO'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -352,14 +416,18 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Apelido]
-	,	[Descricao]
-	,	[NomeFisico] 
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 9
@@ -367,11 +435,15 @@ BEGIN
 	,	[Apelido] = 'Cidade'
 	,	[Descricao] = NULL
 	,	[NomeFisico] = 'CIDADE'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID  
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID  
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -394,14 +466,18 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Apelido]
-	,	[Descricao]
-	,	[NomeFisico] 
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 11
@@ -409,11 +485,15 @@ BEGIN
 	,	[Apelido] = 'Amortização do Principal'
 	,	[Descricao] 'Lista de peridiocidade (Armazena Peridiocidade + Quantidade de PMTS)'
 	,	[NomeFisico] = 'AMORIZACAO_PRINCIPAL'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 8
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -436,22 +516,33 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoAtributoId] = 2000
 	,	[Nome] = 'ArvoreGarantia'	
 	,	[Descricao] 'ARVORE DE GARANTIAS'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[NomeFisico] = 'ARVORE_GARANTIA'
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -474,22 +565,33 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 4000
 	,	[Nome] = 'ArvoreNostroAccount'	
 	,	[Descricao] 'ARVORE DE Notro Account'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[NomeFisico] = 'ARVORE_NOSTRO_ACCOUNT'
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID	
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -512,22 +614,33 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 3000
 	,	[Nome] = 'ArvoreSettlement'	
 	,	[Descricao] 'ARVORE DE Settlement'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[NomeFisico] = 'ARVORE_SETTLEMENT'
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 END
@@ -550,22 +663,33 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 21
 	,	[Nome] = 'Banco'	
 	,	[Descricao] 'Banco'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[NomeFisico] = 'BANCO'
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 1
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
@@ -589,22 +713,33 @@ BEGIN
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
 		[TipoDeAtributoId] = 19
 	,	[Nome] = 'Carência'	
 	,	[Descricao] 'Quantidade de dias'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[NomeFisico] = 'CARENCIA'
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 6
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
@@ -626,24 +761,36 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 14
-		[Nome] = 'Condições de Crédito'	
+		[TipoDeAtributoId] = 14
+	,	[Nome] = 'Condições de Crédito'	
+	,	[Apelido] = 'Condições de Crédito'
 	,	[Descricao] 'Campo texto até 3000 caracteres'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[NomeFisico] = 'CONDICOES_CREDITO'
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 12
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
@@ -665,24 +812,34 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 1
-		[Nome] = 'Credito'	
+		[TipoAtributoId] = 1
+	,	[Nome] = 'Credito'	
 	,	[Descricao] 'Credito'
 	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
@@ -704,24 +861,36 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 15
-		[Nome] = 'Destaque de Garantias'	
+		[TipoDeAtributoId] = 15
+	,	[Nome] = 'Destaque de Garantias'	
+	,	[Apelido] = 'Destaque de Garantias'
 	,	[Descricao] 'Campo texto até 3000 caracteres'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[NomeFisico] = 'DESTAQUE_GARANTIAS'
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 13
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
@@ -743,24 +912,36 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 16
-		[Nome] = 'Destaque de Liberação de Risco'	
+		[TipoDeAtributoId] = 16
+	,	[Nome] = 'Destaque de Liberação de Risco'
+	,	[Apelido] = 'Destaque de Liberação de Risco'	
 	,	[Descricao] 'Campo texto até 3000 caracteres'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[NomeFisico] = 'DESTAQUE_LIBERACAO_RISCO'
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 14
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
@@ -782,24 +963,36 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 4
-		[Nome] = 'Empresa'	
+		[TipoDeAtributoId] = 4
+	,	[Nome] = 'Empresa'	
+	,	[Apelido] = 'Empresa'
 	,	[Descricao] 'Empresa'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[NomeFisico] = 'EMPRESAS'
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 1
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
@@ -821,24 +1014,36 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 7
-		[Nome] = '	Garantia'	
+		[TipoDeAtributoId] = 7
+	,	[Nome] = 'Garantia'	
+	,	[Apelido] = 'Garantia'
 	,	[Descricao] 'Garantia'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[NomeFisico] = 'GARANTIA'
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 10
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
@@ -860,24 +1065,36 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 3
-		[Nome] = 'Grupo Econômico'	
+		[TipoDeAtributoId] = 3
+	,	[Nome] = 'Grupo Econômico'	
+	,	[Apelido] = 'Grupo Econômico'
 	,	[Descricao] 'GrupoEconomico'
+	,	[NomeFisico] = 'GRUPO_ECONOMICO'
 	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 1
 	,	[Limitador] = 1
 	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = GETDATE()
+	,	[CadastroDataHora] = 1
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
 	;
 	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
 	;
@@ -899,20 +1116,26 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 18
-		[Nome] = 'Limite Clean'	
+		[TipoDeAtributoId] = 18
+	,	[Nome] = 'Limite Clean'	
 	,	[Descricao] 'Limite clean'
-	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[TipoDeDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 2
 	,	[Limitador] = 1
@@ -938,18 +1161,24 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 17
-		[Nome] = 'Operação Renegociada'	
+		[TipoAtributoId] = 17
+	,	[Nome] = 'Operação Renegociada'	
 	,	[Descricao] 'bit botao radio (sim/nao)'
 	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
@@ -977,18 +1206,24 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 10
-		[Nome] = 'Pagamento de Encargos'	
+		[TipoAtributoId] = 10
+	,	[Nome] = 'Pagamento de Encargos'	
 	,	[Descricao] 'lista de peridiocidade(armazena id_peridiocidade + qtd de pmts)'
 	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
@@ -1016,18 +1251,24 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 13
-		[Nome] = 'Parecer do Limite'	
+		[TipoAtributoId] = 13
+	,	[Nome] = 'Parecer do Limite'	
 	,	[Descricao] 'Campo texto até 3000 caracteres'
 	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
@@ -1055,18 +1296,25 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+	(
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 6
-		[Nome] = 'Prazo'	
+		[TipoAtributoId] = 6
+	,	[Nome] = 'Prazo'	
 	,	[Descricao] 'Prazo'
 	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
@@ -1094,18 +1342,24 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 8
-		[Nome] = 'Produto'	
+		[TipoAtributoId] = 8
+	,	[Nome] = 'Produto'	
 	,	[Descricao] 'Produto'
 	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
@@ -1133,18 +1387,24 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 5
-		[Nome] = '	Produto'	
+		[TipoAtributoId] = 5
+	,	[Nome] = '	Produto'	
 	,	[Descricao] 'ProdutoLegado'
 	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 0
@@ -1172,18 +1432,24 @@ BEGIN
 	;	
 	INSERT [dbo].[TiposAtributos]
 	(
-		[TipoAtributoId] 
+		[TipoDeAtributoId] 
 	,	[Nome] 
-	,	[Descricao]
-	,	[TipoDadoId]
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
 	,	[Limitador]
 	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
 	)
 	SELECT
-		--[TipoAtributoId] = 19
-		[Nome] = '	Valor'	
+		[TipoAtributoId] = 19
+	,	[Nome] = 'Valor'	
 	,	[Descricao] 'Valor'
 	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
