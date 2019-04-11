@@ -1,13 +1,23 @@
 ﻿IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Apelido]
 	,	[Descricao]
-	, [NomeFisico] 
+	,	[NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -20,7 +30,7 @@ BEGIN
 	,	[Apelido] = 'Endereço'
 	,	[Descricao] = NULL
 	,	[NomeFisico] = "ENDERECO"
-	,	[TipoDadoId] = @VARCHAR  
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID  
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
@@ -33,13 +43,23 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+		DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Apelido]
 	,	[Descricao]
-	, [NomeFisico] 
+	,	[NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -51,8 +71,8 @@ BEGIN
 	,	[Nome] = 'Endereço'	
 	,	[Apelido] = 'Endereço'
 	,	[Descricao] = NULL
-	,	[NomeFisico] = "ENDERECO"
-	,	[TipoDadoId] = @VARCHAR  
+	,	[NomeFisico] = 'ENDERECO'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID  
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
@@ -65,13 +85,24 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
+
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Apelido]
 	,	[Descricao]
-	, [NomeFisico] 
+	,	[NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -83,8 +114,8 @@ BEGIN
 	,	[Nome] = 'Complemento'	
 	,	[Apelido] = 'Complemento'
 	,	[Descricao] = NULL
-	,	[NomeFisico] = "COMPLEMENTO"
-	,	[TipoDadoId] = @VARCHAR  
+	,	[NomeFisico] = 'COMPLEMENTO'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID  
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
@@ -97,13 +128,23 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Apelido]
 	,	[Descricao]
-	, [NomeFisico] 
+	,	[NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -115,8 +156,8 @@ BEGIN
 	,	[Nome] = 'Bairro'	
 	,	[Apelido] = 'Bairro'
 	,	[Descricao] = NULL
-	,	[NomeFisico] = "BAIRRO"
-	,	[TipoDadoId] = @VARCHAR  
+	,	[NomeFisico] = 'BAIRRO'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
@@ -129,13 +170,23 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Apelido]
 	,	[Descricao]
-	, [NomeFisico] 
+	,	[NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -147,8 +198,8 @@ BEGIN
 	,	[Nome] = 'Cep'	
 	,	[Apelido] = 'Cep'
 	,	[Descricao] = NULL
-	,	[NomeFisico] = "CEP"
-	,	[TipoDadoId] = @VARCHAR  
+	,	[NomeFisico] = 'CEP'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
@@ -161,13 +212,23 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Apelido]
 	,	[Descricao]
-	, [NomeFisico] 
+	,	[NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -179,8 +240,8 @@ BEGIN
 	,	[Nome] = 'Cep Complemento'	
 	,	[Apelido] = 'Cep Complemento'
 	,	[Descricao] = NULL
-	,	[NomeFisico] = "CEP_COMPLEMENTO"
-	,	[TipoDadoId] = @VARCHAR  
+	,	[NomeFisico] = 'CEP_COMPLEMENTO'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
@@ -193,13 +254,23 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Apelido]
 	,	[Descricao]
-	, [NomeFisico] 
+	,	[NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -211,8 +282,8 @@ BEGIN
 	,	[Nome] = 'Nome do País'	
 	,	[Apelido] = 'País'
 	,	[Descricao] = NULL
-	,	[NomeFisico] = "NOME_PAIS"
-	,	[TipoDadoId] = @VARCHAR  
+	,	[NomeFisico] = 'NOME_PAIS'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
@@ -225,13 +296,23 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Apelido]
 	,	[Descricao]
-	, [NomeFisico] 
+	,	[NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -243,8 +324,8 @@ BEGIN
 	,	[Nome] = 'Estado'	
 	,	[Apelido] = 'UF'
 	,	[Descricao] = NULL
-	,	[NomeFisico] = "NOME_ESTADO"
-	,	[TipoDadoId] = @VARCHAR  
+	,	[NomeFisico] = 'NOME_ESTADO'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
@@ -257,13 +338,23 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Endereço')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Apelido]
 	,	[Descricao]
-	, [NomeFisico] 
+	,	[NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -275,8 +366,8 @@ BEGIN
 	,	[Nome] = 'Cidade'	
 	,	[Apelido] = 'Cidade'
 	,	[Descricao] = NULL
-	,	[NomeFisico] = "CIDADE"
-	,	[TipoDadoId] = @VARCHAR  
+	,	[NomeFisico] = 'CIDADE'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID  
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 0
@@ -289,13 +380,23 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Amortização do Principal')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
 	,	[Nome] 
 	,	[Apelido]
 	,	[Descricao]
-	, [NomeFisico] 
+	,	[NomeFisico] 
 	,	[TipoDadoId]
 	,	[FlagStatus]
 	,	[OrdemExibicao]
@@ -308,7 +409,7 @@ BEGIN
 	,	[Apelido] = 'Amortização do Principal'
 	,	[Descricao] 'Lista de peridiocidade (Armazena Peridiocidade + Quantidade de PMTS)'
 	,	[NomeFisico] = 'AMORIZACAO_PRINCIPAL'
-	,	[TipoDadoId] = @VARCHAR  
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 8
 	,	[Limitador] = 1
@@ -321,6 +422,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'ArvoreGarantia')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'int'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
@@ -336,7 +447,7 @@ BEGIN
 		[TipoAtributoId] = 2000
 	,	[Nome] = 'ArvoreGarantia'	
 	,	[Descricao] 'ARVORE DE GARANTIAS'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 1
@@ -349,6 +460,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'ArvoreNostroAccount')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'int'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
@@ -364,7 +485,7 @@ BEGIN
 		[TipoDeAtributoId] = 4000
 	,	[Nome] = 'ArvoreNostroAccount'	
 	,	[Descricao] 'ARVORE DE Notro Account'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 1
@@ -377,6 +498,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'ArvoreSettlement')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'int'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
@@ -392,7 +523,7 @@ BEGIN
 		[TipoDeAtributoId] = 3000
 	,	[Nome] = 'ArvoreSettlement'	
 	,	[Descricao] 'ARVORE DE Settlement'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 1
@@ -405,6 +536,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Banco')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'int'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
@@ -420,7 +561,7 @@ BEGIN
 		[TipoDeAtributoId] = 21
 	,	[Nome] = 'Banco'	
 	,	[Descricao] 'Banco'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 1
 	,	[Limitador] = 1
@@ -434,6 +575,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'int'
+	;	
 	INSERT [dbo].[TipoDeAtributos]
 	(
 		[TipoDeAtributoId] 
@@ -449,7 +600,7 @@ BEGIN
 		[TipoDeAtributoId] = 19
 	,	[Nome] = 'Carência'	
 	,	[Descricao] 'Quantidade de dias'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 6
 	,	[Limitador] = 1
@@ -463,6 +614,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -478,7 +639,7 @@ BEGIN
 		--[TipoAtributoId] = 14
 		[Nome] = 'Condições de Crédito'	
 	,	[Descricao] 'Campo texto até 3000 caracteres'
-	,	[TipoDadoId] = @VARCHAR
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 12
 	,	[Limitador] = 1
@@ -492,6 +653,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'int'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -507,7 +678,7 @@ BEGIN
 		--[TipoAtributoId] = 1
 		[Nome] = 'Credito'	
 	,	[Descricao] 'Credito'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1		
 	,	[OrdemExibicao] = 0
 	,	[Limitador] = 1
@@ -521,6 +692,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -536,7 +717,7 @@ BEGIN
 		--[TipoAtributoId] = 15
 		[Nome] = 'Destaque de Garantias'	
 	,	[Descricao] 'Campo texto até 3000 caracteres'
-	,	[TipoDadoId] = @VARCHAR
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 13
 	,	[Limitador] = 1
@@ -550,6 +731,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -565,7 +756,7 @@ BEGIN
 		--[TipoAtributoId] = 16
 		[Nome] = 'Destaque de Liberação de Risco'	
 	,	[Descricao] 'Campo texto até 3000 caracteres'
-	,	[TipoDadoId] = @VARCHAR
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 14
 	,	[Limitador] = 1
@@ -579,6 +770,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'int'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -594,7 +795,7 @@ BEGIN
 		--[TipoAtributoId] = 4
 		[Nome] = 'Empresa'	
 	,	[Descricao] 'Empresa'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 1
 	,	[Limitador] = 1
@@ -608,6 +809,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'object'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -623,7 +834,7 @@ BEGIN
 		--[TipoAtributoId] = 7
 		[Nome] = '	Garantia'	
 	,	[Descricao] 'Garantia'
-	,	[TipoDadoId] = @OBJECT
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 10
 	,	[Limitador] = 1
@@ -637,6 +848,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'int'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -652,7 +873,7 @@ BEGIN
 		--[TipoAtributoId] = 3
 		[Nome] = 'Grupo Econômico'	
 	,	[Descricao] 'GrupoEconomico'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 1
 	,	[Limitador] = 1
@@ -666,6 +887,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'numeric'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -681,7 +912,7 @@ BEGIN
 		--[TipoAtributoId] = 18
 		[Nome] = 'Limite Clean'	
 	,	[Descricao] 'Limite clean'
-	,	[TipoDadoId] = @NUMERIC
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 2
 	,	[Limitador] = 1
@@ -695,6 +926,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'bit'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -710,7 +951,7 @@ BEGIN
 		--[TipoAtributoId] = 17
 		[Nome] = 'Operação Renegociada'	
 	,	[Descricao] 'bit botao radio (sim/nao)'
-	,	[TipoDadoId] = @BIT
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] = 4
 	,	[Limitador] = 1
@@ -724,6 +965,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -739,7 +990,7 @@ BEGIN
 		--[TipoAtributoId] = 10
 		[Nome] = 'Pagamento de Encargos'	
 	,	[Descricao] 'lista de peridiocidade(armazena id_peridiocidade + qtd de pmts)'
-	,	[TipoDadoId] = @VARCHAR
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] =  7
 	,	[Limitador] = 1
@@ -753,6 +1004,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -768,7 +1029,7 @@ BEGIN
 		--[TipoAtributoId] = 13
 		[Nome] = 'Parecer do Limite'	
 	,	[Descricao] 'Campo texto até 3000 caracteres'
-	,	[TipoDadoId] = @VARCHAR
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] =  11
 	,	[Limitador] = 1
@@ -782,6 +1043,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'int'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -797,7 +1068,7 @@ BEGIN
 		--[TipoAtributoId] = 6
 		[Nome] = 'Prazo'	
 	,	[Descricao] 'Prazo'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] =  5
 	,	[Limitador] = 1
@@ -811,6 +1082,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'int'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -826,7 +1107,7 @@ BEGIN
 		--[TipoAtributoId] = 8
 		[Nome] = 'Produto'	
 	,	[Descricao] 'Produto'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] =  3
 	,	[Limitador] = 1
@@ -840,6 +1121,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -855,7 +1146,7 @@ BEGIN
 		--[TipoAtributoId] = 5
 		[Nome] = '	Produto'	
 	,	[Descricao] 'ProdutoLegado'
-	,	[TipoDadoId] = @INTEGER
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 0
 	,	[OrdemExibicao] =  3
 	,	[Limitador] = 1
@@ -869,6 +1160,16 @@ GO
 IF	NOT EXISTS(SELECT * FROM [dbo].[TiposAtributos] WHERE TipoAtributoId > 0 AND Nome = '')
 BEGIN
 	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'numeric'
+	;	
 	INSERT [dbo].[TiposAtributos]
 	(
 		[TipoAtributoId] 
@@ -884,7 +1185,7 @@ BEGIN
 		--[TipoAtributoId] = 19
 		[Nome] = '	Valor'	
 	,	[Descricao] 'Valor'
-	,	[TipoDadoId] = @NUMERIC
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
 	,	[FlagStatus] = 1
 	,	[OrdemExibicao] =  4
 	,	[Limitador] = 1
