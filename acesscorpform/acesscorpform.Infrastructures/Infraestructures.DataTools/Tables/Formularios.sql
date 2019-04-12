@@ -3,7 +3,7 @@
 	[FormularioId] BIGINT IDENTITY(1,1) NOT NULL
 ,	[Nome] VARCHAR(1000) NOT NULL
 ,	[Apelido] VARCHAR(100) NOT NULL
-,	[StatusId] INT NOT NULL
+,	[FormularioStatusId] INT NOT NULL
 ,	[DataVigenciaInicial] DATE NULL
 ,	[DataVigenciaFinal] DATE NULL
 ,	[FormularioTipoId] INT NULL
@@ -28,10 +28,10 @@ CONSTRAINT [FK_Formularios_FormularioTipoId_FormulariosTipos_FormularioTipoId] F
 GO
 
 ALTER TABLE [dbo].[Formularios] ADD
-CONSTRAINT [FK_Formularios_StatusId_Status_StatusId] FOREIGN KEY
+CONSTRAINT [FK_Formularios_FormularioStatusId_FormulariosStatus_FormularioStatusId] FOREIGN KEY
 (
-	[StatusId]
+	[FormularioStatusId]
 ) REFERENCES [dbo].[Status] (
-	[StatusId]
+	[FormularioStatusId]
 ) 
 GO
