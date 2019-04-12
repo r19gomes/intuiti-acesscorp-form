@@ -1,8 +1,8 @@
-﻿CREATE TABLE [dbo].[FormulariosTiposAtributos]
+﻿CREATE TABLE [dbo].[FormulariosTipoDeAtributos]
 (
-	[FormularioTipoAtributoId] BIGINT NOT NULL
+	[FormularioTipoDeAtributoId] BIGINT NOT NULL
 ,	[FormularioId] BIGINT NOT NULL
-,	[TipoAtributoId] BIGINT IDENTITY(1,1) NOT NULL
+,	[TipoDeAtributoId] BIGINT IDENTITY(1,1) NOT NULL
 ,	[Observacao] VARCHAR(MAX) NULL
 ,	[FlagStatus] BIT NOT NULL
 ,	[CadastroUsuarioId] BIGINT NOT NULL
@@ -11,13 +11,13 @@
 ,	[AtualizacaoDataHora] DATETIME2 NULL, 
     CONSTRAINT [PK_FormulariosTiposAtributos] PRIMARY KEY CLUSTERED 
 	(
-		[FormularioTipoAtributoId] ASC
+		[FormularioTipoDeAtributoId] ASC
 	)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO 
 
-ALTER TABLE [dbo].[FormulariosTiposAtributos] ADD
-CONSTRAINT [FK_FormulariosTiposAtributos_FormularioId_Formularios_FormularioId] FOREIGN KEY
+ALTER TABLE [dbo].[FormulariosTipoDeAtributos] ADD
+CONSTRAINT [FK_FormulariosTipoDeAtributos_FormularioId_Formularios_FormularioId] FOREIGN KEY
 (
 	[FormularioId]
 ) REFERENCES [dbo].[Formularios] (
@@ -25,11 +25,11 @@ CONSTRAINT [FK_FormulariosTiposAtributos_FormularioId_Formularios_FormularioId] 
 ) 
 GO
 
-ALTER TABLE [dbo].[FormulariosTiposAtributos] ADD
-CONSTRAINT [FK_FormulariosTiposAtributos_TipoAtributoId_TiposAtributos_TipoAtributoId] FOREIGN KEY
+ALTER TABLE [dbo].[FormulariosTipoDeAtributos] ADD
+CONSTRAINT [FK_FormulariosTipoDeAtributos_TipoDeAtributoId_TipoDeAtributos_TipoDeAtributoId] FOREIGN KEY
 (
-	[TipoAtributoId]
-) REFERENCES [dbo].[TiposAtributos] (
-	[TipoAtributoId]
+	[TipoDeAtributoId]
+) REFERENCES [dbo].[TipoDeAtributos] (
+	[TipoDeAtributoId]
 ) 
 GO

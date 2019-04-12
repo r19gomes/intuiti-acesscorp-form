@@ -65,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Formularios.sql" />
-    <Build Include="Tables\Status.sql" />
+    <Build Include="Tables\FormulariosStatus.sql" />
     <Build Include="Tables\FormulariosTipos.sql" />
     <Build Include="Tables\FormulariosTiposAtributos.sql" />
     <Build Include="Tables\TipoDeDados.sql" />
@@ -78,5 +78,7 @@
     <None Include="Scripts\PosDeploy\001_TipoDeDados.sql" />
     <None Include="Scripts\PosDeploy\002_TipoDeAtributos.sql" />
     <None Include="Scripts\PosDeploy\999_Usuarios.sql" />
+    <None Include="Scripts\PosDeploy\003_FormulariosStatus.sql" />
+    <None Include="Scripts\PosDeploy\004_FormulariosTipos.sql" />
   </ItemGroup>
 </Project>

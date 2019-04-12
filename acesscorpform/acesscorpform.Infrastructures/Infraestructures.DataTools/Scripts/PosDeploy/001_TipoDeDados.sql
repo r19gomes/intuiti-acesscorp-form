@@ -199,5 +199,27 @@ IF	NOT EXISTS(SELECT * FROM TipoDeDados WHERE TipoDeDadoId > 0 AND Nome = 'numer
 END
 GO
 
+IF	NOT EXISTS(SELECT * FROM TipoDeDados WHERE TipoDeDadoId > 0 AND Nome = 'object') BEGIN
+	INSERT [dbo].[TipoDeDados]
+	(
+		[TipoDeDadoId]
+	,	[Nome]
+	,	[FlagStatus]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]
+	)
+	SELECT 
+		[TipoDeDadoId] = 10
+	,	[Nome] = 'object'
+	,	[FlagStatus] = 1 -- Usuário Master (administrador do sistema)
+	,	[CadastroUsuarioId] = 1
+	,	[CadastroDataHora] = GETDATE()
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
+END
+GO
+
 --SET IDENTITY_INSERT produto OFF --Habilita o IDENTITY
 --GO
