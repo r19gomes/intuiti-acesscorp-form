@@ -31,7 +31,7 @@ ALTER TABLE [dbo].[Formularios] ADD
 CONSTRAINT [FK_Formularios_FormularioStatusId_FormulariosStatus_FormularioStatusId] FOREIGN KEY
 (
 	[FormularioStatusId]
-) REFERENCES [dbo].[Status] (
+) REFERENCES [dbo].[FormulariosStatus] (
 	[FormularioStatusId]
 ) 
 GO

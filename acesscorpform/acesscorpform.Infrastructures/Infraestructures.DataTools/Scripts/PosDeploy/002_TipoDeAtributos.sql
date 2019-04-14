@@ -1469,5 +1469,209 @@ BEGIN
 END
 GO
 
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Nome')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
+	)
+	SELECT
+		[TipoDeAtributoId] = 30
+	,	[Nome] = 'Nome'	
+	,	[Apelido] = 'Nome'
+	,	[Descricao] = 'Nome'
+	,	[NomeFisico] = 'NOME'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[FlagStatus] = 1
+	,	[OrdemExibicao] =  0
+	,	[Limitador] = 1
+	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = 1
+	,	[CadastroDataHora] = GETDATE()
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+	;
+END
+GO
+
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Email')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
+	)
+	SELECT
+		[TipoDeAtributoId] = 31
+	,	[Nome] = 'Email'	
+	,	[Apelido] = 'Email'
+	,	[Descricao] = 'Email'
+	,	[NomeFisico] = 'EMAIL'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[FlagStatus] = 1
+	,	[OrdemExibicao] =  0
+	,	[Limitador] = 1
+	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = 1
+	,	[CadastroDataHora] = GETDATE()
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+	;
+END
+GO
+
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Assunto')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
+	)
+	SELECT
+		[TipoDeAtributoId] = 32
+	,	[Nome] = 'Assunto'	
+	,	[Apelido] = 'Assunto'
+	,	[Descricao] = 'Assunto'
+	,	[NomeFisico] = 'ASSUNTO'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[FlagStatus] = 1
+	,	[OrdemExibicao] =  0
+	,	[Limitador] = 1
+	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = 1
+	,	[CadastroDataHora] = GETDATE()
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+	;
+END
+GO
+IF	NOT EXISTS(SELECT * FROM [dbo].[TipoDeAtributos] WHERE TipoDeAtributoId > 0 AND Nome = 'Mensagem')
+BEGIN
+	DECLARE @TIPO_DE_ATRIBUTO_ID INT = 0;
+	DECLARE @TIPO_DE_DADO_ID INT = NULL;
+	SELECT
+		@TIPO_DE_DADO_ID = TipoDeDadoId
+	FROM 
+		TipoDeDados 
+	WHERE
+		TipoDeDadoId > 0 
+	AND
+		Nome = 'varchar'
+	;	
+	INSERT [dbo].[TipoDeAtributos]
+	(
+		[TipoDeAtributoId] 
+	,	[Nome] 
+	,	[Apelido] 
+	,	[Descricao] 
+	,	[NomeFisico]
+	,	[TipoDeDadoId]
+	,	[FlagStatus]
+	,	[OrdemExibicao]
+	,	[Limitador]
+	,	[Qualificador]
+	,	[CadastroUsuarioId]
+	,	[CadastroDataHora]
+	,	[AtualizacaoUsuarioId]
+	,	[AtualizacaoDataHora]	
+	)
+	SELECT
+		[TipoDeAtributoId] = 33
+	,	[Nome] = 'Mensagem'	
+	,	[Apelido] = 'Mensagem'
+	,	[Descricao] = 'Mensagem'
+	,	[NomeFisico] = 'MENSAGEM'
+	,	[TipoDadoId] = @TIPO_DE_DADO_ID
+	,	[FlagStatus] = 1
+	,	[OrdemExibicao] =  0
+	,	[Limitador] = 1
+	,	[Qualificador] = 0
+	,	[CadastroUsuarioId] = 1
+	,	[CadastroDataHora] = GETDATE()
+	,	[AtualizacaoUsuarioId] = NULL
+	,	[AtualizacaoDataHora] = NULL
+	;
+	SET @TIPO_DE_ATRIBUTO_ID = SCOPE_IDENTITY()
+	;
+END
+GO
+
 SET IDENTITY_INSERT TipoDeAtributos OFF --Habilita o IDENTITY
 GO
