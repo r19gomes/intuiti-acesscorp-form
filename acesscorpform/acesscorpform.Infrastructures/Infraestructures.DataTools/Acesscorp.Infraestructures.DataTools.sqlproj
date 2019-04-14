@@ -70,6 +70,8 @@
     <Build Include="Tables\FormulariosTiposAtributos.sql" />
     <Build Include="Tables\TipoDeDados.sql" />
     <Build Include="Tables\TipoDeAtributos.sql" />
+    <Build Include="Scripts\PosDeploy\005_Formularios.sql" />
+    <Build Include="Scripts\PosDeploy\006_FormulariosTipoDeAtributos.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Infraestructures.DataTools.refactorlog" />
