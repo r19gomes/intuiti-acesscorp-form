@@ -15,3 +15,4 @@ C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acessc
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\Acesscorp.Domains.Bussiness\bin\Debug\netcoreapp2.1\Acesscorp.Domains.deps.json
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\Acesscorp.Domains.Bussiness\bin\Debug\netcoreapp2.1\Acesscorp.Domains.dll
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\Acesscorp.Domains.Bussiness\bin\Debug\netcoreapp2.1\Acesscorp.Domains.pdb
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\Acesscorp.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.csprojAssemblyReference.cache

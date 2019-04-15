@@ -17,9 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Dominio", "2 - Dominio"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infraestrutura", "3 - Infraestrutura", "{C3E8084A-0A62-4508-8842-DB5ED11DEB82}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Acesscorp.Infraestructures.DataTools", "acesscorpform.Infrastructures\Infraestructures.DataTools\Acesscorp.Infraestructures.DataTools.sqlproj", "{A9670D05-BA94-4A34-B3EA-ED18DCD33F59}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Acesscorp.Infrastructures.DataTools", "acesscorpform.Infrastructures\Infraestructures.DataTools\Acesscorp.Infrastructures.DataTools.sqlproj", "{A9670D05-BA94-4A34-B3EA-ED18DCD33F59}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acesscorp.Domains", "acesscorpform.Domains\Acesscorp.Domains.Bussiness\Acesscorp.Domains.csproj", "{C70F6918-B795-418C-BB6B-7385C1F40500}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acesscorp.Infrastructures.DataAccess", "acesscorpform.Infrastructures\Infrastructures.DataAccess\Acesscorp.Infrastructures.DataAccess.csproj", "{A7B4F208-7286-447F-A839-94C7D05C1571}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{C70F6918-B795-418C-BB6B-7385C1F40500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C70F6918-B795-418C-BB6B-7385C1F40500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C70F6918-B795-418C-BB6B-7385C1F40500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7B4F208-7286-447F-A839-94C7D05C1571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7B4F208-7286-447F-A839-94C7D05C1571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7B4F208-7286-447F-A839-94C7D05C1571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7B4F208-7286-447F-A839-94C7D05C1571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 		{8D417D47-EACF-475B-A8D9-76F591609752} = {0FC19B3F-CA7A-44EB-93D2-14E9B038A233}
 		{A9670D05-BA94-4A34-B3EA-ED18DCD33F59} = {C3E8084A-0A62-4508-8842-DB5ED11DEB82}
 		{C70F6918-B795-418C-BB6B-7385C1F40500} = {2504FCFE-B27C-4D1B-AB92-AD068109FD22}
+		{A7B4F208-7286-447F-A839-94C7D05C1571} = {C3E8084A-0A62-4508-8842-DB5ED11DEB82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {198CD36C-F693-4B30-AC6C-91AFDF258A4F}
