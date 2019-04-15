@@ -1,9 +1,0 @@
-Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\AspNetMvc.Api.Domains.Bussiness\bin\Debug\netcoreapp2.1\Acesscorp.Domains.deps.json
-Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\AspNetMvc.Api.Domains.Bussiness\bin\Debug\netcoreapp2.1\Acesscorp.Domains.dll
-Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\AspNetMvc.Api.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.csproj.CoreCompileInputs.cache
-Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\AspNetMvc.Api.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.AssemblyInfoInputs.cache
-Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\AspNetMvc.Api.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.AssemblyInfo.cs
-Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\AspNetMvc.Api.Domains.Bussiness\bin\Debug\netcoreapp2.1\Acesscorp.Domains.pdb
-Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\AspNetMvc.Api.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.dll
-Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\AspNetMvc.Api.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.pdb
-Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\AspNetMvc.Api.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.csprojAssemblyReference.cache

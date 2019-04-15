@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infraestrutura", "3 - I
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Acesscorp.Infraestructures.DataTools", "acesscorpform.Infrastructures\Infraestructures.DataTools\Acesscorp.Infraestructures.DataTools.sqlproj", "{A9670D05-BA94-4A34-B3EA-ED18DCD33F59}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acesscorp.Domains", "acesscorpform.Domains\AspNetMvc.Api.Domains.Bussiness\Acesscorp.Domains.csproj", "{C70F6918-B795-418C-BB6B-7385C1F40500}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acesscorp.Domains", "acesscorpform.Domains\Acesscorp.Domains.Bussiness\Acesscorp.Domains.csproj", "{C70F6918-B795-418C-BB6B-7385C1F40500}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
