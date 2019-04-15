@@ -1,5 +1,5 @@
-﻿--SET IDENTITY_INSERT TipoDeDados ON --Desabilita o IDENTITY
---GO
+﻿SET IDENTITY_INSERT TipoDeDados ON --Desabilita o IDENTITY
+GO
 
 IF	NOT EXISTS(SELECT * FROM TipoDeDados WHERE TipoDeDadoId > 0 AND Nome = 'bigint') BEGIN
 	INSERT [dbo].[TipoDeDados]
@@ -221,5 +221,5 @@ IF	NOT EXISTS(SELECT * FROM TipoDeDados WHERE TipoDeDadoId > 0 AND Nome = 'objec
 END
 GO
 
---SET IDENTITY_INSERT produto OFF --Habilita o IDENTITY
---GO
+SET IDENTITY_INSERT produto OFF --Habilita o IDENTITY
+GO

@@ -15,3 +15,7 @@ C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpfor
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Acesscorp.Infraestructures.DataTools.sqlprojAssemblyReference.cache
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.dll
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.pdb
+Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Model.xml
+Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\refactor.xml
+Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\postdeploy.sql
+Y:\Documents\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\predeploy.sql
