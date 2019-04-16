@@ -15,17 +15,13 @@ namespace Acesscorp.Infrastructures.DataAccess.Contexts
 
         public DbSet<Formulario> Formularios { get; set; }
 
-        //public DbSet<FormularioTipoDeAtributo> FormulariosTipoDeAtributos { get; set; }
+        public DbSet<FormularioTipoDeAtributo> FormulariosTipoDeAtributos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string cn = string.Empty;
 
-            // ConnectionString do notebook Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz 2,90 GHz
-            //cn = @"Data Source=DESKTOP-F4SIQSG\SQLEXPRESS;Initial Catalog=DB_INTRA_BANK;Integrated Security=SSPI;";
-
-            // ConnectionString do MACBook
-            cn = @"Data Source=MACOS472F\MSSQL2014;Initial Catalog=DB_INTRA_BANK;Integrated Security=True";
+            cn = @"Data Source=198.71.226.2;Initial Catalog=DB_ACESSCORP;User ID = acesscorp;Password=acesscorp@2019;Persist Security Info = True;";
 
             optionsBuilder.UseSqlServer(cn);
         }

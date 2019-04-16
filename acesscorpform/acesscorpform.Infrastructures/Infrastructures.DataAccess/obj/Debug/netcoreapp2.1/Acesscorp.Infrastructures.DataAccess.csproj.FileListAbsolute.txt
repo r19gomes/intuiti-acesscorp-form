@@ -10,3 +10,15 @@ C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acessc
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\obj\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.csproj.CopyComplete
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\obj\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.dll
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\obj\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\obj\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.csprojAssemblyReference.cache
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\obj\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.csproj.CoreCompileInputs.cache
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\obj\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.AssemblyInfoInputs.cache
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\obj\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.AssemblyInfo.cs
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\obj\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\obj\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\bin\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.deps.json
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\bin\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\bin\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\bin\Debug\netcoreapp2.1\Acesscorp.Domains.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\bin\Debug\netcoreapp2.1\Acesscorp.Domains.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infrastructures.DataAccess\obj\Debug\netcoreapp2.1\Acesscorp.Infrastructures.DataAccess.csproj.CopyComplete

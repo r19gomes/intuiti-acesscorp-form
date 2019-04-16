@@ -5,142 +5,127 @@ using Acesscorp.Infrastructures.DataAccess.Repositories.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Banco = Acesscorp.Infrastructures.DataAccess.Entities.TipoDeDado;
+using TipoDeDado = Acesscorp.Infrastructures.DataAccess.Entities.TipoDeDado;
 
 namespace Acesscorp.Infrastructures.DataAccess.Repositories
 {
-    // public class BancoRepositories : RepositoryBase<Banco>, IBancoRepositories
-    // {
-    //     #region Builders
+    public class TipoDeDadoRepositories : RepositoryBase<TipoDeDado>, ITipoDeDadoRepositories
+    {
+        #region Builders
 
-    //     public BancoRepositories()
-    //     {
-    //     }
+        public TipoDeDadoRepositories()
+        {
+        }
 
-    //     public BancoRepositories(DbContext dbContext) : base()
-    //     {
-    //         if (dbContext == null)
-    //             dbContext = base.DbContext;
-    //     }
+        public TipoDeDadoRepositories(DbContext dbContext) : base()
+        {
+            if (dbContext == null)
+                dbContext = base.DbContext;
+        }
 
-    //     #endregion
+        #endregion
 
-    //     #region Methods
+        #region Methods
 
-    //     public Domains.Dtos.Banco.Banco Get(long id)
-    //     {
-    //         Domains.Dtos.Banco.Banco result =
-    //             new Domains.Dtos.Banco.Banco();
+        public Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado Get(long id)
+        {
+            Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado result = 
+                new Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado();
 
-    //         using (var ctx = new DbContext())
-    //         {
+            using (var ctx = new DbContext())
+            {
+                var tipoDeDado = ctx.TipoDeDados.Find(id);
 
-    //             var banco = ctx.Bancos.Find(id);
+                result.TipoDeDadoId = tipoDeDado.TipoDeDadoId;
+                result.Nome = tipoDeDado.Nome;
+                result.FlagStatus = tipoDeDado.FlagStatus;
+                result.CadastroUsuarioId = tipoDeDado.CadastroUsuarioId;
+                result.CadastroDataHora = tipoDeDado.CadastroDataHora;
+                result.AtualizacaoUsuarioId = tipoDeDado.AtualizacaoUsuarioId;
+                result.AtualizacaoDataHora = tipoDeDado.AtualizacaoDataHora;
+            }
 
-    //             result.BancoId = banco.BancoId;
-    //             result.Codigo = banco.Codigo;
-    //             result.Nome = banco.Nome;
-    //             result.Apelido = banco.Apelido;
-    //             result.NumeroCnpj = banco.NumeroCnpj;
-    //             result.WebSiteOficial = banco.WebSiteOficial;
-    //             result.FlagStatus = banco.FlagStatus;
-    //             result.CadastroUsuarioId = banco.CadastroUsuarioId;
-    //             result.CadastroDataHora = banco.CadastroDataHora;
-    //             result.AtualizacaoUsuarioId = banco.AtualizacaoUsuarioId;
-    //             result.AtualizacaoDataHora = banco.AtualizacaoDataHora;
+            return result;
+        }
 
-    //         }
+        public IList<Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado> GetAll()
+        {
+            IList<Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado> result = 
+                new List<Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado>();
 
-    //         return result;
-    //     }
+            using (var ctx = new DbContext())
+            {
+                var ret = ctx.TipoDeDados.ToList();
+                if (ret.Count > 0)
+                {
+                    foreach (var item in ret)
+                    {
+                        result.Add(new Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado
+                        {
+                            TipoDeDadoId = item.TipoDeDadoId,
+                            Nome = item.Nome,
+                            FlagStatus = item.FlagStatus,
+                            CadastroUsuarioId = item.CadastroUsuarioId,
+                            CadastroDataHora = item.CadastroDataHora,
+                            AtualizacaoUsuarioId = item.AtualizacaoUsuarioId,
+                            AtualizacaoDataHora = item.AtualizacaoDataHora
+                        });
 
-    //     public IList<Domains.Dtos.Banco.Banco> GetAll()
-    //     {
-    //         IList<Domains.Dtos.Banco.Banco> result =
-    //             new List<Domains.Dtos.Banco.Banco>();
+                    }
+                }
+            }
 
-    //         using (var ctx = new DbContext())
-    //         {
-    //             var ret = ctx.Bancos.ToList();
-    //             if (ret.Count > 0)
-    //             {
-    //                 foreach (var item in ret)
-    //                 {
-    //                     result.Add(new Domains.Dtos.Banco.Banco
-    //                     {
-    //                         BancoId = item.BancoId,
-    //                         Codigo = item.Codigo,
-    //                         Nome = item.Nome,
-    //                         Apelido = item.Apelido,
-    //                         NumeroCnpj = item.NumeroCnpj,
-    //                         FlagStatus = item.FlagStatus,
-    //                         CadastroUsuarioId = item.CadastroUsuarioId,
-    //                         CadastroDataHora = item.CadastroDataHora,
-    //                         AtualizacaoUsuarioId = item.AtualizacaoUsuarioId,
-    //                         AtualizacaoDataHora = item.AtualizacaoDataHora
-    //                     });
+            return result;
+        }
 
-    //                 }
-    //             }
-    //         }
+        public Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado Insert
+            (Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDadoRequest request)
+        {
+            Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado result = 
+                new Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado();
 
-    //         return result;
-    //     }
+            using (var ctx = new DbContext())
+            {
+                ctx.Add(new Entities.TipoDeDado
+                {
+                    TipoDeDadoId = request.TipoDeDado.TipoDeDadoId,
+                    Nome = request.TipoDeDado.Nome,
+                    FlagStatus = request.TipoDeDado.FlagStatus,
+                    CadastroUsuarioId = request.TipoDeDado.CadastroUsuarioId,
+                    CadastroDataHora = request.TipoDeDado.CadastroDataHora,
+                    AtualizacaoUsuarioId = request.TipoDeDado.AtualizacaoUsuarioId,
+                    AtualizacaoDataHora = request.TipoDeDado.AtualizacaoDataHora
+                });
+                ctx.SaveChanges();
+            }
 
-    //     public Domains.Dtos.Banco.Banco Insert(BancoRequest request)
-    //     {
-    //         Domains.Dtos.Banco.Banco result =
-    //              new Domains.Dtos.Banco.Banco();
+            return result;
+        }
 
-    //         using (var ctx = new DbContext())
-    //         {
-    //             ctx.Add(new Entities.Banco
-    //             {
-    //                 BancoId = request.Banco.BancoId,
-    //                 Codigo = request.Banco.Codigo,
-    //                 Nome = request.Banco.Nome,
-    //                 Apelido = request.Banco.Apelido,
-    //                 NumeroCnpj = request.Banco.NumeroCnpj,
-    //                 WebSiteOficial = request.Banco.WebSiteOficial,
-    //                 FlagStatus = request.Banco.FlagStatus,
-    //                 CadastroUsuarioId = request.Banco.CadastroUsuarioId,
-    //                 CadastroDataHora = request.Banco.CadastroDataHora,
-    //                 AtualizacaoUsuarioId = request.Banco.AtualizacaoUsuarioId,
-    //                 AtualizacaoDataHora = request.Banco.AtualizacaoDataHora
-    //             });
-    //             ctx.SaveChanges();
-    //         }
+        public Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado Update
+            (Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDadoRequest request)
+        {
+            Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado result = 
+                new Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado();
 
-    //         return result;
-    //     }
+            using (var ctx = new DbContext())
+            {
+                ctx.Update(new Entities.TipoDeDado
+                {
+                    TipoDeDadoId = request.TipoDeDado.TipoDeDadoId,
+                    Nome = request.TipoDeDado.Nome,
+                    FlagStatus = request.TipoDeDado.FlagStatus,
+                    CadastroUsuarioId = request.TipoDeDado.CadastroUsuarioId,
+                    CadastroDataHora = request.TipoDeDado.CadastroDataHora,
+                    AtualizacaoUsuarioId = request.TipoDeDado.AtualizacaoUsuarioId,
+                    AtualizacaoDataHora = request.TipoDeDado.AtualizacaoDataHora
+                });
+                ctx.SaveChanges();
+            }
 
-    //     public Domains.Dtos.Banco.Banco Update(BancoRequest request)
-    //     {
-    //         Domains.Dtos.Banco.Banco result = 
-    //             new Domains.Dtos.Banco.Banco();
+            return result;
+        }
 
-    //         using (var ctx = new DbContext())
-    //         {
-    //             ctx.Update(new Entities.Banco
-    //             {
-    //                 BancoId = request.Banco.BancoId,
-    //                 Codigo = request.Banco.Codigo,
-    //                 Nome = request.Banco.Nome,
-    //                 Apelido = request.Banco.Apelido,
-    //                 NumeroCnpj = request.Banco.NumeroCnpj,
-    //                 WebSiteOficial = request.Banco.WebSiteOficial,
-    //                 FlagStatus = request.Banco.FlagStatus,
-    //                 CadastroUsuarioId = request.Banco.CadastroUsuarioId,
-    //                 CadastroDataHora = request.Banco.CadastroDataHora,
-    //                 AtualizacaoUsuarioId = request.Banco.AtualizacaoUsuarioId,
-    //                 AtualizacaoDataHora = request.Banco.AtualizacaoDataHora
-    //             });
-    //             ctx.SaveChanges();
-    //         }
-
-    //         return result;
-    //     }
-
-    //     #endregion
-    // }
+        #endregion
+    }
 }
