@@ -3,7 +3,7 @@ using Acesscorp.Domains.Contracts.Services;
 using Acesscorp.Domains.Dtos.TipoDeAtributo;
 using System;
 
-namespace Acesscorp.Applications.Implementation.ContaCorrente
+namespace Acesscorp.Applications.Implementation.TipoDeAtributo
 {
     public class TipoDeAtributoAppService : ITipoDeAtributoAppService
     {

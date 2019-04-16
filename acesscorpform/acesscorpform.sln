@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Application", "2-Applicat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acesscorp.Applications", "acesscorpform.Applications\Applications\Acesscorp.Applications.csproj", "{A197F714-F035-4F6D-BD92-5A95356BD557}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acesscorp.Api", "acesscorpform.Services\AcesscorpApi\Acesscorp.Api.csproj", "{C175BB94-6CBB-4D39-94EB-1FDC1A37007C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{A197F714-F035-4F6D-BD92-5A95356BD557}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A197F714-F035-4F6D-BD92-5A95356BD557}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A197F714-F035-4F6D-BD92-5A95356BD557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C175BB94-6CBB-4D39-94EB-1FDC1A37007C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C175BB94-6CBB-4D39-94EB-1FDC1A37007C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C175BB94-6CBB-4D39-94EB-1FDC1A37007C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C175BB94-6CBB-4D39-94EB-1FDC1A37007C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{C70F6918-B795-418C-BB6B-7385C1F40500} = {2504FCFE-B27C-4D1B-AB92-AD068109FD22}
 		{A7B4F208-7286-447F-A839-94C7D05C1571} = {C3E8084A-0A62-4508-8842-DB5ED11DEB82}
 		{A197F714-F035-4F6D-BD92-5A95356BD557} = {EB7920C5-8B9A-429B-87B1-49A4E60488A5}
+		{C175BB94-6CBB-4D39-94EB-1FDC1A37007C} = {38BACAB8-9BD1-4CA9-9C25-48D6826FEE93}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {198CD36C-F693-4B30-AC6C-91AFDF258A4F}
