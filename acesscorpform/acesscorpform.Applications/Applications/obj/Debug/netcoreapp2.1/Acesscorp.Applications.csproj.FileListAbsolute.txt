@@ -1,0 +1,12 @@
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Domains.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Domains.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.csprojAssemblyReference.cache
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.csproj.CoreCompileInputs.cache
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.AssemblyInfoInputs.cache
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.AssemblyInfo.cs
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.csproj.CopyComplete
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Applications.deps.json
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Applications.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Applications.pdb

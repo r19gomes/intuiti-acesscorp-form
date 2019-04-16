@@ -24,3 +24,4 @@ C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpfor
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\Acesscorp.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.AssemblyInfo.cs
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\Acesscorp.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.dll
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\Acesscorp.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Domains\Acesscorp.Domains.Bussiness\obj\Debug\netcoreapp2.1\Acesscorp.Domains.csprojAssemblyReference.cache
