@@ -10,3 +10,15 @@ C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpfor
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Applications.deps.json
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Applications.dll
 C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Applications.pdb
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Applications.deps.json
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Applications.dll
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Applications.pdb
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Domains.dll
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\bin\Debug\netcoreapp2.1\Acesscorp.Domains.pdb
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.csprojAssemblyReference.cache
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.csproj.CoreCompileInputs.cache
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.AssemblyInfoInputs.cache
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.AssemblyInfo.cs
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.csproj.CopyComplete
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.dll
+C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Applications\Applications\obj\Debug\netcoreapp2.1\Acesscorp.Applications.pdb

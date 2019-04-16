@@ -1,10 +1,12 @@
-﻿namespace Acesscorp.Domains.Dtos.TipoDeDado
+﻿using System;
+
+namespace Acesscorp.Domains.Dtos.TipoDeDado
 {
     public class TipoDeDado: Base
     {
         #region Properties | Fields
         
-        public long TipoDeDadoId { get; set; }
+        public Int64 TipoDeDadoId { get; set; }
 
         public string Nome { get; set; }
 

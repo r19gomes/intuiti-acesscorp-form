@@ -8,7 +8,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Entities
     public partial class TipoDeDado
     {
         [Key]
-        public long TipoDeDadoId { get; set; }
+        public Int64 TipoDeDadoId { get; set; }
 
         public string Nome { get; set; }
 

@@ -4,7 +4,7 @@ namespace Acesscorp.Applications.Dtos
 {
     public class TipoDeDadoDto
     {
-        public long TipoDeDadoId { get; set; }
+        public Int64 TipoDeDadoId { get; set; }
 
         public string Nome { get; set; }
 

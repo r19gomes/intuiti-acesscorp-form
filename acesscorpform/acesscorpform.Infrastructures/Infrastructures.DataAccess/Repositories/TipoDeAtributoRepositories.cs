@@ -63,6 +63,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
             using (var ctx = new DbContext())
             {
+                var ret1 = ctx.TipoDeAtributos;
                 var ret = ctx.TipoDeAtributos.ToList();
                 if (ret.Count > 0)
                 {

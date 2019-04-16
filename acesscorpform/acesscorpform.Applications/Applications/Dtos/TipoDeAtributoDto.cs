@@ -16,7 +16,7 @@ namespace Acesscorp.Applications.Dtos
 
         public string NomeFisico { get; set; }
 
-        public long TipoDeDadoId { get; set; }
+        public Int64 TipoDeDadoId { get; set; }
 
         public bool FlagStatus { get; set; }
 

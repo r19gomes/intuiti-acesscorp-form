@@ -20,7 +20,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Entities
 
         public string NomeFisico { get; set; }
 
-        public long TipoDeDadoId { get; set; }
+        public Int64 TipoDeDadoId { get; set; }
 
         public int OrdemExibicao { get; set; }
 

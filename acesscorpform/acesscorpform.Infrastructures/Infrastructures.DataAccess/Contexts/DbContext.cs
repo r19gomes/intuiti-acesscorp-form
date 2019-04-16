@@ -21,7 +21,8 @@ namespace Acesscorp.Infrastructures.DataAccess.Contexts
         {
             string cn = string.Empty;
 
-            cn = @"Data Source=198.71.226.2;Initial Catalog=DB_ACESSCORP;User ID = acesscorp;Password=acesscorp@2019;Persist Security Info = True;";
+            cn = @"Persist Security Info=False;User ID=acesscorp;Password=acesscorp@2019;Initial Catalog=DB_ACESSCORP;Data Source=198.71.226.2;";
+            //cn = @"Server=myServerName\myInstanceName;Database=myDataBase;User Id=myUsername;Password=myPassword;";
 
             optionsBuilder.UseSqlServer(cn);
         }
