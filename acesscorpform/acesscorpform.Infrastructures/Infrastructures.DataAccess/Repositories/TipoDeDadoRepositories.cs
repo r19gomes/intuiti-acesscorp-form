@@ -27,7 +27,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
         public Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado Get(long id)
         {
-            Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado result = 
+            Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado result =
                 new Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado();
 
             using (var ctx = new DbContext())
@@ -48,7 +48,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
         public IList<Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado> GetAll()
         {
-            IList<Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado> result = 
+            IList<Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado> result =
                 new List<Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado>();
 
             using (var ctx = new DbContext())
@@ -79,7 +79,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
         public Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado Insert
             (Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDadoRequest request)
         {
-            Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado result = 
+            Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado result =
                 new Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado();
 
             using (var ctx = new DbContext())
@@ -103,7 +103,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
         public Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado Update
             (Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDadoRequest request)
         {
-            Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado result = 
+            Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado result =
                 new Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado();
 
             using (var ctx = new DbContext())

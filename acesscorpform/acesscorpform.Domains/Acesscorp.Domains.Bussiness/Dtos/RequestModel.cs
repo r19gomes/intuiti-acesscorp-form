@@ -12,6 +12,8 @@
 
         public bool UpdateOnlyMain { get; set; }
 
+        public bool? IsInserted { get; set; }
+
         #endregion
 
         #region Builders
@@ -20,6 +22,7 @@
         {
             UpdateNoSql = true;
             UpdateOnlyMain = false;
+            IsInserted = false;
         }
 
         #endregion

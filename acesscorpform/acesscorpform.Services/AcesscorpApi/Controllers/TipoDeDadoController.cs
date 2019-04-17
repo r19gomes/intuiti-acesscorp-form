@@ -37,7 +37,7 @@ namespace Acesscorp.Api.Controllers
             {
                 response.ResourceCode = string.Empty;
                 response.ErrorCode = 1;
-                response.Message = "Erro ao obter a lista dos Bancos.";
+                response.Message = "Erro ao obter a lista dos Tipos de Dados.";
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
 
@@ -69,7 +69,7 @@ namespace Acesscorp.Api.Controllers
             {
                 response.ResourceCode = string.Empty;
                 response.ErrorCode = 1;
-                response.Message = "Erro ao obter a lista dos Bancos.";
+                response.Message = "Erro ao obter a lista dos Tipos de Dados.";
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
 
@@ -82,36 +82,36 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new TipoDeDadoResponse();
 
-            //try
-            //{
-            //    //var messages = request.Validate();
-            //    string[] messages = null;
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        response = _tipoDeDadoAppService.Insert(request);
-            //        if (response.TipoDeDado.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30000",
-            //                ErrorMessage = "Tipo de Dado salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista dos Bancos.";
-            //    response.Erros.Add(new AspNetMvc.Api.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                request.IsInserted = true;
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    response = _tipoDeDadoAppService.Insert(request);
+                    if (response.TipoDeDado.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "00005",
+                            ErrorMessage = "Tipo de Dado salvo não encontrado!"
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 6; //- ErrorCode = "00006"
+                response.Message = "Erro ao inserrir o Tipo de Dado.";
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
