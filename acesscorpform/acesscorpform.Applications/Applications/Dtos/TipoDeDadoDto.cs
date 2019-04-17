@@ -16,6 +16,6 @@ namespace Acesscorp.Applications.Dtos
 
         public long? AtualizacaoUsuarioId { get; set; }
 
-        public long? AtualizacaoDataHora { get; set; }
+        public DateTime? AtualizacaoDataHora { get; set; }
     }
 }

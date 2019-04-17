@@ -1,6 +1,6 @@
-namespace Acesscorp.Applications.Contract.FormularioTipoDeAtributoAppService
+namespace Acesscorp.Applications.Contract.FormularioTipoDeAtributo
 {
-    public interface ITFormularioTipoDeAtributoAppService: IFormularioTipoDeAtributoQueries, IFormularioTipoDeAtributoCommand
+    public interface IFormularioTipoDeAtributoAppService: IFormularioTipoDeAtributoQueries, IFormularioTipoDeAtributoCommand
     {
     }
 }

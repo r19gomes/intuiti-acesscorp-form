@@ -1,8 +1,6 @@
 ﻿using Acesscorp.Domains.Contracts.Repositories;
-using Acesscorp.Domains.Dtos.TipoDeDado;
 using Acesscorp.Infrastructures.DataAccess.Contexts;
 using Acesscorp.Infrastructures.DataAccess.Repositories.Base;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TipoDeDado = Acesscorp.Infrastructures.DataAccess.Entities.TipoDeDado;

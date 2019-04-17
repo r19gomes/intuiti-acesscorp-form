@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dtos\Common\" />
+    <Compile Remove="Dtos\Common\**" />
+    <EmbeddedResource Remove="Dtos\Common\**" />
+    <None Remove="Dtos\Common\**" />
   </ItemGroup>
 
   <ItemGroup>

@@ -10,29 +10,29 @@ namespace Acesscorp.Infrastructures.DataAccess.Entities
     public partial class Formulario
     {
         [Key]
-        public long FormularioId { get; set; }
+        public Int64 FormularioId { get; set; }
 
         public string Nome { get; set; }
 
         public string Apelido { get; set; }
 
-        public long FormularioStatusId { get; set; }
+        public Int64 FormularioStatusId { get; set; }
 
         public DateTime DataVigenciaInicial { get; set; }
 
         public DateTime DataVigenciaFinal { get; set; }
 
-        public long FormularioTipoId { get; set; }
+        public Int64 FormularioTipoId { get; set; }
 
         public bool FlagStatus { get; set; }
 
-        public long CadastroUsuarioId { get; set; }
+        public Int64 CadastroUsuarioId { get; set; }
 
         public DateTime CadastroDataHora { get; set; }
 
-        public long AtualizacaoUsuarioId { get; set; }
+        public Int64? AtualizacaoUsuarioId { get; set; }
 
-        public DateTime AtualizacaoDataHora { get; set; }
+        public DateTime? AtualizacaoDataHora { get; set; }
 
         public virtual List<FormularioTipoDeAtributo> FormulariosTipoDeAtributos { get; set; }
 

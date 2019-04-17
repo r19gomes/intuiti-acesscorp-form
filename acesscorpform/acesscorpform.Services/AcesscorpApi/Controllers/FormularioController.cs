@@ -54,7 +54,7 @@ namespace Acesscorp.Api.Controllers
             {
                 response = _formularioAppService.GetAll();
 
-                if (response.Formulairo.Count == 0)
+                if (response.Formulario.Count == 0)
                 {
                     response.Erros.Add(new Error
                     {

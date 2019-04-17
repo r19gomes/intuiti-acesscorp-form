@@ -8,14 +8,24 @@ namespace Acesscorp.Applications.Dtos
 
         public string Nome { get; set; }
 
+        public string Apelido { get; set; }
+
+        public Int64 FormularioStatusId { get; set; }
+
+        public DateTime DataVigenciaInicial { get; set; }
+
+        public DateTime DataVigenciaFinal { get; set; }
+
+        public Int64 FormularioTipoId { get; set; }
+
         public bool FlagStatus { get; set; }
 
-        public long CadastroUsuarioId { get; set; }
+        public Int64 CadastroUsuarioId { get; set; }
 
         public DateTime CadastroDataHora { get; set; }
 
-        public long? AtualizacaoUsuarioId { get; set; }
+        public Int64? AtualizacaoUsuarioId { get; set; }
 
-        public long? AtualizacaoDataHora { get; set; }
+        public DateTime? AtualizacaoDataHora { get; set; }
     }
 }

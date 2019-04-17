@@ -1,10 +1,12 @@
-﻿namespace Acesscorp.Domains.Dtos.FormularioStatus
+﻿using System;
+
+namespace Acesscorp.Domains.Dtos.FormularioStatus
 {
     public class FormularioStatus: Base
     {
         #region Properties | Fields
 
-        public long FormularioStatusId { get; set; }
+        public Int64 FormularioStatusId { get; set; }
 
         public string Nome { get; set; }
 

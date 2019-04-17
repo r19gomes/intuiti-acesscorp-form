@@ -1,14 +1,16 @@
-﻿namespace Acesscorp.Domains.Dtos.FormularioTipoDeAtributo
+﻿using System;
+
+namespace Acesscorp.Domains.Dtos.FormularioTipoDeAtributo
 {
     public class FormularioTipoDeAtributo: Base
     {
-        #region
+        #region Properties | Fields
 
-        public long FormularioTipoDeAtributoId { get; set; }
+        public Int64 FormularioTipoDeAtributoId { get; set; }
 
-        public long FormularioId { get; set; }
+        public Int64 FormularioId { get; set; }
 
-        public long TipoDeAtributoId { get; set; }
+        public Int64 TipoDeAtributoId { get; set; }
 
         public string Observacao { get; set; }
 

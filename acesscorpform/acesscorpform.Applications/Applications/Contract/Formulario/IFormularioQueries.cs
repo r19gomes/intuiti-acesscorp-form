@@ -1,4 +1,5 @@
 using Acesscorp.Domains.Dtos.Formulario;
+using System;
 
 namespace Acesscorp.Applications.Contract.Formulario
 {
@@ -6,6 +7,6 @@ namespace Acesscorp.Applications.Contract.Formulario
     {
         FormularioResponse GetAll();
 
-        FormularioResponse Get(long id);
+        FormularioResponse Get(Int64 id);
     }
 }

@@ -6,7 +6,7 @@ namespace Acesscorp.Applications.Dtos
 {
     public class TipoDeAtributoDto
     {
-        public long TipoDeAtributoId { get; set; }
+        public Int64 TipoDeAtributoId { get; set; }
 
         public string Nome { get; set; }
 
@@ -32,6 +32,6 @@ namespace Acesscorp.Applications.Dtos
 
         public DateTime? AtualizacaoDataHora { get; set; }
 
-        public long? AtualizacaoUsuarioId { get; set; }
+        public Int64? AtualizacaoUsuarioId { get; set; }
     }
 }

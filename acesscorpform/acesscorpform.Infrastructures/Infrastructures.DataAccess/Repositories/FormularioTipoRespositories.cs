@@ -1,8 +1,6 @@
 using Acesscorp.Domains.Contracts.Repositories;
-using Acesscorp.Domains.Dtos.FormularioTipo;
 using Acesscorp.Infrastructures.DataAccess.Contexts;
 using Acesscorp.Infrastructures.DataAccess.Repositories.Base;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using FormularioTipo = Acesscorp.Infrastructures.DataAccess.Entities.FormularioTipo;
@@ -34,7 +32,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
             using (var ctx = new DbContext())
             {
-                var formularioTipo = ctx.FormulariosTipo.Find(id);
+                var formularioTipo = ctx.FormulariosTipos.Find(id);
 
                 result.FormularioTipoId = formularioTipo.FormularioTipoId;
                 result.Nome = formularioTipo.Nome;
@@ -55,7 +53,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
             using (var ctx = new DbContext())
             {
-                var ret = ctx.FormulariosTipo.ToList();
+                var ret = ctx.FormulariosTipos.ToList();
                 if (ret.Count > 0)
                 {
                     foreach (var item in ret)

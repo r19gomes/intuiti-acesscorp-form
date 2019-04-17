@@ -1,8 +1,6 @@
 using Acesscorp.Domains.Contracts.Repositories;
-using Acesscorp.Domains.Dtos.FormularioStatus;
 using Acesscorp.Infrastructures.DataAccess.Contexts;
 using Acesscorp.Infrastructures.DataAccess.Repositories.Base;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using FormularioStatus = Acesscorp.Infrastructures.DataAccess.Entities.FormularioStatus;

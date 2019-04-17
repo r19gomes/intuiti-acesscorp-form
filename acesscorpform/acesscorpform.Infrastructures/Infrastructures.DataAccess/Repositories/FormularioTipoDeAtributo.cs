@@ -1,8 +1,6 @@
 using Acesscorp.Domains.Contracts.Repositories;
-using Acesscorp.Domains.Dtos.FormularioTipoDeAtributo;
 using Acesscorp.Infrastructures.DataAccess.Contexts;
 using Acesscorp.Infrastructures.DataAccess.Repositories.Base;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using FormularioTipoDeAtributo = Acesscorp.Infrastructures.DataAccess.Entities.FormularioTipoDeAtributo;
@@ -29,15 +27,14 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
         public Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo Get(long id)
         {
-            Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipoDeAtributo result = 
-                new Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipoDeAtributo();
+            Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo result = 
+                new Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo();
 
             using (var ctx = new DbContext())
             {
-                var formularioTipoDeAtributo = ctx.FormulariosTipoDeAtributo.Find(id);
+                var formularioTipoDeAtributo = ctx.FormulariosTipoDeAtributos.Find(id);
 
                 result.FormularioTipoDeAtributoId = formularioTipoDeAtributo.FormularioTipoDeAtributoId;
-                result.Nome = formularioTipoDeAtributo.Nome;
                 result.FlagStatus = formularioTipoDeAtributo.FlagStatus;
                 result.CadastroUsuarioId = formularioTipoDeAtributo.CadastroUsuarioId;
                 result.CadastroDataHora = formularioTipoDeAtributo.CadastroDataHora;
@@ -50,8 +47,8 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
         public IList<Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo> GetAll()
         {
-            IList<Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipoDeAtributo> result = 
-                new List<Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipoDeAtributo>();
+            IList<Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo> result = 
+                new List<Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo>();
 
             using (var ctx = new DbContext())
             {
@@ -77,16 +74,16 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
         }
 
         public Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo Insert
-            (Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoRequest request)
+            (Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributoRequest request)
         {
-            Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipoDeAtributo result = 
-                new Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipoDeAtributo();
+            Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo result = 
+                new Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo();
 
             using (var ctx = new DbContext())
             {
                 ctx.Add(new Entities.FormularioTipoDeAtributo
                 {
-                    FormularioTipoDeAtributoId = request.FormularioTipoDeAtributo.FormularioTipoId,
+                    FormularioTipoDeAtributoId = request.FormularioTipoDeAtributo.FormularioTipoDeAtributoId,
                     FlagStatus = request.FormularioTipoDeAtributo.FlagStatus,
                     CadastroUsuarioId = request.FormularioTipoDeAtributo.CadastroUsuarioId,
                     CadastroDataHora = request.FormularioTipoDeAtributo.CadastroDataHora,
@@ -102,7 +99,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
         public Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo Update
             (Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributoRequest request)
         {
-            Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipoDeAtributo result = 
+            Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo result = 
                 new Acesscorp.Domains.Dtos.FormularioTipoDeAtributo.FormularioTipoDeAtributo();
 
             using (var ctx = new DbContext())

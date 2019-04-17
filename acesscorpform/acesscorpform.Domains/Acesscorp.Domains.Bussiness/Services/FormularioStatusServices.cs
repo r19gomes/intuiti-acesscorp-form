@@ -31,9 +31,18 @@ namespace Acesscorp.Domains.Services
         #region Methods
 
         public FormularioStatusResponse Get(long id)
-        {
-            _formularioStatusRepositories.Get(id);
-            throw new NotImplementedException();
+        {           
+            var response = new FormularioStatusResponse();
+
+            var result = _formularioStatusRepositories.Get(id); ;
+
+            IList<FormularioStatus> formularioStatus = new List<FormularioStatus>();
+            formularioStatus.Add(result);
+
+            response.FormularioStatus = formularioStatus;
+            response.Success = (formularioStatus.Count > 0 ? true : false);
+
+            return response;
         }
 
         public FormularioStatusResponse GetAll()

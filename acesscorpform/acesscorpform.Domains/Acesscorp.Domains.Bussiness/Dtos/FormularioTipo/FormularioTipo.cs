@@ -1,10 +1,12 @@
-﻿namespace Acesscorp.Domains.Dtos.FormularioTipo
+﻿using System;
+
+namespace Acesscorp.Domains.Dtos.FormularioTipo
 {
     public class FormularioTipo: Base
     {
         #region Properties | Fields
 
-        public long FormularioTipoId { get; set; }
+        public Int64 FormularioTipoId { get; set; }
 
         public string Nome { get; set; }
 

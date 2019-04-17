@@ -10,7 +10,7 @@ namespace Acesscorp.Api.Controllers
     [ApiController]
     public class FormularioStatusController : ControllerBase
     {
-        private readonly IFormularioStatusAppService _FormularioStatusAppService;
+        private readonly IFormularioStatusAppService _formularioStatusAppService;
 
         public FormularioStatusController(IFormularioStatusAppService formularioStatusAppService) : base()
         {
@@ -54,7 +54,7 @@ namespace Acesscorp.Api.Controllers
             {
                 response = _formularioStatusAppService.GetAll();
 
-                if (response.FormulairoStatus.Count == 0)
+                if (response.FormularioStatus.Count == 0)
                 {
                     response.Erros.Add(new Error
                     {

@@ -3,10 +3,10 @@
 	[FormularioId] BIGINT IDENTITY(1,1) NOT NULL
 ,	[Nome] VARCHAR(1000) NOT NULL
 ,	[Apelido] VARCHAR(100) NOT NULL
-,	[FormularioStatusId] INT NOT NULL
+,	[FormularioStatusId] BIGINT NOT NULL
 ,	[DataVigenciaInicial] DATE NULL
 ,	[DataVigenciaFinal] DATE NULL
-,	[FormularioTipoId] INT NULL
+,	[FormularioTipoId] BIGINT NULL
 ,	[CadastroUsuarioId] BIGINT NOT NULL
 ,	[CadastroDataHora] DATETIME2 NOT NULL
 ,	[AtualizacaoUsuarioId] BIGINT NULL

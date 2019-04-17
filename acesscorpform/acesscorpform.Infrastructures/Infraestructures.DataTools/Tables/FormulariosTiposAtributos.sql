@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[FormulariosTipoDeAtributos]
 (
-	[FormularioTipoDeAtributoId] BIGINT NOT NULL
+	[FormularioTipoDeAtributoId] BIGINT IDENTITY(1,1) NOT NULL
 ,	[FormularioId] BIGINT NOT NULL
-,	[TipoDeAtributoId] BIGINT IDENTITY(1,1) NOT NULL
+,	[TipoDeAtributoId] BIGINT NOT NULL
 ,	[Observacao] VARCHAR(MAX) NULL
 ,	[FlagStatus] BIT NOT NULL
 ,	[CadastroUsuarioId] BIGINT NOT NULL

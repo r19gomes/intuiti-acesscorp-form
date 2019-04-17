@@ -10,12 +10,12 @@ namespace Acesscorp.Applications.Dtos
 
         public bool FlagStatus { get; set; }
 
-        public long CadastroUsuarioId { get; set; }
+        public Int64 CadastroUsuarioId { get; set; }
 
         public DateTime CadastroDataHora { get; set; }
 
-        public long? AtualizacaoUsuarioId { get; set; }
+        public Int64? AtualizacaoUsuarioId { get; set; }
 
-        public long? AtualizacaoDataHora { get; set; }
+        public DateTime? AtualizacaoDataHora { get; set; }
     }
 }

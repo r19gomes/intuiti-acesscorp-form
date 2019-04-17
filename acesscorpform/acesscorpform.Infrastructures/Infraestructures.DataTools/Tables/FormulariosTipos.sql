@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[FormulariosTipos]
 (
-	[FormularioTipoId] INT IDENTITY(1,1) NOT NULL 
+	[FormularioTipoId] BIGINT IDENTITY(1,1) NOT NULL 
 ,	[Nome] VARCHAR(100) NOT NULL
 ,	[Apelido] VARCHAR(40) NOT NULL
 ,	[FlagStatus] [bit] NOT NULL

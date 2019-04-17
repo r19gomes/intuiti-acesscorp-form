@@ -10,7 +10,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Entities
     public partial class TipoDeAtributo
     {
         [Key]
-        public long TipoDeAtributoId { get; set; }
+        public Int64 TipoDeAtributoId { get; set; }
 
         public string Nome { get; set; }
 
@@ -30,11 +30,11 @@ namespace Acesscorp.Infrastructures.DataAccess.Entities
 
         public bool FlagStatus { get; set; }
 
-        public long CadastroUsuarioId { get; set; }
+        public Int64 CadastroUsuarioId { get; set; }
 
         public DateTime CadastroDataHora { get; set; }
 
-        public long? AtualizacaoUsuarioId { get; set; }
+        public Int64? AtualizacaoUsuarioId { get; set; }
 
         public DateTime? AtualizacaoDataHora { get; set; }
 

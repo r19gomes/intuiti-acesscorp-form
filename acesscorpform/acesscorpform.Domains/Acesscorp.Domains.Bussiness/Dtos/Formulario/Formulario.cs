@@ -4,21 +4,21 @@ namespace Acesscorp.Domains.Dtos.Formulario
 {
     public class Formulario: Base
     {
-        #region
+        #region Properties | Fields
 
-        public long FormularioId { get; set; }
+        public Int64 FormularioId { get; set; }
 
         public string Nome { get; set; }
 
         public string Apelido { get; set; }
 
-        public long FormularioStatusId { get; set; }
+        public Int64 FormularioStatusId { get; set; }
 
         public DateTime DataVigenciaInicial { get; set; }
 
         public DateTime DataVigenciaFinal { get; set; }
 
-        public long FormularioTipoId { get; set; }
+        public Int64 FormularioTipoId { get; set; }
 
         #endregion
 

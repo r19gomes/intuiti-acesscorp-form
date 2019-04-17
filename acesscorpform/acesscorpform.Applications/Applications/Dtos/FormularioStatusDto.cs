@@ -14,8 +14,8 @@ namespace Acesscorp.Applications.Dtos
 
         public DateTime CadastroDataHora { get; set; }
 
-        public long? AtualizacaoUsuarioId { get; set; }
+        public Int64? AtualizacaoUsuarioId { get; set; }
 
-        public long? AtualizacaoDataHora { get; set; }
+        public DateTime? AtualizacaoDataHora { get; set; }
     }
 }

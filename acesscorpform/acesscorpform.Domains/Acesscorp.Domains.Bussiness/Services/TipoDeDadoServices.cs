@@ -21,7 +21,7 @@ namespace Acesscorp.Domains.Services
 
         }
 
-        public TipoDeDadoServices(ITipoDeDadoRepositories contaCorrenteRepositories):base()
+        public TipoDeDadoServices(ITipoDeDadoRepositories contaCorrenteRepositories) : base()
         {
             _tipoDeDadoRepositories = contaCorrenteRepositories;
         }
@@ -32,8 +32,17 @@ namespace Acesscorp.Domains.Services
 
         public TipoDeDadoResponse Get(long id)
         {
-            _tipoDeDadoRepositories.Get(id);
-            throw new NotImplementedException();
+            var response = new TipoDeDadoResponse();
+
+            var result = _tipoDeDadoRepositories.Get(id);
+
+            IList<TipoDeDado> tipoDeDado = new List<TipoDeDado>();
+            tipoDeDado.Add(result);
+
+            response.TipoDeDado = tipoDeDado;
+            response.Success = (tipoDeDado.Count > 0 ? true : false);
+
+            return response;
         }
 
         public TipoDeDadoResponse GetAll()

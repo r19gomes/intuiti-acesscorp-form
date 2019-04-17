@@ -6,7 +6,7 @@ namespace Acesscorp.Domains.Dtos.TipoDeAtributo
     {
         #region Properties | Fields
 
-        public long TipoDeAtributoId { get; set; }
+        public Int64 TipoDeAtributoId { get; set; }
 
         public string Nome { get; set; }
 

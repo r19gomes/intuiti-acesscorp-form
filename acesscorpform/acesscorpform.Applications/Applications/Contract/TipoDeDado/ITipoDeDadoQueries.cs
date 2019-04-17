@@ -1,4 +1,5 @@
 ﻿using Acesscorp.Domains.Dtos.TipoDeDado;
+using System;
 
 namespace Acesscorp.Applications.Contract.TipoDeDado
 {
@@ -6,6 +7,6 @@ namespace Acesscorp.Applications.Contract.TipoDeDado
     {
         TipoDeDadoResponse GetAll();
 
-        TipoDeDadoResponse Get(long id);
+        TipoDeDadoResponse Get(Int64 id);
     }
 }

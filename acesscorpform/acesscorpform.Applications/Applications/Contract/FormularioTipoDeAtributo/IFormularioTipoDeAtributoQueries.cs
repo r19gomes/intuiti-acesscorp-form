@@ -1,4 +1,5 @@
 using Acesscorp.Domains.Dtos.FormularioTipoDeAtributo;
+using System;
 
 namespace Acesscorp.Applications.Contract.FormularioTipoDeAtributo
 {
@@ -6,6 +7,6 @@ namespace Acesscorp.Applications.Contract.FormularioTipoDeAtributo
     {
         FormularioTipoDeAtributoResponse GetAll();
 
-        FormularioTipoDeAtributoResponse Get(long id);
+        FormularioTipoDeAtributoResponse Get(Int64 id);
     }
 }
