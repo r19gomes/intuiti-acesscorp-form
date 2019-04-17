@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TipoDeDados]
 (
-	[TipoDeDadoId] BIGINT NOT NULL
+	[TipoDeDadoId] BIGINT NOT NULL IDENTITY(1,1)
 ,	[Nome] VARCHAR(200) NULL
 ,	[FlagStatus] BIT NOT NULL
 ,	[CadastroUsuarioId] BIGINT NOT NULL

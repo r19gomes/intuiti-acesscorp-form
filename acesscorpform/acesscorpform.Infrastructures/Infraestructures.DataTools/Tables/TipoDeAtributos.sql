@@ -5,7 +5,7 @@
 ,	[Apelido] VARCHAR(100) NULL
 ,	[Descricao] VARCHAR(MAX) NOT NULL
 ,	[NomeFisico] VARCHAR(600) NOT NULL
-,	[TipoDeDadoId] INT NOT NULL
+,	[TipoDeDadoId] BIGINT NOT NULL
 ,	[FlagStatus] BIT NOT NULL
 ,	[OrdemExibicao] [int] NOT NULL DEFAULT ((0))
 ,	[Limitador] [bit] NULL
@@ -21,4 +21,11 @@
 ) ON [PRIMARY]
 GO 
 
-
+ALTER TABLE [dbo].[TipoDeAtributos] ADD
+CONSTRAINT [FK_TipoDeAtributos_TipoDeDadoId_TipoDeDados_TipoDeDadoId] FOREIGN KEY
+(
+	[TipoDeDadoId]
+) REFERENCES [dbo].[TipoDeDados] (
+	[TipoDeDadoId]
+) 
+GO

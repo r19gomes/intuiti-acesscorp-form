@@ -221,5 +221,5 @@ IF	NOT EXISTS(SELECT * FROM TipoDeDados WHERE TipoDeDadoId > 0 AND Nome = 'objec
 END
 GO
 
-SET IDENTITY_INSERT produto OFF --Habilita o IDENTITY
+SET IDENTITY_INSERT TipoDeDados OFF --Habilita o IDENTITY
 GO
