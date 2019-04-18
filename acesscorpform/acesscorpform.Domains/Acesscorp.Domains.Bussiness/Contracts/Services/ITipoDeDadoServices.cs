@@ -15,6 +15,8 @@ namespace Acesscorp.Domains.Contracts.Services
 
         TipoDeDadoResponse Update(TipoDeDadoRequest request);
 
+        TipoDeDadoResponse Delete(Int64 id);
+
         #endregion
     }
 }

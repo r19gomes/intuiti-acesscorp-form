@@ -8,3 +8,12 @@ C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acessc
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\predeploy.sql
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.dll
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Acesscorp.Infrastructures.DataTools.dacpac
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Database1.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\bin\Debug\Database1.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Model.xml
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\refactor.xml
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\postdeploy.sql
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\predeploy.sql
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.dll
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform.Infrastructures\Infraestructures.DataTools\obj\Debug\Database1.pdb

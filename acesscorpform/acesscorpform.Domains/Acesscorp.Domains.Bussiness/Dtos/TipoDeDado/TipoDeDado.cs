@@ -2,10 +2,10 @@
 
 namespace Acesscorp.Domains.Dtos.TipoDeDado
 {
-    public class TipoDeDado: Base
+    public class TipoDeDado : Base
     {
         #region Properties | Fields
-        
+
         public Int64 TipoDeDadoId { get; set; }
 
         public string Nome { get; set; }

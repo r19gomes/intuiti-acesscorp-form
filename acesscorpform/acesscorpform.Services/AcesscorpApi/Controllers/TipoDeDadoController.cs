@@ -19,7 +19,7 @@ namespace Acesscorp.Api.Controllers
 
         [Route("Get")]
         [HttpGet]
-        public ActionResult<TipoDeDadoResponse> Get(long id)
+        public ActionResult<TipoDeDadoResponse> Get(Int64 id)
         {
             var response = new TipoDeDadoResponse();
 
@@ -29,7 +29,8 @@ namespace Acesscorp.Api.Controllers
 
                 if (response.TipoDeDado.Count == 0)
                 {
-                    response.Message = "Tipo de Dado não encontrado!";
+                    response.Message = string.Format
+                        ("Tipo de Dado {0} não encontrado!", id.ToString());
                 }
                 return response;
             }
@@ -37,7 +38,8 @@ namespace Acesscorp.Api.Controllers
             {
                 response.ResourceCode = string.Empty;
                 response.ErrorCode = 1;
-                response.Message = "Erro ao obter a lista dos Tipos de Dados.";
+                response.Message = string.Format
+                    ("Erro o Tipos de Dados: {0}.", id.ToString());
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
 
@@ -59,7 +61,7 @@ namespace Acesscorp.Api.Controllers
                     response.Erros.Add(new Error
                     {
                         ErrorCode = "30004",
-                        ErrorMessage = "Tipo de Dado não encontrado!"
+                        ErrorMessage = "Nenhum Tipo de Dado foi não encontrado!"
                     });
                     response.Success = false;
                 };
@@ -94,7 +96,9 @@ namespace Acesscorp.Api.Controllers
                         response.Erros.Add(new Error
                         {
                             ErrorCode = "00005",
-                            ErrorMessage = "Tipo de Dado salvo não encontrado!"
+                            ErrorMessage = string.Format
+                                ("Tipo de Dado {0} salvo não encontrado!",
+                                    request.TipoDeDado.Nome)
                         });
                         response.Success = false;
                     };
@@ -109,7 +113,10 @@ namespace Acesscorp.Api.Controllers
             {
                 response.ResourceCode = string.Empty;
                 response.ErrorCode = 6; //- ErrorCode = "00006"
-                response.Message = "Erro ao inserrir o Tipo de Dado.";
+                response.Message = string.Format
+                    ("Erro ao inserrir o Tipo de Dado: {0}-{1}.",
+                        request.TipoDeDado.TipoDeDadoId,
+                        request.TipoDeDado.Nome);
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
 
@@ -122,36 +129,41 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new TipoDeDadoResponse();
 
-            //try
-            //{
-            //    var messages = request.Validate();
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        response = _tipoDeDadoAppService.Update(request);
-            //        if (response.TipoDeDado.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30001",
-            //                ErrorMessage = "Tipo de Dado salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista dos Bancos.";
-            //    response.Erros.Add
-            //        (new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    response = _tipoDeDadoAppService.Update(request);
+                    if (response.TipoDeDado.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30001",
+                            ErrorMessage = string.Format
+                                ("Tipo de Dado {0} salvo não encontrado!",
+                                    request.TipoDeDado.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 1;
+                response.Message = string.Format
+                    ("Erro ao atualizar o Tipo de Dado: {0}-{1}.", 
+                        request.TipoDeDado.TipoDeDadoId, 
+                        request.TipoDeDado.Nome);
+                response.Erros.Add
+                    (new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
@@ -162,50 +174,83 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new TipoDeDadoResponse();
 
-            //try
-            //{
-            //    var messages = request.Validate();
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        if (request.TipoDeDado.TipoDeDadoId == 0)
-            //        {
-            //            response = _tipoDeDadoAppService.Insert(request);
-            //        } else
-            //        {
-            //            response = _tipoDeDadoAppService.Update(request);
-            //        }
-            //        if (response.TipoDeDado.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30002",
-            //                ErrorMessage = "Tipo de Dado salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista do Tipo de Dado.";
-            //    response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    if (request.TipoDeDado.TipoDeDadoId <= 0)
+                    {
+                        response = _tipoDeDadoAppService.Insert(request);
+                    }
+                    else
+                    {
+                        response = _tipoDeDadoAppService.Update(request);
+                    }
+                    if (response.TipoDeDado.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30002",
+                            ErrorMessage = string.Format
+                                ("Tipo de Dado {0} salvo não encontrado!",
+                                    request.TipoDeDado.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 1;
+                response.Message = string.Format
+                    ("Erro ao salvar o Tipo de Dado: {0}-{1}.", 
+                        request.TipoDeDado.TipoDeDadoId,
+                        request.TipoDeDado.Nome);
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
 
         [Route("Delete")]
         [HttpDelete]
-        public ActionResult<TipoDeDadoResponse> Delete(long id)
+        public ActionResult<TipoDeDadoResponse> Delete(Int64 id)
         {
-            return null;
+            var response = new TipoDeDadoResponse();
+
+            try
+            {
+                response = _tipoDeDadoAppService.Delete(id);
+
+                if (response.TipoDeDado.Count == 0)
+                {
+                    response.Erros.Add(new Error
+                    {
+                        ErrorCode = "30003",
+                        ErrorMessage = string.Format
+                            ("Tipo de Dado foi não removido!", id.ToString())
+                    });
+                    response.Success = false;
+                };
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 1;
+                response.Message = string.Format
+                    ("Erro ao remover o Tipos de Dados: {0}.", id.ToString());
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
+
+            return response;
         }
     }
 }

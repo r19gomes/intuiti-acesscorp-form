@@ -84,17 +84,33 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
             using (var ctx = new DbContext())
             {
-                ctx.Add(new Entities.TipoDeDado
+                var entities = new Entities.TipoDeDado
                 {
                     TipoDeDadoId = request.TipoDeDado.TipoDeDadoId,
                     Nome = request.TipoDeDado.Nome,
                     FlagStatus = request.TipoDeDado.FlagStatus,
                     CadastroUsuarioId = request.TipoDeDado.CadastroUsuarioId,
                     CadastroDataHora = request.TipoDeDado.CadastroDataHora,
-                    AtualizacaoUsuarioId = request.TipoDeDado.AtualizacaoUsuarioId,
-                    AtualizacaoDataHora = request.TipoDeDado.AtualizacaoDataHora
-                });
+                    AtualizacaoUsuarioId = request.TipoDeDado.AtualizacaoUsuarioId > 0 ?
+                        request.TipoDeDado.AtualizacaoUsuarioId : null,
+                    AtualizacaoDataHora = request.TipoDeDado.AtualizacaoUsuarioId > 0 ?
+                        request.TipoDeDado.AtualizacaoDataHora : null
+                };
+                ctx.TipoDeDados.Add(entities);
                 ctx.SaveChanges();
+                if (entities != null)
+                {
+                    result = new Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado()
+                    {
+                        TipoDeDadoId = entities.TipoDeDadoId,
+                        Nome = entities.Nome,
+                        FlagStatus = entities.FlagStatus,
+                        CadastroUsuarioId = entities.CadastroUsuarioId,
+                        CadastroDataHora = entities.CadastroDataHora,
+                        AtualizacaoUsuarioId = entities.AtualizacaoUsuarioId,
+                        AtualizacaoDataHora = entities.AtualizacaoDataHora
+                    };
+                }
             }
 
             return result;
@@ -108,17 +124,60 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
             using (var ctx = new DbContext())
             {
-                ctx.Update(new Entities.TipoDeDado
+                var entities = new Entities.TipoDeDado
                 {
                     TipoDeDadoId = request.TipoDeDado.TipoDeDadoId,
                     Nome = request.TipoDeDado.Nome,
                     FlagStatus = request.TipoDeDado.FlagStatus,
                     CadastroUsuarioId = request.TipoDeDado.CadastroUsuarioId,
                     CadastroDataHora = request.TipoDeDado.CadastroDataHora,
-                    AtualizacaoUsuarioId = request.TipoDeDado.AtualizacaoUsuarioId,
-                    AtualizacaoDataHora = request.TipoDeDado.AtualizacaoDataHora
-                });
+                    AtualizacaoUsuarioId = request.TipoDeDado.AtualizacaoUsuarioId > 0 ?
+                        request.TipoDeDado.AtualizacaoUsuarioId : null,
+                    AtualizacaoDataHora = request.TipoDeDado.AtualizacaoUsuarioId > 0 ?
+                        request.TipoDeDado.AtualizacaoDataHora : null
+                };
+                ctx.Update(entities);
                 ctx.SaveChanges();
+                if (entities != null)
+                {
+                    result = new Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado()
+                    {
+                        TipoDeDadoId = entities.TipoDeDadoId,
+                        Nome = entities.Nome,
+                        FlagStatus = entities.FlagStatus,
+                        CadastroUsuarioId = entities.CadastroUsuarioId,
+                        CadastroDataHora = entities.CadastroDataHora,
+                        AtualizacaoUsuarioId = entities.AtualizacaoUsuarioId,
+                        AtualizacaoDataHora = entities.AtualizacaoDataHora
+                    };
+                }
+            }
+
+            return result;
+        }
+
+        public Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado Delete(long id)
+        {
+            Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado result =
+                new Acesscorp.Domains.Dtos.TipoDeDado.TipoDeDado();
+
+            using (var ctx = new DbContext())
+            {
+                var itemToRemove = ctx.TipoDeDados.Find(id);
+                                
+                result.TipoDeDadoId = itemToRemove.TipoDeDadoId;
+                result.Nome = itemToRemove.Nome;
+                result.FlagStatus = itemToRemove.FlagStatus;
+                result.CadastroUsuarioId = itemToRemove.CadastroUsuarioId;
+                result.CadastroDataHora = itemToRemove.CadastroDataHora;
+                result.AtualizacaoUsuarioId = itemToRemove.AtualizacaoUsuarioId;
+                result.AtualizacaoDataHora = itemToRemove.AtualizacaoDataHora;
+
+                if (itemToRemove != null)
+                {
+                    ctx.TipoDeDados.Remove(itemToRemove);
+                    ctx.SaveChanges();
+                }
             }
 
             return result;

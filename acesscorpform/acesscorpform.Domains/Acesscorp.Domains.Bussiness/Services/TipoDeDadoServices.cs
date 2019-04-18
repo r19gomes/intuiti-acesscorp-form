@@ -30,7 +30,7 @@ namespace Acesscorp.Domains.Services
 
         #region Methods
 
-        public TipoDeDadoResponse Get(long id)
+        public TipoDeDadoResponse Get(Int64 id)
         {
             var response = new TipoDeDadoResponse();
 
@@ -86,6 +86,21 @@ namespace Acesscorp.Domains.Services
 
             response.TipoDeDado = tipoDeAtributo;
             response.Success = true;
+
+            return response;
+        }
+
+        public TipoDeDadoResponse Delete(Int64 id)
+        {
+            var response = new TipoDeDadoResponse();
+
+            var result = _tipoDeDadoRepositories.Delete(id);
+
+            IList<TipoDeDado> tipoDeDado = new List<TipoDeDado>();
+            tipoDeDado.Add(result);
+
+            response.TipoDeDado = tipoDeDado;
+            response.Success = (tipoDeDado.Count > 0 ? true : false);
 
             return response;
         }

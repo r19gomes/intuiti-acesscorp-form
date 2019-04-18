@@ -1,4 +1,5 @@
 ﻿using Acesscorp.Domains.Dtos.TipoDeDado;
+using System;
 
 namespace Acesscorp.Applications.Contract.TipoDeDado
 {
@@ -7,5 +8,7 @@ namespace Acesscorp.Applications.Contract.TipoDeDado
         TipoDeDadoResponse Insert(TipoDeDadoRequest request);
 
         TipoDeDadoResponse Update(TipoDeDadoRequest request);
+
+        TipoDeDadoResponse Delete(Int64 id);
     }
 }

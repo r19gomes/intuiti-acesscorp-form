@@ -1,6 +1,7 @@
 ﻿using Acesscorp.Applications.Contract.TipoDeDado;
 using Acesscorp.Domains.Contracts.Services;
 using Acesscorp.Domains.Dtos.TipoDeDado;
+using System;
 
 namespace Acesscorp.Applications.Implementation.TipoDeDado
 {
@@ -28,7 +29,7 @@ namespace Acesscorp.Applications.Implementation.TipoDeDado
 
         #region Methods
 
-        public TipoDeDadoResponse Get(long id)
+        public TipoDeDadoResponse Get(Int64 id)
         {
             return _tipoDeDadoService.Get(id);
         }
@@ -46,6 +47,11 @@ namespace Acesscorp.Applications.Implementation.TipoDeDado
         public TipoDeDadoResponse Update(TipoDeDadoRequest request)
         {
             return _tipoDeDadoService.Update(request);
+        }
+
+        public TipoDeDadoResponse Delete(Int64 id)
+        {
+            return _tipoDeDadoService.Delete(id);
         }
 
         #endregion
