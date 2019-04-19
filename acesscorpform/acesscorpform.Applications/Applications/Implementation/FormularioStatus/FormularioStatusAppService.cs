@@ -1,6 +1,7 @@
 using Acesscorp.Applications.Contract.FormularioStatus;
 using Acesscorp.Domains.Contracts.Services;
 using Acesscorp.Domains.Dtos.FormularioStatus;
+using System;
 
 namespace Acesscorp.Applications.Implementation.FormularioStatus
 {
@@ -46,6 +47,11 @@ namespace Acesscorp.Applications.Implementation.FormularioStatus
         public FormularioStatusResponse Update(FormularioStatusRequest request)
         {
             return _formularioStatusService.Update(request);
+        }
+
+        public FormularioStatusResponse Delete(Int64 id)
+        {
+            return _formularioStatusService.Delete(id);
         }
 
         #endregion

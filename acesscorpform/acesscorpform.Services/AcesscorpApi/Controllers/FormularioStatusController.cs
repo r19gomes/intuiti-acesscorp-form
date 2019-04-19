@@ -37,7 +37,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30017; //- ErrorCode = "30017"
                 response.Message = string.Format
                     ("Erro o Formulário Status: {0}.", id.ToString());
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
@@ -60,7 +60,7 @@ namespace Acesscorp.Api.Controllers
                 {
                     response.Erros.Add(new Error
                     {
-                        ErrorCode = "30004",
+                        ErrorCode = "30018",
                         ErrorMessage = "Formulário Status não encontrado!"
                     });
                     response.Success = false;
@@ -70,7 +70,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30019; //- ErrorCode = "30019"
                 response.Message = "Erro ao obter a lista do Formulário Status.";
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
@@ -84,36 +84,41 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new FormularioStatusResponse();
 
-            //try
-            //{
-            //    //var messages = request.Validate();
-            //    string[] messages = null;
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        response = _formulairoStatusAppService.Insert(request);
-            //        if (response.FormularioStatus.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30000",
-            //                ErrorMessage = "Formulário Status salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista do Formulário Status.";
-            //    response.Erros.Add(new AspNetMvc.Api.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                request.IsInserted = true;
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    response = _formularioStatusAppService.Insert(request);
+                    if (response.FormularioStatus.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30020",
+                            ErrorMessage = string.Format
+                                ("Formulário Status {0} salvo não encontrado!",
+                                    request.FormularioStatus.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30021; //- ErrorCode = "30021"
+                response.Message = string.Format
+                    ("Erro ao inserrir o Formulário Status: {0}-{1}.",
+                        request.FormularioStatus.FormularioStatusId,
+                        request.FormularioStatus.Nome);
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
@@ -124,36 +129,41 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new FormularioStatusResponse();
 
-            //try
-            //{
-            //    var messages = request.Validate();
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        response = _formulairoStatusAppService.Update(request);
-            //        if (response.FormularioStatus.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30001",
-            //                ErrorMessage = "Formulário Status salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista do Formulário Status.";
-            //    response.Erros.Add
-            //        (new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    response = _formularioStatusAppService.Update(request);
+                    if (response.FormularioStatus.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30022",
+                            ErrorMessage = string.Format
+                                ("Formulário Status {0} salvo não encontrado!",
+                                    request.FormularioStatus.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30023; //- ErrorCode = "30023"
+                response.Message = string.Format
+                    ("Erro ao atualizar o Formulário Status: {0}-{1}.",
+                        request.FormularioStatus.FormularioStatusId,
+                        request.FormularioStatus.Nome);
+                response.Erros.Add
+                    (new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
@@ -164,50 +174,83 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new FormularioStatusResponse();
 
-            //try
-            //{
-            //    var messages = request.Validate();
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        if (request.FormularioStatus.TipoDeDadoId == 0)
-            //        {
-            //            response = _formularioStatusAppService.Insert(request);
-            //        } else
-            //        {
-            //            response = _formularioStatusAppService.Update(request);
-            //        }
-            //        if (response.FormularioStatus.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30002",
-            //                ErrorMessage = "Formulário Status salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista do Formulário Status.";
-            //    response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    if (request.FormularioStatus.FormularioStatusId <= 0)
+                    {
+                        response = _formularioStatusAppService.Insert(request);
+                    }
+                    else
+                    {
+                        response = _formularioStatusAppService.Update(request);
+                    }
+                    if (response.FormularioStatus.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30024",
+                            ErrorMessage = string.Format
+                                ("Formulário Status {0} salvo não encontrado!",
+                                    request.FormularioStatus.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30025; //- ErrorCode = "30025"
+                response.Message = string.Format
+                    ("Erro ao salvar o Formulário Status: {0}-{1}.",
+                        request.FormularioStatus.FormularioStatusId,
+                        request.FormularioStatus.Nome);
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
 
         [Route("Delete")]
         [HttpDelete]
-        public ActionResult<FormularioStatusResponse> Delete(long id)
+        public ActionResult<FormularioStatusResponse> Delete(Int64 id)
         {
-            return null;
+            var response = new FormularioStatusResponse();
+
+            try
+            {
+                response = _formularioStatusAppService.Delete(id);
+
+                if (response.FormularioStatus.Count == 0)
+                {
+                    response.Erros.Add(new Error
+                    {
+                        ErrorCode = "30026",
+                        ErrorMessage = string.Format
+                            ("Formulário Status foi não removido!", id.ToString())
+                    });
+                    response.Success = false;
+                };
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30027; //- ErrorCode = "30027"
+                response.Message = string.Format
+                    ("Erro ao remover o Formulário Status: {0}.", id.ToString());
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
+
+            return response;
         }
     }
 }

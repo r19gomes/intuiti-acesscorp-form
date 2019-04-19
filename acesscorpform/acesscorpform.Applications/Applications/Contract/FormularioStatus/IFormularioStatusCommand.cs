@@ -1,4 +1,5 @@
 using Acesscorp.Domains.Dtos.FormularioStatus;
+using System;
 
 namespace Acesscorp.Applications.Contract.FormularioStatus
 {
@@ -7,5 +8,7 @@ namespace Acesscorp.Applications.Contract.FormularioStatus
         FormularioStatusResponse Insert(FormularioStatusRequest request);
 
         FormularioStatusResponse Update(FormularioStatusRequest request);
+
+        FormularioStatusResponse Delete(Int64 id);
     }
 }
