@@ -264,3 +264,4 @@ C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acessc
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\obj\Debug\Acesscorp.UI.csproj.CopyComplete
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\obj\Debug\acesscorpform.dll
 C:\Users\robertosi\Documents\Roberto\Projetos\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\obj\Debug\acesscorpform.pdb
+C:\Roberto\br.com.intuiti\intuiti-test-acesscorp-form\acesscorpform\acesscorpform\obj\Debug\Acesscorp.UI.csprojAssemblyReference.cache

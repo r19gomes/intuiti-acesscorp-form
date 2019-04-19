@@ -1,4 +1,5 @@
 ﻿using Acesscorp.Domains.Dtos.TipoDeAtributo;
+using System;
 using System.Collections.Generic;
 
 namespace Acesscorp.Domains.Contracts.Repositories
@@ -9,11 +10,13 @@ namespace Acesscorp.Domains.Contracts.Repositories
 
         IList<TipoDeAtributo> GetAll();
 
-        TipoDeAtributo Get(long id);
+        TipoDeAtributo Get(Int64 id);
 
         TipoDeAtributo Insert(TipoDeAtributoRequest request);
 
         TipoDeAtributo Update(TipoDeAtributoRequest request);
+
+        TipoDeAtributo Delete(Int64 id);
 
         #endregion
     }

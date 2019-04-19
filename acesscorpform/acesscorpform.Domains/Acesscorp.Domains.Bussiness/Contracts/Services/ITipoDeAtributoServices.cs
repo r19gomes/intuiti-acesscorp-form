@@ -1,4 +1,5 @@
 ﻿using Acesscorp.Domains.Dtos.TipoDeAtributo;
+using System;
 
 namespace Acesscorp.Domains.Contracts.Services
 {
@@ -8,11 +9,13 @@ namespace Acesscorp.Domains.Contracts.Services
 
         TipoDeAtributoResponse GetAll();
 
-        TipoDeAtributoResponse Get(long id);
+        TipoDeAtributoResponse Get(Int64 id);
 
         TipoDeAtributoResponse Insert(TipoDeAtributoRequest request);
 
         TipoDeAtributoResponse Update(TipoDeAtributoRequest request);
+
+        TipoDeAtributoResponse Delete(Int64 id);
 
         #endregion
     }

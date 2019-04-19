@@ -27,7 +27,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
         public Domains.Dtos.TipoDeAtributo.TipoDeAtributo Get(long id)
         {
-            Domains.Dtos.TipoDeAtributo.TipoDeAtributo result = 
+            Domains.Dtos.TipoDeAtributo.TipoDeAtributo result =
                 new Domains.Dtos.TipoDeAtributo.TipoDeAtributo();
 
             using (var ctx = new DbContext())
@@ -58,10 +58,8 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
             IList<Domains.Dtos.TipoDeAtributo.TipoDeAtributo> result =
                 new List<Domains.Dtos.TipoDeAtributo.TipoDeAtributo>();
 
-
             using (var ctx = new DbContext())
             {
-                var ret1 = ctx.TipoDeAtributos;
                 var ret = ctx.TipoDeAtributos.ToList();
                 if (ret.Count > 0)
                 {
@@ -94,12 +92,12 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
         public Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo Insert
             (Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributoRequest request)
         {
-            Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo result = 
+            Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo result =
                 new Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo();
 
             using (var ctx = new DbContext())
             {
-                ctx.Add(new Entities.TipoDeAtributo
+                var entities = new Entities.TipoDeAtributo
                 {
                     TipoDeAtributoId = request.TipoDeAtributo.TipoDeAtributoId,
                     Nome = request.TipoDeAtributo.Nome,
@@ -115,8 +113,29 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
                     CadastroDataHora = request.TipoDeAtributo.CadastroDataHora,
                     AtualizacaoUsuarioId = request.TipoDeAtributo.AtualizacaoUsuarioId,
                     AtualizacaoDataHora = request.TipoDeAtributo.AtualizacaoDataHora
-                });
+                };
+                ctx.TipoDeAtributos.Add(entities);
                 ctx.SaveChanges();
+                if (entities != null)
+                {
+                    result = new Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo()
+                    {
+                        TipoDeAtributoId = entities.TipoDeAtributoId,
+                        Nome = entities.Nome,
+                        Apelido = entities.Apelido,
+                        Descricao = entities.Descricao,
+                        NomeFisico = entities.NomeFisico,
+                        TipoDeDadoId = entities.TipoDeDadoId,
+                        FlagStatus = entities.FlagStatus,
+                        OrdemExibicao = entities.OrdemExibicao,
+                        Limitador = entities.Limitador,
+                        Qualificador = entities.Qualificador,
+                        CadastroUsuarioId = entities.CadastroUsuarioId,
+                        CadastroDataHora = entities.CadastroDataHora,
+                        AtualizacaoUsuarioId = entities.AtualizacaoUsuarioId,
+                        AtualizacaoDataHora = entities.AtualizacaoDataHora
+                    };
+                }
             }
 
             return result;
@@ -125,12 +144,12 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
         public Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo Update
             (Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributoRequest request)
         {
-            Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo result = 
+            Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo result =
                 new Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo();
 
             using (var ctx = new DbContext())
             {
-                ctx.Update(new Entities.TipoDeAtributo
+                var entities = new Entities.TipoDeAtributo
                 {
                     TipoDeAtributoId = request.TipoDeAtributo.TipoDeAtributoId,
                     Nome = request.TipoDeAtributo.Nome,
@@ -144,10 +163,68 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
                     Qualificador = request.TipoDeAtributo.Qualificador,
                     CadastroUsuarioId = request.TipoDeAtributo.CadastroUsuarioId,
                     CadastroDataHora = request.TipoDeAtributo.CadastroDataHora,
-                    AtualizacaoUsuarioId = request.TipoDeAtributo.AtualizacaoUsuarioId,
-                    AtualizacaoDataHora = request.TipoDeAtributo.AtualizacaoDataHora
-                });
+                    AtualizacaoUsuarioId = request.TipoDeAtributo.AtualizacaoUsuarioId > 0 ?
+                        request.TipoDeAtributo.AtualizacaoUsuarioId : null,
+                    AtualizacaoDataHora = request.TipoDeAtributo.AtualizacaoUsuarioId > 0 ?
+                        request.TipoDeAtributo.AtualizacaoDataHora : null
+                };
+                ctx.Update(entities);
                 ctx.SaveChanges();
+                if (entities != null)
+                {
+                    result = new Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo()
+                    {
+                        TipoDeAtributoId = entities.TipoDeAtributoId,
+                        Nome = entities.Nome,
+                        Apelido = entities.Apelido,
+                        Descricao = entities.Descricao,
+                        NomeFisico = entities.NomeFisico,
+                        TipoDeDadoId = entities.TipoDeDadoId,
+                        FlagStatus = entities.FlagStatus,
+                        OrdemExibicao = entities.OrdemExibicao,
+                        Limitador = entities.Limitador,
+                        Qualificador = entities.Qualificador,
+                        CadastroUsuarioId = entities.CadastroUsuarioId,
+                        CadastroDataHora = entities.CadastroDataHora,
+                        AtualizacaoUsuarioId = entities.AtualizacaoUsuarioId,
+                        AtualizacaoDataHora = entities.AtualizacaoDataHora
+                    };
+                }
+
+            }
+
+            return result;
+        }
+
+        public Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo Delete(long id)
+        {
+            Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo result =
+                new Acesscorp.Domains.Dtos.TipoDeAtributo.TipoDeAtributo();
+
+            using (var ctx = new DbContext())
+            {
+                var itemToRemove = ctx.TipoDeAtributos.Find(id);
+
+                result.TipoDeAtributoId = itemToRemove.TipoDeAtributoId;
+                result.Nome = itemToRemove.Nome;
+                result.Apelido = itemToRemove.Apelido;
+                result.Descricao = itemToRemove.Descricao;
+                result.NomeFisico = itemToRemove.NomeFisico;
+                result.TipoDeDadoId = itemToRemove.TipoDeDadoId;
+                result.FlagStatus = itemToRemove.FlagStatus;
+                result.OrdemExibicao = itemToRemove.OrdemExibicao;
+                result.Limitador = itemToRemove.Limitador;
+                result.Qualificador = itemToRemove.Qualificador;
+                result.CadastroUsuarioId = itemToRemove.CadastroUsuarioId;
+                result.CadastroDataHora = itemToRemove.CadastroDataHora;
+                result.AtualizacaoUsuarioId = itemToRemove.AtualizacaoUsuarioId;
+                result.AtualizacaoDataHora = itemToRemove.AtualizacaoDataHora;
+
+                if (itemToRemove != null)
+                {
+                    ctx.TipoDeAtributos.Remove(itemToRemove);
+                    ctx.SaveChanges();
+                }
             }
 
             return result;

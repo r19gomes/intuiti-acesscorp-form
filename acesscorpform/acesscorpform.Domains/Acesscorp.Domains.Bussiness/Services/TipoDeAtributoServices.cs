@@ -30,7 +30,7 @@ namespace Acesscorp.Domains.Services
 
         #region Methods
 
-        public TipoDeAtributoResponse Get(long id)
+        public TipoDeAtributoResponse Get(Int64 id)
         {
             var response = new TipoDeAtributoResponse();
 
@@ -41,7 +41,7 @@ namespace Acesscorp.Domains.Services
             };
 
             response.TipoDeAtributo = tipoDeAtributo;
-            response.Success = true;
+            response.Success = (tipoDeAtributo.Count > 0 ? true : false);
 
             return response;
         }
@@ -54,9 +54,10 @@ namespace Acesscorp.Domains.Services
             tipoDeAtributo = _tipoDeAtributoRepositories.GetAll();
 
             response.TipoDeAtributo = tipoDeAtributo;
-            response.Success = true;
+            response.Success = (tipoDeAtributo.Count > 0 ? true : false);
 
             return response;
+
         }
 
         public TipoDeAtributoResponse Insert(TipoDeAtributoRequest request)
@@ -70,9 +71,10 @@ namespace Acesscorp.Domains.Services
             };
 
             response.TipoDeAtributo = tipoDeAtributo;
-            response.Success = true;
+            response.Success = (tipoDeAtributo.Count > 0 ? true : false);
 
             return response;
+
         }
 
         public TipoDeAtributoResponse Update(TipoDeAtributoRequest request)
@@ -86,7 +88,23 @@ namespace Acesscorp.Domains.Services
             };
 
             response.TipoDeAtributo = tipoDeAtributo;
-            response.Success = true;
+            response.Success = (tipoDeAtributo.Count > 0 ? true : false); ;
+
+            return response;
+
+        }
+
+        public TipoDeAtributoResponse Delete(Int64 id)
+        {
+            var response = new TipoDeAtributoResponse();
+
+            var result = _tipoDeAtributoRepositories.Delete(id);
+
+            IList<TipoDeAtributo> tipoDeAtributo = new List<TipoDeAtributo>();
+            tipoDeAtributo.Add(result);
+
+            response.TipoDeAtributo = tipoDeAtributo;
+            response.Success = (tipoDeAtributo.Count > 0 ? true : false);
 
             return response;
         }

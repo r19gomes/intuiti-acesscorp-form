@@ -53,7 +53,7 @@ namespace Acesscorp.Domains.Services
             tipoDeDado = _tipoDeDadoRepositories.GetAll();
 
             response.TipoDeDado = tipoDeDado;
-            response.Success = true;
+            response.Success = (tipoDeDado.Count > 0 ? true : false);
 
             return response;
         }
@@ -69,7 +69,7 @@ namespace Acesscorp.Domains.Services
             };
 
             response.TipoDeDado = tipoDeDado;
-            response.Success = true;
+            response.Success = (tipoDeDado.Count > 0 ? true : false);
 
             return response;
         }
@@ -79,13 +79,13 @@ namespace Acesscorp.Domains.Services
             var response = new TipoDeDadoResponse();
 
             var result = _tipoDeDadoRepositories.Update(request);
-            IList<TipoDeDado> tipoDeAtributo = new List<TipoDeDado>()
+            IList<TipoDeDado> tipoDeDado = new List<TipoDeDado>()
             {
                 new TipoDeDado(result)
             };
 
-            response.TipoDeDado = tipoDeAtributo;
-            response.Success = true;
+            response.TipoDeDado = tipoDeDado;
+            response.Success = (tipoDeDado.Count > 0 ? true : false);
 
             return response;
         }

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Acesscorp.Applications.Contract.TipoDeAtributo;
+﻿using Acesscorp.Applications.Contract.TipoDeAtributo;
+using Acesscorp.Domains.Dtos;
 using Acesscorp.Domains.Dtos.TipoDeAtributo;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Acesscorp.Api.Controllers
 {
@@ -19,9 +17,38 @@ namespace Acesscorp.Api.Controllers
             _tipoDeAtributoAppService = tipoDeAtributoAppService;
         }
 
-        // GET api/values
+        [Route("Get")]
         [HttpGet]
-        public ActionResult<TipoDeAtributoResponse> Get()
+        public ActionResult<TipoDeAtributoResponse> Get(Int64 id)
+        {
+            var response = new TipoDeAtributoResponse();
+
+            try
+            {
+                response = _tipoDeAtributoAppService.Get(id);
+
+                if (response.TipoDeAtributo.Count == 0)
+                {
+                    response.Message = string.Format
+                        ("Tipo de Atributo {0} não encontrado!", id.ToString());
+                }
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 1;
+                response.Message = string.Format
+                    ("Erro o Tipos de Atributos: {0}.", id.ToString());
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
+
+            return response;
+        }
+
+        [Route("GetAll")]
+        [HttpGet]
+        public ActionResult<TipoDeAtributoResponse> GetAll()
         {
             var response = new TipoDeAtributoResponse();
 
@@ -31,9 +58,18 @@ namespace Acesscorp.Api.Controllers
 
                 if (response.TipoDeAtributo.Count == 0)
                 {
-                    response.Message = "Tipo de Atributo não encontrado!";
+                    if (response.TipoDeAtributo.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30004",
+                            ErrorMessage = "Nenhum Tipo de Atributo foi não encontrado!"
+                        });
+                        response.Success = false;
+                    };
+                    return response;
                 }
-                return null;
+                return response;
             }
             catch (Exception ex)
             {
@@ -44,31 +80,182 @@ namespace Acesscorp.Api.Controllers
             }
 
             return response;
+
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
+        [Route("Insert")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<TipoDeAtributoResponse> Insert(TipoDeAtributoRequest request)
         {
+            var response = new TipoDeAtributoResponse();
+
+            try
+            {
+                request.IsInserted = true;
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    response = _tipoDeAtributoAppService.Insert(request);
+                    if (response.TipoDeAtributo.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "00005",
+                            ErrorMessage = string.Format
+                                ("Tipo de Atributo {0} salvo não encontrado!",
+                                    request.TipoDeAtributo.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 6; //- ErrorCode = "00006"
+                response.Message = string.Format
+                    ("Erro ao inserrir o Tipo de Dado: {0}-{1}.",
+                        request.TipoDeAtributo.TipoDeDadoId,
+                        request.TipoDeAtributo.Nome);
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
+
+            return response;
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [Route("Update")]
+        [HttpPut]
+        public ActionResult<TipoDeAtributoResponse> Update(TipoDeAtributoRequest request)
         {
+            var response = new TipoDeAtributoResponse();
+
+            try
+            {
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    response = _tipoDeAtributoAppService.Update(request);
+                    if (response.TipoDeAtributo.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30001",
+                            ErrorMessage = string.Format
+                                ("Tipo de Atributos {0} salvo não encontrado!",
+                                    request.TipoDeAtributo.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 1;
+                response.Message = string.Format
+                    ("Erro ao atualizar o Tipo de Atributo: {0}-{1}.",
+                        request.TipoDeAtributo.TipoDeAtributoId,
+                        request.TipoDeAtributo.Nome);
+                response.Erros.Add
+                    (new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
+
+            return response;
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [Route("SaveOrUpdate")]
+        [HttpPost]
+        public ActionResult<TipoDeAtributoResponse> SaveOrUpdate(TipoDeAtributoRequest request)
         {
+            var response = new TipoDeAtributoResponse();
+
+            try
+            {
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    if (request.TipoDeAtributo.TipoDeDadoId <= 0)
+                    {
+                        response = _tipoDeAtributoAppService.Insert(request);
+                    }
+                    else
+                    {
+                        response = _tipoDeAtributoAppService.Update(request);
+                    }
+                    if (response.TipoDeAtributo.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30002",
+                            ErrorMessage = string.Format
+                                ("Tipo de Atributo {0} salvo não encontrado!",
+                                    request.TipoDeAtributo.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 1;
+                response.Message = string.Format
+                    ("Erro ao salvar o Tipo de Atributo: {0}-{1}.",
+                        request.TipoDeAtributo.TipoDeAtributoId,
+                        request.TipoDeAtributo.Nome);
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
+
+            return response;
+        }
+
+        [Route("Delete")]
+        [HttpDelete]
+        public ActionResult<TipoDeAtributoResponse> Delete(Int64 id)
+        {
+            var response = new TipoDeAtributoResponse();
+
+            try
+            {
+                response = _tipoDeAtributoAppService.Delete(id);
+
+                if (response.TipoDeAtributo.Count == 0)
+                {
+                    response.Erros.Add(new Error
+                    {
+                        ErrorCode = "30003",
+                        ErrorMessage = string.Format
+                            ("Tipo de Atributo foi não removido!", id.ToString())
+                    });
+                    response.Success = false;
+                };
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 1;
+                response.Message = string.Format
+                    ("Erro ao remover o Tipos de Atributos: {0}.", id.ToString());
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
+
+            return response;
         }
     }
 }

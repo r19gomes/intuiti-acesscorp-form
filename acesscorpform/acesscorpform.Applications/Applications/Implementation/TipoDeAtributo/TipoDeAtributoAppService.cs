@@ -19,6 +19,7 @@ namespace Acesscorp.Applications.Implementation.TipoDeAtributo
         {
 
         }
+
         public TipoDeAtributoAppService(ITipoDeAtributoServices tipoDeAtributoService) : base()
         {
             _tipoDeAtributoService = tipoDeAtributoService;
@@ -28,14 +29,29 @@ namespace Acesscorp.Applications.Implementation.TipoDeAtributo
 
         #region Methods
 
+        public TipoDeAtributoResponse Get(Int64 id)
+        {
+            return _tipoDeAtributoService.Get(id);
+        }
+
         public TipoDeAtributoResponse GetAll()
         {
             return _tipoDeAtributoService.GetAll();
         }
 
-        public TipoDeAtributoResponse Get(Int64 id)
+        public TipoDeAtributoResponse Insert(TipoDeAtributoRequest request)
         {
-            return _tipoDeAtributoService.Get(id);
+            return _tipoDeAtributoService.Insert(request);
+        }
+
+        public TipoDeAtributoResponse Update(TipoDeAtributoRequest request)
+        {
+            return _tipoDeAtributoService.Update(request);
+        }
+
+        public TipoDeAtributoResponse Delete(Int64 id)
+        {
+            return _tipoDeAtributoService.Delete(id);
         }
 
         #endregion
