@@ -37,7 +37,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30001; //- ErrorCode = "30001"
                 response.Message = string.Format
                     ("Erro o Tipos de Dados: {0}.", id.ToString());
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
@@ -60,7 +60,7 @@ namespace Acesscorp.Api.Controllers
                 {
                     response.Erros.Add(new Error
                     {
-                        ErrorCode = "30004",
+                        ErrorCode = "30002",
                         ErrorMessage = "Nenhum Tipo de Dado foi não encontrado!"
                     });
                     response.Success = false;
@@ -70,7 +70,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30002; //- ErrorCode = "30002"
                 response.Message = "Erro ao obter a lista dos Tipos de Dados.";
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
@@ -95,7 +95,7 @@ namespace Acesscorp.Api.Controllers
                     {
                         response.Erros.Add(new Error
                         {
-                            ErrorCode = "00005",
+                            ErrorCode = "30003",
                             ErrorMessage = string.Format
                                 ("Tipo de Dado {0} salvo não encontrado!",
                                     request.TipoDeDado.Nome)
@@ -112,7 +112,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 6; //- ErrorCode = "00006"
+                response.ErrorCode = 30003; //- ErrorCode = "30003"
                 response.Message = string.Format
                     ("Erro ao inserrir o Tipo de Dado: {0}-{1}.",
                         request.TipoDeDado.TipoDeDadoId,
@@ -139,7 +139,7 @@ namespace Acesscorp.Api.Controllers
                     {
                         response.Erros.Add(new Error
                         {
-                            ErrorCode = "30001",
+                            ErrorCode = "30004",
                             ErrorMessage = string.Format
                                 ("Tipo de Dado {0} salvo não encontrado!",
                                     request.TipoDeDado.Nome)
@@ -156,7 +156,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30004; //- ErrorCode = "30004"
                 response.Message = string.Format
                     ("Erro ao atualizar o Tipo de Dado: {0}-{1}.", 
                         request.TipoDeDado.TipoDeDadoId, 
@@ -191,7 +191,7 @@ namespace Acesscorp.Api.Controllers
                     {
                         response.Erros.Add(new Error
                         {
-                            ErrorCode = "30002",
+                            ErrorCode = "30005",
                             ErrorMessage = string.Format
                                 ("Tipo de Dado {0} salvo não encontrado!",
                                     request.TipoDeDado.Nome)
@@ -208,7 +208,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30005; //- ErrorCode = "30005"
                 response.Message = string.Format
                     ("Erro ao salvar o Tipo de Dado: {0}-{1}.", 
                         request.TipoDeDado.TipoDeDadoId,
@@ -233,7 +233,7 @@ namespace Acesscorp.Api.Controllers
                 {
                     response.Erros.Add(new Error
                     {
-                        ErrorCode = "30003",
+                        ErrorCode = "30006",
                         ErrorMessage = string.Format
                             ("Tipo de Dado foi não removido!", id.ToString())
                     });
@@ -244,7 +244,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30006; //- ErrorCode = "30006"
                 response.Message = string.Format
                     ("Erro ao remover o Tipos de Dados: {0}.", id.ToString());
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));

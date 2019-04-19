@@ -37,7 +37,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30007; //- ErrorCode = "30007"
                 response.Message = string.Format
                     ("Erro o Tipos de Atributos: {0}.", id.ToString());
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
@@ -62,7 +62,7 @@ namespace Acesscorp.Api.Controllers
                     {
                         response.Erros.Add(new Error
                         {
-                            ErrorCode = "30004",
+                            ErrorCode = "30008",
                             ErrorMessage = "Nenhum Tipo de Atributo foi não encontrado!"
                         });
                         response.Success = false;
@@ -74,7 +74,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30009; //- ErrorCode = "30009"
                 response.Message = "Erro ao obter a lista de Tipo de Atributo.";
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
@@ -100,7 +100,7 @@ namespace Acesscorp.Api.Controllers
                     {
                         response.Erros.Add(new Error
                         {
-                            ErrorCode = "00005",
+                            ErrorCode = "30010",
                             ErrorMessage = string.Format
                                 ("Tipo de Atributo {0} salvo não encontrado!",
                                     request.TipoDeAtributo.Nome)
@@ -117,7 +117,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 6; //- ErrorCode = "00006"
+                response.ErrorCode = 30011; //- ErrorCode = "30011"
                 response.Message = string.Format
                     ("Erro ao inserrir o Tipo de Dado: {0}-{1}.",
                         request.TipoDeAtributo.TipoDeDadoId,
@@ -144,7 +144,7 @@ namespace Acesscorp.Api.Controllers
                     {
                         response.Erros.Add(new Error
                         {
-                            ErrorCode = "30001",
+                            ErrorCode = "30011",
                             ErrorMessage = string.Format
                                 ("Tipo de Atributos {0} salvo não encontrado!",
                                     request.TipoDeAtributo.Nome)
@@ -161,7 +161,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30012; //- ErrorCode = "30012"
                 response.Message = string.Format
                     ("Erro ao atualizar o Tipo de Atributo: {0}-{1}.",
                         request.TipoDeAtributo.TipoDeAtributoId,
@@ -196,7 +196,7 @@ namespace Acesscorp.Api.Controllers
                     {
                         response.Erros.Add(new Error
                         {
-                            ErrorCode = "30002",
+                            ErrorCode = "30013",
                             ErrorMessage = string.Format
                                 ("Tipo de Atributo {0} salvo não encontrado!",
                                     request.TipoDeAtributo.Nome)
@@ -213,7 +213,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30014; //- ErrorCode = "30014"
                 response.Message = string.Format
                     ("Erro ao salvar o Tipo de Atributo: {0}-{1}.",
                         request.TipoDeAtributo.TipoDeAtributoId,
@@ -238,7 +238,7 @@ namespace Acesscorp.Api.Controllers
                 {
                     response.Erros.Add(new Error
                     {
-                        ErrorCode = "30003",
+                        ErrorCode = "30015",
                         ErrorMessage = string.Format
                             ("Tipo de Atributo foi não removido!", id.ToString())
                     });
@@ -249,7 +249,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30016; //- ErrorCode = "30016"
                 response.Message = string.Format
                     ("Erro ao remover o Tipos de Atributos: {0}.", id.ToString());
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));

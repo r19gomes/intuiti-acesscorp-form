@@ -19,7 +19,7 @@ namespace Acesscorp.Api.Controllers
 
         [Route("Get")]
         [HttpGet]
-        public ActionResult<FormularioStatusResponse> Get(long id)
+        public ActionResult<FormularioStatusResponse> Get(Int64 id)
         {
             var response = new FormularioStatusResponse();
 
@@ -29,7 +29,8 @@ namespace Acesscorp.Api.Controllers
 
                 if (response.FormularioStatus.Count == 0)
                 {
-                    response.Message = "Formulário Status não encontrado!";
+                    response.Message = string.Format
+                        ("Formulário Status {0} não encontrado!", id.ToString());
                 }
                 return response;
             }
@@ -37,7 +38,8 @@ namespace Acesscorp.Api.Controllers
             {
                 response.ResourceCode = string.Empty;
                 response.ErrorCode = 1;
-                response.Message = "Erro ao obter a lista do Formulário Status.";
+                response.Message = string.Format
+                    ("Erro o Formulário Status: {0}.", id.ToString());
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
 
