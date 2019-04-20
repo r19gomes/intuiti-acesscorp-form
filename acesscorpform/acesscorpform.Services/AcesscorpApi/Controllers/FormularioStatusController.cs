@@ -1,4 +1,4 @@
-using Acesscorp.Applications.Contract.FormularioStatus;
+﻿using Acesscorp.Applications.Contract.FormularioStatus;
 using Acesscorp.Domains.Dtos;
 using Acesscorp.Domains.Dtos.FormularioStatus;
 using Microsoft.AspNetCore.Mvc;
@@ -252,5 +252,6 @@ namespace Acesscorp.Api.Controllers
 
             return response;
         }
+
     }
 }

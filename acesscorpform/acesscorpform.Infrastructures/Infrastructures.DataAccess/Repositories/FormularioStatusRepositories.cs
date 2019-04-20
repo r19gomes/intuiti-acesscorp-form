@@ -90,8 +90,10 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
                     FlagStatus = request.FormularioStatus.FlagStatus,
                     CadastroUsuarioId = request.FormularioStatus.CadastroUsuarioId,
                     CadastroDataHora = request.FormularioStatus.CadastroDataHora,
-                    AtualizacaoUsuarioId = request.FormularioStatus.AtualizacaoUsuarioId,
-                    AtualizacaoDataHora = request.FormularioStatus.AtualizacaoDataHora
+                    AtualizacaoUsuarioId = request.FormularioStatus.AtualizacaoUsuarioId > 0 ?
+                        request.FormularioStatus.AtualizacaoUsuarioId : null,
+                    AtualizacaoDataHora = request.FormularioStatus.AtualizacaoUsuarioId > 0 ?
+                        request.FormularioStatus.AtualizacaoDataHora : null
                 };
                 ctx.FormulariosStatus.Add(entities);
                 ctx.SaveChanges();
@@ -99,13 +101,13 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
                 {
                     result = new Acesscorp.Domains.Dtos.FormularioStatus.FormularioStatus()
                     {
-                        FormularioStatusId = request.FormularioStatus.FormularioStatusId,
-                        Nome = request.FormularioStatus.Nome,
-                        FlagStatus = request.FormularioStatus.FlagStatus,
-                        CadastroUsuarioId = request.FormularioStatus.CadastroUsuarioId,
-                        CadastroDataHora = request.FormularioStatus.CadastroDataHora,
-                        AtualizacaoUsuarioId = request.FormularioStatus.AtualizacaoUsuarioId,
-                        AtualizacaoDataHora = request.FormularioStatus.AtualizacaoDataHora
+                        FormularioStatusId = entities.FormularioStatusId,
+                        Nome = entities.Nome,
+                        FlagStatus = entities.FlagStatus,
+                        CadastroUsuarioId = entities.CadastroUsuarioId,
+                        CadastroDataHora = entities.CadastroDataHora,
+                        AtualizacaoUsuarioId = entities.AtualizacaoUsuarioId,
+                        AtualizacaoDataHora = entities.AtualizacaoDataHora
                     };
                 }
             }
@@ -128,8 +130,10 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
                     FlagStatus = request.FormularioStatus.FlagStatus,
                     CadastroUsuarioId = request.FormularioStatus.CadastroUsuarioId,
                     CadastroDataHora = request.FormularioStatus.CadastroDataHora,
-                    AtualizacaoUsuarioId = request.FormularioStatus.AtualizacaoUsuarioId,
-                    AtualizacaoDataHora = request.FormularioStatus.AtualizacaoDataHora
+                    AtualizacaoUsuarioId = request.FormularioStatus.AtualizacaoUsuarioId > 0 ?
+                        request.FormularioStatus.AtualizacaoUsuarioId : null,
+                    AtualizacaoDataHora = request.FormularioStatus.AtualizacaoUsuarioId > 0 ?
+                        request.FormularioStatus.AtualizacaoDataHora : null
                 };
                 ctx.Update(entities);
                 ctx.SaveChanges();
@@ -137,13 +141,13 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
                 {
                     result = new Acesscorp.Domains.Dtos.FormularioStatus.FormularioStatus()
                     {
-                        FormularioStatusId = request.FormularioStatus.FormularioStatusId,
-                        Nome = request.FormularioStatus.Nome,
-                        FlagStatus = request.FormularioStatus.FlagStatus,
-                        CadastroUsuarioId = request.FormularioStatus.CadastroUsuarioId,
-                        CadastroDataHora = request.FormularioStatus.CadastroDataHora,
-                        AtualizacaoUsuarioId = request.FormularioStatus.AtualizacaoUsuarioId,
-                        AtualizacaoDataHora = request.FormularioStatus.AtualizacaoDataHora
+                        FormularioStatusId = entities.FormularioStatusId,
+                        Nome = entities.Nome,
+                        FlagStatus = entities.FlagStatus,
+                        CadastroUsuarioId = entities.CadastroUsuarioId,
+                        CadastroDataHora = entities.CadastroDataHora,
+                        AtualizacaoUsuarioId = entities.AtualizacaoUsuarioId,
+                        AtualizacaoDataHora = entities.AtualizacaoDataHora
                     };
                 }
             }
