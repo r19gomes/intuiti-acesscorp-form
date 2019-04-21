@@ -13,6 +13,8 @@ namespace Acesscorp.Infrastructures.DataAccess.Entities
 
         public string Nome { get; set; }
 
+        public string Apelido { get; set; }
+
         public bool FlagStatus { get; set; }
 
         public Int64 CadastroUsuarioId { get; set; }

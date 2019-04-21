@@ -30,7 +30,7 @@ namespace Acesscorp.Domains.Services
 
         #region Methods
 
-        public FormularioTipoResponse Get(long id)
+        public FormularioTipoResponse Get(Int64 id)
         {
             var response = new FormularioTipoResponse();
 
@@ -41,7 +41,7 @@ namespace Acesscorp.Domains.Services
             };
 
             response.FormularioTipo = formularioTipo;
-            response.Success = true;
+            response.Success = (formularioTipo.Count > 0 ? true : false);
 
             return response;
         }
@@ -54,7 +54,7 @@ namespace Acesscorp.Domains.Services
             formularioTipo = _formularioTipoRepositories.GetAll();
 
             response.FormularioTipo = formularioTipo;
-            response.Success = true;
+            response.Success = (formularioTipo.Count > 0 ? true : false);
 
             return response;
         }
@@ -70,7 +70,7 @@ namespace Acesscorp.Domains.Services
             };
 
             response.FormularioTipo = formularioTipo;
-            response.Success = true;
+            response.Success = (formularioTipo.Count > 0 ? true : false);
 
             return response;
         }
@@ -86,7 +86,22 @@ namespace Acesscorp.Domains.Services
             };
 
             response.FormularioTipo = formularioTipo;
-            response.Success = true;
+            response.Success = (formularioTipo.Count > 0 ? true : false);
+
+            return response;
+        }
+
+        public FormularioTipoResponse Delete(Int64 id)
+        {
+            var response = new FormularioTipoResponse();
+
+            var result = _formularioTipoRepositories.Delete(id);
+
+            IList<FormularioTipo> formularioTipo = new List<FormularioTipo>();
+            formularioTipo.Add(result);
+
+            response.FormularioTipo = formularioTipo;
+            response.Success = (formularioTipo.Count > 0 ? true : false);
 
             return response;
         }

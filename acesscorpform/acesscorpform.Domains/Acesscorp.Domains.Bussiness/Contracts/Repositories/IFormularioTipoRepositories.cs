@@ -1,4 +1,5 @@
 ﻿using Acesscorp.Domains.Dtos.FormularioTipo;
+using System;
 using System.Collections.Generic;
 
 namespace Acesscorp.Domains.Contracts.Repositories
@@ -9,11 +10,13 @@ namespace Acesscorp.Domains.Contracts.Repositories
 
         IList<FormularioTipo> GetAll();
 
-        FormularioTipo Get(long id);
+        FormularioTipo Get(Int64 id);
 
         FormularioTipo Insert(FormularioTipoRequest request);
 
         FormularioTipo Update(FormularioTipoRequest request);
+
+        FormularioTipo Delete(Int64 id);
 
         #endregion
     }

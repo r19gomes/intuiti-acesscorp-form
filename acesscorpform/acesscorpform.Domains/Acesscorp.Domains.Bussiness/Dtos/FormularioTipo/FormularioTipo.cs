@@ -22,6 +22,7 @@ namespace Acesscorp.Domains.Dtos.FormularioTipo
         {
             FormularioTipoId = formularioTipo.FormularioTipoId;
             Nome = formularioTipo.Nome;
+            Apelido = formularioTipo.Apelido;
             FlagStatus = formularioTipo.FlagStatus;
             CadastroUsuarioId = formularioTipo.CadastroUsuarioId;
             CadastroDataHora = formularioTipo.CadastroDataHora;

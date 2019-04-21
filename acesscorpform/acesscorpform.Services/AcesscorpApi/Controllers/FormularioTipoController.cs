@@ -19,7 +19,7 @@ namespace Acesscorp.Api.Controllers
 
         [Route("Get")]
         [HttpGet]
-        public ActionResult<FormularioTipoResponse> Get(long id)
+        public ActionResult<FormularioTipoResponse> Get(Int64 id)
         {
             var response = new FormularioTipoResponse();
 
@@ -29,15 +29,17 @@ namespace Acesscorp.Api.Controllers
 
                 if (response.FormularioTipo.Count == 0)
                 {
-                    response.Message = "Formulário Tipo não encontrado!";
+                    response.Message = string.Format
+                        ("Tipo do Formulário {0} não encontrado!", id.ToString());
                 }
                 return response;
             }
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
-                response.Message = "Erro ao obter a lista do Formulário Tipo.";
+                response.ErrorCode = 30028; //- ErrorCode = "30028"
+                response.Message = string.Format
+                    ("Erro o Tipo de Formulário: {0}.", id.ToString());
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
 
@@ -58,8 +60,8 @@ namespace Acesscorp.Api.Controllers
                 {
                     response.Erros.Add(new Error
                     {
-                        ErrorCode = "30004",
-                        ErrorMessage = "Formulário Tipo não encontrado!"
+                        ErrorCode = "30029",
+                        ErrorMessage = "Tipo de Formulário não encontrado!"
                     });
                     response.Success = false;
                 };
@@ -68,8 +70,8 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
-                response.Message = "Erro ao obter a lista do Formulário Tipo.";
+                response.ErrorCode = 30030; //- ErrorCode = "30030"
+                response.Message = "Erro ao obter a lista do Tipo de Formulário.";
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
 
@@ -82,36 +84,41 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new FormularioTipoResponse();
 
-            //try
-            //{
-            //    //var messages = request.Validate();
-            //    string[] messages = null;
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        response = _formulairoTipoAppService.Insert(request);
-            //        if (response.FormularioTipo.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30000",
-            //                ErrorMessage = "Formulário Tipo salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista do Formulário Tipo.";
-            //    response.Erros.Add(new AspNetMvc.Api.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                request.IsInserted = true;
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    response = _formularioTipoAppService.Insert(request);
+                    if (response.FormularioTipo.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30031",
+                            ErrorMessage = string.Format
+                                ("Tipo de Formulário {0} salvo não encontrado!",
+                                    request.FormularioTipo.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30032; //- ErrorCode = "30032"
+                response.Message = string.Format
+                    ("Erro ao inserrir o Tipo de Formulário: {0}-{1}.",
+                        request.FormularioTipo.FormularioTipoId,
+                        request.FormularioTipo.Nome);
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
@@ -122,36 +129,41 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new FormularioTipoResponse();
 
-            //try
-            //{
-            //    var messages = request.Validate();
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        response = _formulairoTipoAppService.Update(request);
-            //        if (response.FormularioTipo.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30001",
-            //                ErrorMessage = "Formulário Tipo salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista do Formulário Tipo.";
-            //    response.Erros.Add
-            //        (new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    response = _formularioTipoAppService.Update(request);
+                    if (response.FormularioTipo.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30033",
+                            ErrorMessage = string.Format
+                                ("Tipo de Formulário {0} salvo não encontrado!",
+                                    request.FormularioTipo.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30034; //- ErrorCode = "30034
+                response.Message = string.Format
+                    ("Erro ao atualizar o Tipo de Formulário: {0}-{1}.",
+                        request.FormularioTipo.FormularioTipoId,
+                        request.FormularioTipo.Nome);
+                response.Erros.Add
+                    (new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
@@ -162,50 +174,84 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new FormularioTipoResponse();
 
-            //try
-            //{
-            //    var messages = request.Validate();
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        if (request.FormularioTipo.TipoDeDadoId == 0)
-            //        {
-            //            response = _formularioTipoAppService.Insert(request);
-            //        } else
-            //        {
-            //            response = _formularioTipoAppService.Update(request);
-            //        }
-            //        if (response.FormularioTipo.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30002",
-            //                ErrorMessage = "Formulário Tipo salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista do Formulário Tipo.";
-            //    response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    if (request.FormularioTipo.FormularioTipoId <= 0)
+                    {
+                        response = _formularioTipoAppService.Insert(request);
+                    }
+                    else
+                    {
+                        response = _formularioTipoAppService.Update(request);
+                    }
+                    if (response.FormularioTipo.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30035",
+                            ErrorMessage = string.Format
+                                ("Tipo de Formulário {0} salvo não encontrado!",
+                                    request.FormularioTipo.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30036; //- ErrorCode = "30036"
+                response.Message = string.Format
+                    ("Erro ao salvar o Tipo de Formulário: {0}-{1}.",
+                        request.FormularioTipo.FormularioTipoId,
+                        request.FormularioTipo.Nome);
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
 
         [Route("Delete")]
         [HttpDelete]
-        public ActionResult<FormularioTipoResponse> Delete(long id)
+        public ActionResult<FormularioTipoResponse> Delete(Int64 id)
         {
-            return null;
+            var response = new FormularioTipoResponse();
+
+            try
+            {
+                response = _formularioTipoAppService.Delete(id);
+
+                if (response.FormularioTipo.Count == 0)
+                {
+                    response.Erros.Add(new Error
+                    {
+                        ErrorCode = "30036",
+                        ErrorMessage = string.Format
+                            ("Tipo de Formulário foi não removido!", id.ToString())
+                    });
+                    response.Success = false;
+                };
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30037; //- ErrorCode = "30027"
+                response.Message = string.Format
+                    ("Erro ao remover o Tipo de Formulário: {0}.", id.ToString());
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
+
+            return response;
         }
+
     }
 }

@@ -36,6 +36,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
                 result.FormularioTipoId = formularioTipo.FormularioTipoId;
                 result.Nome = formularioTipo.Nome;
+                result.Apelido = formularioTipo.Apelido;
                 result.FlagStatus = formularioTipo.FlagStatus;
                 result.CadastroUsuarioId = formularioTipo.CadastroUsuarioId;
                 result.CadastroDataHora = formularioTipo.CadastroDataHora;
@@ -62,6 +63,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
                         {
                             FormularioTipoId = item.FormularioTipoId,
                             Nome = item.Nome,
+                            Apelido = item.Apelido,
                             FlagStatus = item.FlagStatus,
                             CadastroUsuarioId = item.CadastroUsuarioId,
                             CadastroDataHora = item.CadastroDataHora,
@@ -83,17 +85,35 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
             using (var ctx = new DbContext())
             {
-                ctx.Add(new Entities.FormularioTipo
+                var entities = new Entities.FormularioTipo
                 {
                     FormularioTipoId = request.FormularioTipo.FormularioTipoId,
                     Nome = request.FormularioTipo.Nome,
+                    Apelido = request.FormularioTipo.Apelido,
                     FlagStatus = request.FormularioTipo.FlagStatus,
                     CadastroUsuarioId = request.FormularioTipo.CadastroUsuarioId,
                     CadastroDataHora = request.FormularioTipo.CadastroDataHora,
-                    AtualizacaoUsuarioId = request.FormularioTipo.AtualizacaoUsuarioId,
-                    AtualizacaoDataHora = request.FormularioTipo.AtualizacaoDataHora
-                });
+                    AtualizacaoUsuarioId = request.FormularioTipo.AtualizacaoUsuarioId > 0 ?
+                        request.FormularioTipo.AtualizacaoUsuarioId : null,
+                    AtualizacaoDataHora = request.FormularioTipo.AtualizacaoUsuarioId > 0 ?
+                        request.FormularioTipo.AtualizacaoDataHora : null
+                };
+                ctx.FormulariosTipos.Add(entities);
                 ctx.SaveChanges();
+                if (entities != null)
+                {
+                    result = new Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipo()
+                    {
+                        FormularioTipoId = entities.FormularioTipoId,
+                        Nome = entities.Nome,
+                        Apelido = entities.Apelido,
+                        FlagStatus = entities.FlagStatus,
+                        CadastroUsuarioId = entities.CadastroUsuarioId,
+                        CadastroDataHora = entities.CadastroDataHora,
+                        AtualizacaoUsuarioId = entities.AtualizacaoUsuarioId,
+                        AtualizacaoDataHora = entities.AtualizacaoDataHora
+                    };
+                }
             }
 
             return result;
@@ -107,17 +127,63 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
             using (var ctx = new DbContext())
             {
-                ctx.Update(new Entities.FormularioTipo
+                var entities = new Entities.FormularioTipo
                 {
                     FormularioTipoId = request.FormularioTipo.FormularioTipoId,
                     Nome = request.FormularioTipo.Nome,
+                    Apelido = request.FormularioTipo.Apelido,
                     FlagStatus = request.FormularioTipo.FlagStatus,
                     CadastroUsuarioId = request.FormularioTipo.CadastroUsuarioId,
                     CadastroDataHora = request.FormularioTipo.CadastroDataHora,
-                    AtualizacaoUsuarioId = request.FormularioTipo.AtualizacaoUsuarioId,
-                    AtualizacaoDataHora = request.FormularioTipo.AtualizacaoDataHora
-                });
+                    AtualizacaoUsuarioId = request.FormularioTipo.AtualizacaoUsuarioId > 0 ?
+                                        request.FormularioTipo.AtualizacaoUsuarioId : null,
+                    AtualizacaoDataHora = request.FormularioTipo.AtualizacaoUsuarioId > 0 ?
+                                        request.FormularioTipo.AtualizacaoDataHora : null
+                };
+                ctx.Update(entities);
                 ctx.SaveChanges();
+                if (entities != null)
+                {
+                    result = new Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipo()
+                    {
+                        FormularioTipoId = entities.FormularioTipoId,
+                        Nome = entities.Nome,
+                        Apelido = entities.Apelido,
+                        FlagStatus = entities.FlagStatus,
+                        CadastroUsuarioId = entities.CadastroUsuarioId,
+                        CadastroDataHora = entities.CadastroDataHora,
+                        AtualizacaoUsuarioId = entities.AtualizacaoUsuarioId,
+                        AtualizacaoDataHora = entities.AtualizacaoDataHora
+                    };
+                }
+            }
+
+            return result;
+        }
+
+        public Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipo Delete(long id)
+        {
+            Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipo result =
+                new Acesscorp.Domains.Dtos.FormularioTipo.FormularioTipo();
+
+            using (var ctx = new DbContext())
+            {
+                var itemToRemove = ctx.FormulariosTipos.Find(id);
+
+                result.FormularioTipoId = itemToRemove.FormularioTipoId;
+                result.Nome = itemToRemove.Nome;
+                result.Apelido = itemToRemove.Apelido;
+                result.FlagStatus = itemToRemove.FlagStatus;
+                result.CadastroUsuarioId = itemToRemove.CadastroUsuarioId;
+                result.CadastroDataHora = itemToRemove.CadastroDataHora;
+                result.AtualizacaoUsuarioId = itemToRemove.AtualizacaoUsuarioId;
+                result.AtualizacaoDataHora = itemToRemove.AtualizacaoDataHora;
+
+                if (itemToRemove != null)
+                {
+                    ctx.FormulariosTipos.Remove(itemToRemove);
+                    ctx.SaveChanges();
+                }
             }
 
             return result;
