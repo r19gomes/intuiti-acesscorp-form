@@ -1,4 +1,5 @@
 using Acesscorp.Domains.Dtos.Formulario;
+using System;
 
 namespace Acesscorp.Applications.Contract.Formulario
 {
@@ -7,5 +8,7 @@ namespace Acesscorp.Applications.Contract.Formulario
         FormularioResponse Insert(FormularioRequest request);
 
         FormularioResponse Update(FormularioRequest request);
+
+        FormularioResponse Delete(Int64 id);
     }
 }

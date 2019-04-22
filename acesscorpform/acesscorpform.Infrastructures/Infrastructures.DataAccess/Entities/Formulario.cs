@@ -24,7 +24,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Entities
 
         public Int64 FormularioTipoId { get; set; }
 
-        public bool FlagStatus { get; set; }
+        //public bool FlagStatus { get; set; }
 
         public Int64 CadastroUsuarioId { get; set; }
 

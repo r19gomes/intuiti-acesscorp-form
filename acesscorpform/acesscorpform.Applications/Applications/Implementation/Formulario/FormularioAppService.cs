@@ -1,6 +1,7 @@
 using Acesscorp.Applications.Contract.Formulario;
 using Acesscorp.Domains.Contracts.Services;
 using Acesscorp.Domains.Dtos.Formulario;
+using System;
 
 namespace Acesscorp.Applications.Implementation.Formulario
 {
@@ -28,7 +29,7 @@ namespace Acesscorp.Applications.Implementation.Formulario
 
         #region Methods
 
-        public FormularioResponse Get(long id)
+        public FormularioResponse Get(Int64 id)
         {
             return _formularioService.Get(id);
         }
@@ -46,6 +47,11 @@ namespace Acesscorp.Applications.Implementation.Formulario
         public FormularioResponse Update(FormularioRequest request)
         {
             return _formularioService.Update(request);
+        }
+
+        public FormularioResponse Delete(Int64 id)
+        {
+            return _formularioService.Delete(id);
         }
 
         #endregion

@@ -1,7 +1,9 @@
-﻿using Acesscorp.Applications.Contract.FormularioStatus;
+﻿using Acesscorp.Applications.Contract.Formulario;
+using Acesscorp.Applications.Contract.FormularioStatus;
 using Acesscorp.Applications.Contract.FormularioTipo;
 using Acesscorp.Applications.Contract.TipoDeAtributo;
 using Acesscorp.Applications.Contract.TipoDeDado;
+using Acesscorp.Applications.Implementation.Formulario;
 using Acesscorp.Applications.Implementation.FormularioStatus;
 using Acesscorp.Applications.Implementation.FormularioTipo;
 using Acesscorp.Applications.Implementation.TipoDeAtributo;
@@ -67,6 +69,11 @@ namespace AspNetMvc.Api
             services.AddScoped<IFormularioTipoRepositories, FormularioTipoRepositories>();
             services.AddScoped<IFormularioTipoServices, FormularioTipoServices>();
             services.AddScoped<IFormularioTipoAppService, FormularioTipoAppService>();
+
+            services.AddScoped<IFormularioRepositories, FormularioRepositories>();
+            services.AddScoped<IFormularioServices, FormularioServices>();
+            services.AddScoped<IFormularioAppService, FormularioAppService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

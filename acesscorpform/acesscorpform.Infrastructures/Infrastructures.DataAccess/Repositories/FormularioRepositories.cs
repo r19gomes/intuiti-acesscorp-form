@@ -36,7 +36,7 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
                 result.FormularioId = formulario.FormularioId;
                 result.Nome = formulario.Nome;
-                result.FlagStatus = formulario.FlagStatus;
+                result.FlagStatus = true; //formulario.FlagStatus;
                 result.CadastroUsuarioId = formulario.CadastroUsuarioId;
                 result.CadastroDataHora = formulario.CadastroDataHora;
                 result.AtualizacaoUsuarioId = formulario.AtualizacaoUsuarioId;
@@ -62,7 +62,12 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
                         {
                             FormularioId = item.FormularioId,
                             Nome = item.Nome,
-                            FlagStatus = item.FlagStatus,
+                            Apelido = item.Apelido,
+                            FormularioStatusId = item.FormularioStatusId,
+                            DataVigenciaInicial = item.DataVigenciaInicial,
+                            DataVigenciaFinal = item.DataVigenciaFinal,
+                            FormularioTipoId = item.FormularioTipoId,
+                            FlagStatus = true,
                             CadastroUsuarioId = item.CadastroUsuarioId,
                             CadastroDataHora = item.CadastroDataHora,
                             AtualizacaoUsuarioId = item.AtualizacaoUsuarioId,
@@ -83,17 +88,39 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
             using (var ctx = new DbContext())
             {
-                ctx.Add(new Entities.Formulario
+                var entities = new Entities.Formulario
                 {
                     FormularioId = request.Formulario.FormularioId,
                     Nome = request.Formulario.Nome,
-                    FlagStatus = request.Formulario.FlagStatus,
+                    Apelido = request.Formulario.Apelido,
+                    FormularioStatusId = request.Formulario.FormularioStatusId,
+                    DataVigenciaInicial = request.Formulario.DataVigenciaInicial,
+                    DataVigenciaFinal = request.Formulario.DataVigenciaFinal,
+                    FormularioTipoId = request.Formulario.FormularioTipoId,
                     CadastroUsuarioId = request.Formulario.CadastroUsuarioId,
                     CadastroDataHora = request.Formulario.CadastroDataHora,
                     AtualizacaoUsuarioId = request.Formulario.AtualizacaoUsuarioId,
                     AtualizacaoDataHora = request.Formulario.AtualizacaoDataHora
-                });
+                };
+                ctx.Add(entities);
                 ctx.SaveChanges();
+                if (entities != null)
+                {
+                    result = new Acesscorp.Domains.Dtos.Formulario.Formulario()
+                    {
+                        FormularioId = entities.FormularioId,
+                        Nome = entities.Nome,
+                        Apelido = entities.Apelido,
+                        FormularioStatusId = entities.FormularioStatusId,
+                        DataVigenciaInicial = entities.DataVigenciaInicial,
+                        DataVigenciaFinal = entities.DataVigenciaFinal,
+                        FormularioTipoId = entities.FormularioTipoId,
+                        CadastroUsuarioId = entities.CadastroUsuarioId,
+                        CadastroDataHora = entities.CadastroDataHora,
+                        AtualizacaoUsuarioId = entities.AtualizacaoUsuarioId,
+                        AtualizacaoDataHora = entities.AtualizacaoDataHora
+                    };
+                }
             }
 
             return result;
@@ -107,17 +134,71 @@ namespace Acesscorp.Infrastructures.DataAccess.Repositories
 
             using (var ctx = new DbContext())
             {
-                ctx.Update(new Entities.Formulario
+                var entities = new Entities.Formulario
                 {
                     FormularioId = request.Formulario.FormularioId,
                     Nome = request.Formulario.Nome,
-                    FlagStatus = request.Formulario.FlagStatus,
+                    Apelido = request.Formulario.Apelido,
+                    FormularioStatusId = request.Formulario.FormularioStatusId,
+                    DataVigenciaInicial = request.Formulario.DataVigenciaInicial,
+                    DataVigenciaFinal = request.Formulario.DataVigenciaFinal,
+                    FormularioTipoId = request.Formulario.FormularioTipoId,
                     CadastroUsuarioId = request.Formulario.CadastroUsuarioId,
                     CadastroDataHora = request.Formulario.CadastroDataHora,
                     AtualizacaoUsuarioId = request.Formulario.AtualizacaoUsuarioId,
                     AtualizacaoDataHora = request.Formulario.AtualizacaoDataHora
-                });
+                };
+                ctx.Update(entities);
                 ctx.SaveChanges();
+                if (entities != null)
+                {
+                    result = new Acesscorp.Domains.Dtos.Formulario.Formulario()
+                    {
+                        FormularioId = entities.FormularioId,
+                        Nome = entities.Nome,
+                        Apelido = entities.Apelido,
+                        FormularioStatusId = entities.FormularioStatusId,
+                        DataVigenciaInicial = entities.DataVigenciaInicial,
+                        DataVigenciaFinal = entities.DataVigenciaFinal,
+                        FormularioTipoId = entities.FormularioTipoId,
+                        CadastroUsuarioId = entities.CadastroUsuarioId,
+                        CadastroDataHora = entities.CadastroDataHora,
+                        AtualizacaoUsuarioId = entities.AtualizacaoUsuarioId,
+                        AtualizacaoDataHora = entities.AtualizacaoDataHora
+                    };
+                }
+            }
+
+            return result;
+        }
+
+        public Acesscorp.Domains.Dtos.Formulario.Formulario Delete(long id)
+        {
+            Acesscorp.Domains.Dtos.Formulario.Formulario result =
+                new Acesscorp.Domains.Dtos.Formulario.Formulario();
+
+            using (var ctx = new DbContext())
+            {
+                var itemToRemove = ctx.Formularios.Find(id);
+
+                result.FormularioId = itemToRemove.FormularioId;
+                result.Nome = itemToRemove.Nome;
+                result.Apelido = itemToRemove.Apelido;
+                result.FormularioStatusId = itemToRemove.FormularioStatusId;
+                result.DataVigenciaInicial = itemToRemove.DataVigenciaInicial;
+                result.DataVigenciaFinal = itemToRemove.DataVigenciaFinal;
+                result.FormularioTipoId = itemToRemove.FormularioTipoId;
+                result.FlagStatus = true; // itemToRemove.FlagStatus;
+                result.CadastroUsuarioId = itemToRemove.CadastroUsuarioId;
+                result.CadastroDataHora = itemToRemove.CadastroDataHora;
+                result.AtualizacaoUsuarioId = itemToRemove.AtualizacaoUsuarioId;
+                result.AtualizacaoDataHora = itemToRemove.AtualizacaoDataHora;
+
+                if (itemToRemove != null)
+                {
+                    ctx.Formularios.Remove(itemToRemove);
+                    ctx.SaveChanges();
+                }
             }
 
             return result;

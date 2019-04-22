@@ -15,6 +15,8 @@ namespace Acesscorp.Domains.Contracts.Services
 
         FormularioResponse Update(FormularioRequest request);
 
+        FormularioResponse Delete(Int64 id);
+
         #endregion
     }
 }

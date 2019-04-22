@@ -30,7 +30,7 @@ namespace Acesscorp.Domains.Services
 
         #region Methods
 
-        public FormularioResponse Get(long id)
+        public FormularioResponse Get(Int64 id)
         {
             var response = new FormularioResponse();
 
@@ -41,7 +41,7 @@ namespace Acesscorp.Domains.Services
             };
 
             response.Formulario = formulario;
-            response.Success = true;
+            response.Success = (formulario.Count > 0 ? true : false);
 
             return response;
         }
@@ -54,7 +54,7 @@ namespace Acesscorp.Domains.Services
             formulario = _formularioRepositories.GetAll();
 
             response.Formulario = formulario;
-            response.Success = true;
+            response.Success = (formulario.Count > 0 ? true : false); ;
 
             return response;
         }
@@ -70,7 +70,7 @@ namespace Acesscorp.Domains.Services
             };
 
             response.Formulario = formulario;
-            response.Success = true;
+            response.Success = (formulario.Count > 0 ? true : false);
 
             return response;
         }
@@ -86,7 +86,22 @@ namespace Acesscorp.Domains.Services
             };
 
             response.Formulario = formulario;
-            response.Success = true;
+            response.Success = (formulario.Count > 0 ? true : false); ;
+
+            return response;
+        }
+
+        public FormularioResponse Delete(Int64 id)
+        {
+            var response = new FormularioResponse();
+
+            var result = _formularioRepositories.Delete(id);
+
+            IList<Formulario> formulario = new List<Formulario>();
+            formulario.Add(result);
+
+            response.Formulario = formulario;
+            response.Success = (formulario.Count > 0 ? true : false);
 
             return response;
         }

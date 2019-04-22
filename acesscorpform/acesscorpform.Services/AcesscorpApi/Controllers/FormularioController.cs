@@ -29,15 +29,18 @@ namespace Acesscorp.Api.Controllers
 
                 if (response.Formulario.Count == 0)
                 {
-                    response.Message = "Formulário não encontrado!";
+                    response.ErrorCode = 30038; //- ErrorCode = "30038"
+                    response.Message = string.Format
+                        ("Formulário {0} não encontrado!", id.ToString());
                 }
                 return response;
             }
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
-                response.Message = "Erro ao obter a lista do Formulário.";
+                response.ErrorCode = 30039; //- ErrorCode = "30039"
+                response.Message = string.Format
+                    ("Erro o Formulário: {0}.", id.ToString());
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
 
@@ -58,7 +61,7 @@ namespace Acesscorp.Api.Controllers
                 {
                     response.Erros.Add(new Error
                     {
-                        ErrorCode = "30004",
+                        ErrorCode = "30040",
                         ErrorMessage = "Formulário não encontrado!"
                     });
                     response.Success = false;
@@ -68,7 +71,7 @@ namespace Acesscorp.Api.Controllers
             catch (Exception ex)
             {
                 response.ResourceCode = string.Empty;
-                response.ErrorCode = 1;
+                response.ErrorCode = 30041; //- ErrorCode = "30041"
                 response.Message = "Erro ao obter a lista do Formulário.";
                 response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
             }
@@ -82,36 +85,41 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new FormularioResponse();
 
-            //try
-            //{
-            //    //var messages = request.Validate();
-            //    string[] messages = null;
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        response = _formulairoAppService.Insert(request);
-            //        if (response.Formulario.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30000",
-            //                ErrorMessage = "Formulário salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista do Formulário.";
-            //    response.Erros.Add(new AspNetMvc.Api.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                request.IsInserted = true;
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    response = _formularioAppService.Insert(request);
+                    if (response.Formulario.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30042",
+                            ErrorMessage = string.Format
+                                ("Formulário {0} salvo não encontrado!",
+                                    request.Formulario.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30043; //- ErrorCode = "30043"
+                response.Message = string.Format
+                    ("Erro ao inserrir o Formulário: {0}-{1}.",
+                        request.Formulario.FormularioId,
+                        request.Formulario.Nome);
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
@@ -122,36 +130,41 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new FormularioResponse();
 
-            //try
-            //{
-            //    var messages = request.Validate();
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        response = _formulairoAppService.Update(request);
-            //        if (response.Formulario.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30001",
-            //                ErrorMessage = "Formulário salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista do Formulário.";
-            //    response.Erros.Add
-            //        (new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    response = _formularioAppService.Update(request);
+                    if (response.Formulario.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30044",
+                            ErrorMessage = string.Format
+                                ("Formulário {0} salvo não encontrado!",
+                                    request.Formulario.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30045; //- ErrorCode = "30045"
+                response.Message = string.Format
+                    ("Erro ao atualizar o Formulário: {0}-{1}.",
+                        request.Formulario.FormularioId,
+                        request.Formulario.Nome);
+                response.Erros.Add
+                    (new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
@@ -162,50 +175,83 @@ namespace Acesscorp.Api.Controllers
         {
             var response = new FormularioResponse();
 
-            //try
-            //{
-            //    var messages = request.Validate();
-            //    if (messages.Count.Equals(0))
-            //    {
-            //        if (request.Formulario.TipoDeDadoId == 0)
-            //        {
-            //            response = _formularioAppService.Insert(request);
-            //        } else
-            //        {
-            //            response = _formularioAppService.Update(request);
-            //        }
-            //        if (response.Formulario.Count == 0)
-            //        {
-            //            response.Erros.Add(new Error
-            //            {
-            //                ErrorCode = "30002",
-            //                ErrorMessage = "Formulário salvo não encontrado!"
-            //            });
-            //            response.Success = false;
-            //        };
-            //        return response;
-            //    }
-            //    else
-            //    {
-            //        response.Erros = messages;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.ResourceCode = string.Empty;
-            //    response.ErrorCode = 1;
-            //    response.Message = "Erro ao obter a lista do Formulário.";
-            //    response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
-            //}
+            try
+            {
+                var messages = request.Validate();
+                if (messages.Count.Equals(0))
+                {
+                    if (request.Formulario.FormularioId <= 0)
+                    {
+                        response = _formularioAppService.Insert(request);
+                    }
+                    else
+                    {
+                        response = _formularioAppService.Update(request);
+                    }
+                    if (response.Formulario.Count == 0)
+                    {
+                        response.Erros.Add(new Error
+                        {
+                            ErrorCode = "30045",
+                            ErrorMessage = string.Format
+                                ("Formulário {0} salvo não encontrado!",
+                                    request.Formulario.Nome)
+                        });
+                        response.Success = false;
+                    };
+                    return response;
+                }
+                else
+                {
+                    response.Erros = messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30046; //- ErrorCode = "30046"
+                response.Message = string.Format
+                    ("Erro ao salvar o Formulário: {0}-{1}.",
+                        request.Formulario.FormularioId,
+                        request.Formulario.Nome);
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
 
             return response;
         }
 
         [Route("Delete")]
         [HttpDelete]
-        public ActionResult<FormularioResponse> Delete(long id)
+        public ActionResult<FormularioResponse> Delete(Int64 id)
         {
-            return null;
+            var response = new FormularioResponse();
+
+            try
+            {
+                response = _formularioAppService.Delete(id);
+
+                if (response.Formulario.Count == 0)
+                {
+                    response.Erros.Add(new Error
+                    {
+                        ErrorCode = "30047",
+                        ErrorMessage = string.Format
+                            ("Formulário foi não removido!", id.ToString())
+                    });
+                    response.Success = false;
+                };
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.ResourceCode = string.Empty;
+                response.ErrorCode = 30048; //- ErrorCode = "30048"
+                response.Message = string.Format
+                    ("Erro ao remover o Formulário: {0}.", id.ToString());
+                response.Erros.Add(new Acesscorp.Domains.Dtos.Error(ex.Message, "", ex.StackTrace));
+            }
+
+            return response;
         }
     }
 }
