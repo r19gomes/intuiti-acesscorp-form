@@ -1,11 +1,13 @@
 ﻿using Acesscorp.Applications.Contract.Formulario;
 using Acesscorp.Applications.Contract.FormularioStatus;
 using Acesscorp.Applications.Contract.FormularioTipo;
+using Acesscorp.Applications.Contract.FormularioTipoDeAtributo;
 using Acesscorp.Applications.Contract.TipoDeAtributo;
 using Acesscorp.Applications.Contract.TipoDeDado;
 using Acesscorp.Applications.Implementation.Formulario;
 using Acesscorp.Applications.Implementation.FormularioStatus;
 using Acesscorp.Applications.Implementation.FormularioTipo;
+using Acesscorp.Applications.Implementation.FormularioTipoDeAtributo;
 using Acesscorp.Applications.Implementation.TipoDeAtributo;
 using Acesscorp.Applications.Implementation.TipoDeDado;
 using Acesscorp.Domains.Contracts.Repositories;
@@ -73,6 +75,10 @@ namespace AspNetMvc.Api
             services.AddScoped<IFormularioRepositories, FormularioRepositories>();
             services.AddScoped<IFormularioServices, FormularioServices>();
             services.AddScoped<IFormularioAppService, FormularioAppService>();
+
+            services.AddScoped<IFormularioTipoDeAtributoRepositories, FormularioTipoDeAtributoRepositories>();
+            services.AddScoped<IFormularioTipoDeAtributoServices, FormularioTipoDeAtributoServices>();
+            services.AddScoped<IFormularioTipoDeAtributoAppService, FormularioTipoDeAtributoAppService>();
 
         }
 

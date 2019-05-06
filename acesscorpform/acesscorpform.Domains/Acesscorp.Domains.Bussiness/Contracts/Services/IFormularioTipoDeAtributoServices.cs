@@ -15,6 +15,8 @@ namespace Acesscorp.Domains.Contracts.Services
 
         FormularioTipoDeAtributoResponse Update(FormularioTipoDeAtributoRequest request);
 
+        FormularioTipoDeAtributoResponse Delete(Int64 id);
+
         #endregion
     }
 }

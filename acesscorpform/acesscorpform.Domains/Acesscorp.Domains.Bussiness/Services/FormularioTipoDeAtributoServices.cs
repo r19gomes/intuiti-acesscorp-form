@@ -30,7 +30,7 @@ namespace Acesscorp.Domains.Services
 
         #region Methods
 
-        public FormularioTipoDeAtributoResponse Get(long id)
+        public FormularioTipoDeAtributoResponse Get(Int64 id)
         {
             var response = new FormularioTipoDeAtributoResponse();
 
@@ -41,9 +41,10 @@ namespace Acesscorp.Domains.Services
             };
 
             response.FormularioTipoDeAtributo = formularioTipoDeAtributo;
-            response.Success = true;
+            response.Success = (formularioTipoDeAtributo.Count > 0 ? true : false); ;
 
             return response;
+
         }
 
         public FormularioTipoDeAtributoResponse GetAll()
@@ -54,9 +55,10 @@ namespace Acesscorp.Domains.Services
             formularioTipoDeAtributo = _formularioTipoDeAtributoRepositories.GetAll();
 
             response.FormularioTipoDeAtributo = formularioTipoDeAtributo;
-            response.Success = true;
+            response.Success = (formularioTipoDeAtributo.Count > 0 ? true : false);
 
             return response;
+
         }
 
         public FormularioTipoDeAtributoResponse Insert(FormularioTipoDeAtributoRequest request)
@@ -70,7 +72,7 @@ namespace Acesscorp.Domains.Services
             };
 
             response.FormularioTipoDeAtributo = formularioTipoDeAtributo;
-            response.Success = true;
+            response.Success = (formularioTipoDeAtributo.Count > 0 ? true : false);
 
             return response;
         }
@@ -86,7 +88,22 @@ namespace Acesscorp.Domains.Services
             };
 
             response.FormularioTipoDeAtributo = formularioTipoDeAtributo;
-            response.Success = true;
+            response.Success = (formularioTipoDeAtributo.Count > 0 ? true : false);
+
+            return response;
+        }
+
+        public FormularioTipoDeAtributoResponse Delete(Int64 id)
+        {
+            var response = new FormularioTipoDeAtributoResponse();
+
+            var result = _formularioTipoDeAtributoRepositories.Delete(id);
+
+            IList<FormularioTipoDeAtributo> formularioTipoDeAtributo = new List<FormularioTipoDeAtributo>();
+            formularioTipoDeAtributo.Add(result);
+
+            response.FormularioTipoDeAtributo = formularioTipoDeAtributo;
+            response.Success = (formularioTipoDeAtributo.Count > 0 ? true : false);
 
             return response;
         }

@@ -1,6 +1,7 @@
 using Acesscorp.Applications.Contract.FormularioTipoDeAtributo;
 using Acesscorp.Domains.Contracts.Services;
 using Acesscorp.Domains.Dtos.FormularioTipoDeAtributo;
+using System;
 
 namespace Acesscorp.Applications.Implementation.FormularioTipoDeAtributo
 {
@@ -28,7 +29,7 @@ namespace Acesscorp.Applications.Implementation.FormularioTipoDeAtributo
 
         #region Methods
 
-        public FormularioTipoDeAtributoResponse Get(long id)
+        public FormularioTipoDeAtributoResponse Get(Int64 id)
         {
             return _formularioTipoDeAtributoService.Get(id);
         }
@@ -46,6 +47,11 @@ namespace Acesscorp.Applications.Implementation.FormularioTipoDeAtributo
         public FormularioTipoDeAtributoResponse Update(FormularioTipoDeAtributoRequest request)
         {
             return _formularioTipoDeAtributoService.Update(request);
+        }
+
+        public FormularioTipoDeAtributoResponse Delete(Int64 id)
+        {
+            return _formularioTipoDeAtributoService.Delete(id);
         }
 
         #endregion

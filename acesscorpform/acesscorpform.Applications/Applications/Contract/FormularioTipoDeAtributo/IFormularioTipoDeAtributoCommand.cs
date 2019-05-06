@@ -1,4 +1,5 @@
 using Acesscorp.Domains.Dtos.FormularioTipoDeAtributo;
+using System;
 
 namespace Acesscorp.Applications.Contract.FormularioTipoDeAtributo
 {
@@ -7,5 +8,7 @@ namespace Acesscorp.Applications.Contract.FormularioTipoDeAtributo
         FormularioTipoDeAtributoResponse Insert(FormularioTipoDeAtributoRequest request);
 
         FormularioTipoDeAtributoResponse Update(FormularioTipoDeAtributoRequest request);
+
+        FormularioTipoDeAtributoResponse Delete(Int64 id);
     }
 }
