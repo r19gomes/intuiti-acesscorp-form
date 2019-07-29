@@ -3279,11 +3279,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj",
+      "projectUniqueName": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj",
       "projectName": "Acesscorp.Domains",
-      "projectPath": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj",
+      "projectPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\obj\\",
+      "outputPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -4448,11 +4448,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj",
+      "projectUniqueName": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj",
       "projectName": "Acesscorp.Infrastructures.DataAccess",
-      "projectPath": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj",
+      "projectPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\obj\\",
+      "outputPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4471,8 +4471,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj": {
-              "projectPath": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj"
+            "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj": {
+              "projectPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj"
             }
           }
         }

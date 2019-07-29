@@ -12822,11 +12822,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Services\\AcesscorpApi\\Acesscorp.Api.csproj",
+      "projectUniqueName": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Services\\AcesscorpApi\\Acesscorp.Api.csproj",
       "projectName": "Acesscorp.Api",
-      "projectPath": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Services\\AcesscorpApi\\Acesscorp.Api.csproj",
+      "projectPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Services\\AcesscorpApi\\Acesscorp.Api.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Services\\AcesscorpApi\\obj\\",
+      "outputPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Services\\AcesscorpApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12845,14 +12845,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Applications\\Applications\\Acesscorp.Applications.csproj": {
-              "projectPath": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Applications\\Applications\\Acesscorp.Applications.csproj"
+            "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Applications\\Applications\\Acesscorp.Applications.csproj": {
+              "projectPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Applications\\Applications\\Acesscorp.Applications.csproj"
             },
-            "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj": {
-              "projectPath": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj"
+            "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj": {
+              "projectPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj"
             },
-            "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj": {
-              "projectPath": "C:\\Roberto\\br.com.intuiti\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj"
+            "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj": {
+              "projectPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj"
             }
           }
         }
@@ -12878,6 +12878,7 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
