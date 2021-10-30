@@ -1,38 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj": {}
+    "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj": {}
   },
   "projects": {
-    "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj": {
+    "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj",
+        "projectUniqueName": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj",
         "projectName": "Acesscorp.Domains",
-        "projectPath": "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj",
-        "packagesPath": "C:\\Users\\robertosi\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\obj\\",
+        "projectPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\robertosi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://abcbrasil.pkgs.visualstudio.com/_packaging/ABCBrasil.Infraestrutura/nuget/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
@@ -67,41 +62,36 @@
         }
       }
     },
-    "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj": {
+    "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj",
+        "projectUniqueName": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj",
         "projectName": "Acesscorp.Infrastructures.DataAccess",
-        "projectPath": "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\robertosi\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\obj\\",
+        "projectPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\Acesscorp.Infrastructures.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Infrastructures\\Infrastructures.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\robertosi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://abcbrasil.pkgs.visualstudio.com/_packaging/ABCBrasil.Infraestrutura/nuget/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj": {
-                "projectPath": "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj"
+              "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj": {
+                "projectPath": "C:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform.Domains\\Acesscorp.Domains.Bussiness\\Acesscorp.Domains.csproj"
               }
             }
           }

@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\robertosi\\Documents\\Roberto\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform\\Acesscorp.UI.csproj",
+  "FilePath": "c:\\Projetos\\intuiti-test-acesscorp-form\\acesscorpform\\acesscorpform\\Acesscorp.UI.csproj",
   "Configuration": {
     "ConfigurationName": "UnsupportedRazor",
     "LanguageVersion": "1.0",
@@ -11,8 +11,9 @@
   },
   "ProjectWorkspaceState": {
     "TagHelpers": [],
-    "CSharpLanguageVersion": 703
+    "CSharpLanguageVersion": 800
   },
   "RootNamespace": null,
-  "Documents": []
+  "Documents": [],
+  "SerializationFormat": "0.2"
 }
